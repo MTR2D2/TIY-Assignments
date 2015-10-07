@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		4CF61AD21BC57C44002EF03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61AD11BC57C44002EF03D /* AppDelegate.swift */; };
-		4CF61AD41BC57C44002EF03D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61AD31BC57C44002EF03D /* ViewController.swift */; };
+		4CF61AD41BC57C44002EF03D /* MissionBriefingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61AD31BC57C44002EF03D /* MissionBriefingViewController.swift */; };
 		4CF61AD71BC57C44002EF03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61AD51BC57C44002EF03D /* Main.storyboard */; };
 		4CF61AD91BC57C44002EF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61AD81BC57C44002EF03D /* Assets.xcassets */; };
 		4CF61ADC1BC57C44002EF03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61ADA1BC57C44002EF03D /* LaunchScreen.storyboard */; };
+		4CF61AE41BC59CEA002EF03D /* TIYLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61AE31BC59CEA002EF03D /* TIYLogo.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4CF61ACE1BC57C44002EF03D /* MissionBriefing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionBriefing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF61AD11BC57C44002EF03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4CF61AD31BC57C44002EF03D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4CF61AD31BC57C44002EF03D /* MissionBriefingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionBriefingViewController.swift; sourceTree = "<group>"; };
 		4CF61AD61BC57C44002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4CF61AD81BC57C44002EF03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF61ADB1BC57C44002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CF61ADD1BC57C44002EF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CF61AE31BC59CEA002EF03D /* TIYLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = TIYLogo.png; path = "../../../2015--FALL--iOS/03--Good-Morning-Agent-Hunt/images/TIYLogo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +56,9 @@
 		4CF61AD01BC57C44002EF03D /* MissionBriefing */ = {
 			isa = PBXGroup;
 			children = (
+				4CF61AE31BC59CEA002EF03D /* TIYLogo.png */,
 				4CF61AD11BC57C44002EF03D /* AppDelegate.swift */,
-				4CF61AD31BC57C44002EF03D /* ViewController.swift */,
+				4CF61AD31BC57C44002EF03D /* MissionBriefingViewController.swift */,
 				4CF61AD51BC57C44002EF03D /* Main.storyboard */,
 				4CF61AD81BC57C44002EF03D /* Assets.xcassets */,
 				4CF61ADA1BC57C44002EF03D /* LaunchScreen.storyboard */,
@@ -122,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF61ADC1BC57C44002EF03D /* LaunchScreen.storyboard in Resources */,
+				4CF61AE41BC59CEA002EF03D /* TIYLogo.png in Resources */,
 				4CF61AD91BC57C44002EF03D /* Assets.xcassets in Resources */,
 				4CF61AD71BC57C44002EF03D /* Main.storyboard in Resources */,
 			);
@@ -134,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF61AD41BC57C44002EF03D /* ViewController.swift in Sources */,
+				4CF61AD41BC57C44002EF03D /* MissionBriefingViewController.swift in Sources */,
 				4CF61AD21BC57C44002EF03D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +287,7 @@
 				4CF61AE21BC57C44002EF03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
