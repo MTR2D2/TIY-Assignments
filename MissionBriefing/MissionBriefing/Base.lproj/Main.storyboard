@@ -45,7 +45,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="271" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-Fv-wgA">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="271" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-Fv-wgA">
                                 <rect key="frame" x="60" y="260" width="480" height="86"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

@@ -15,7 +15,7 @@ class MissionBriefingViewController: UIViewController
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var namePasscode: UITextField!
     @IBOutlet var messageLabel: UILabel!
-    //@IBOutlet var textField: UITextView!
+    @IBOutlet var textField: UITextView!
     
     override func viewDidLoad()
     {
@@ -23,7 +23,7 @@ class MissionBriefingViewController: UIViewController
         // Do any additional setup after loading the view, typically from a nib.
         messageLabel.text = ""
         namePasscode.text = ""
-        nameTextField.text = ""
+        textField.text = ""
         
         //
         // 3. The three UI elements need to be emptied on launch
@@ -41,20 +41,26 @@ class MissionBriefingViewController: UIViewController
     // MARK: - Action Handlers
     
     @IBAction func authenticateAgent(sender: UIButton)
+        
     {
+        func signInAgent()
+        {
+            
+        }
+    
         // This will cause the keyboard to dismiss when the authenticate button is tapped
         
-//        if nameTextField.isFirstResponder()
-//        {
-//           nameTextField.resignFirstResponder()
-//        }
-//        if namePasscode.isFirstResponder()
-//        {
-//            namePasscode.resignFirstResponder()
-//        }
+        if nameTextField.isFirstResponder()
+        {
+           nameTextField.resignFirstResponder()
+        }
+        if namePasscode.isFirstResponder()
+        {
+            namePasscode.resignFirstResponder()
+        }
     }
     
-    if   nameTextField.text == "" || namePasscode.text == ""
+    if nameTextField.text != "" && namePasscode.text != ""
     {
     
     
@@ -71,21 +77,12 @@ class MissionBriefingViewController: UIViewController
             //
 //    MARK: - Private
     
-    func sayHello() -> Bool
-    {
-    var rc = false
+  
+        let nameComponents = nameTextField.text!.characters.split(" ").map {
+        String($0) }
+        messageLabel.text = "Hello, Good evening, Agent \(nameComponents[0])"
+        }
     
-    if let name = nameTextField.text
-    {
-    rc = true
-    nameTextField.resignFirstResponder()
-    let nameComponents = name.characters.split(" ").map {
-    String($0) }
-    messageLabel.text = "Good evening, Agent \(nameComponents[1])"
-    }
-    return rc
-    }
-
     
     
             //
@@ -109,7 +106,7 @@ class MissionBriefingViewController: UIViewController
             //    Once you have the color object, you should be able to set the view's background color to this object.
             //
             
-            
+            view.backgroundColor = UIColor(
             
             
             
@@ -128,8 +125,8 @@ class MissionBriefingViewController: UIViewController
             //
             
             
-            
-            
+    view.backgroundColor = UIColor(red: 0.78, Green: 0.188, Blue: 0.188, alpha: 1)
+    
             
             
         }
