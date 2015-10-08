@@ -12,6 +12,7 @@
 		4CF61B171BC6D529002EF03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B151BC6D529002EF03D /* Main.storyboard */; };
 		4CF61B191BC6D529002EF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B181BC6D529002EF03D /* Assets.xcassets */; };
 		4CF61B1C1BC6D529002EF03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B1A1BC6D529002EF03D /* LaunchScreen.storyboard */; };
+		4CF61B241BC6F03A002EF03D /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B231BC6F03A002EF03D /* digital-7.ttf */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4CF61B181BC6D529002EF03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4CF61B1B1BC6D529002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CF61B1D1BC6D529002EF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CF61B231BC6F03A002EF03D /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				4CF61B181BC6D529002EF03D /* Assets.xcassets */,
 				4CF61B1A1BC6D529002EF03D /* LaunchScreen.storyboard */,
 				4CF61B1D1BC6D529002EF03D /* Info.plist */,
+				4CF61B231BC6F03A002EF03D /* digital-7.ttf */,
 			);
 			path = OutaTime;
 			sourceTree = "<group>";
@@ -124,6 +127,7 @@
 				4CF61B1C1BC6D529002EF03D /* LaunchScreen.storyboard in Resources */,
 				4CF61B191BC6D529002EF03D /* Assets.xcassets in Resources */,
 				4CF61B171BC6D529002EF03D /* Main.storyboard in Resources */,
+				4CF61B241BC6F03A002EF03D /* digital-7.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
