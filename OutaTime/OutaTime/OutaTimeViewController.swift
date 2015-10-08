@@ -8,14 +8,43 @@
 
 import UIKit
 
-class OutaTimeViewController: UIViewController {
+@objc protocol TimeCircuitsDatePickerDelegate
+{
+    func timerWasChosen(timerCount: Int)
+}
 
-    override func viewDidLoad() {
+class OutaTimeViewController: UIViewController
+{
+    @IBOutlet weak var destinationTimeLabel: UILabel!
+
+    @IBOutlet weak var destinationTime: UILabel!
+    
+    @IBOutlet weak var presentTimeLabel: UILabel!
+    
+    @IBOutlet weak var presentTime: UILabel!
+    
+    @IBOutlet weak var lastTimeDepartedLabel: UILabel!
+    
+    @IBOutlet weak var lastTimeDeparted: UILabel!
+    
+    @IBOutlet weak var speedLabel: UILabel!
+    
+    @IBOutlet weak var speed: UILabel!
+    
+    @IBOutlet weak var setDestinationTimeButton: UIButton!
+    
+    @IBOutlet weak var travelBackButton: UIButton!
+    
+//    let NSDateFormatter: String
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

@@ -199,6 +199,18 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="destinationTime" destination="FWu-CN-i2J" id="gQ7-m0-AR7"/>
+                        <outlet property="destinationTimeLabel" destination="I02-al-Ef1" id="qf6-Gs-FIG"/>
+                        <outlet property="lastTimeDeparted" destination="CyA-Ej-qe8" id="UU1-zk-nKK"/>
+                        <outlet property="lastTimeDepartedLabel" destination="Y5w-vs-zQG" id="yWw-fd-ecf"/>
+                        <outlet property="presentTime" destination="sgR-Bc-ggT" id="fEG-4n-xKh"/>
+                        <outlet property="presentTimeLabel" destination="J2Q-tN-azT" id="6Pg-bV-ucJ"/>
+                        <outlet property="setDestinationTimeButton" destination="NPr-Fz-0pU" id="HxR-df-Oik"/>
+                        <outlet property="speed" destination="sXJ-j9-Jxv" id="qdh-Ae-KsH"/>
+                        <outlet property="speedLabel" destination="P7y-hd-MWy" id="hkM-lf-rUi"/>
+                        <outlet property="travelBackButton" destination="hyj-C5-LJp" id="0e9-Ut-ZQZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
