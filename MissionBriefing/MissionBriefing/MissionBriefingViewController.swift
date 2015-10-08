@@ -15,12 +15,15 @@ class MissionBriefingViewController: UIViewController
     @IBOutlet var nameTextField: UITextField!
     @IBOutlet var namePasscode: UITextField!
     @IBOutlet var messageLabel: UILabel!
+    //@IBOutlet var textField: UITextView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         messageLabel.text = ""
+        namePasscode.text = ""
+        nameTextField.text = ""
         
         //
         // 3. The three UI elements need to be emptied on launch
@@ -40,16 +43,25 @@ class MissionBriefingViewController: UIViewController
     @IBAction func authenticateAgent(sender: UIButton)
     {
         // This will cause the keyboard to dismiss when the authenticate button is tapped
-        if <#name text field property identifier goes here#>.isFirstResponder
-        {
-            <#name text field property identifier goes here#>.resignFirstResponder
-        }
         
+//        if nameTextField.isFirstResponder()
+//        {
+//           nameTextField.resignFirstResponder()
+//        }
+//        if namePasscode.isFirstResponder()
+//        {
+//            namePasscode.resignFirstResponder()
+//        }
+    }
+    
+    if   nameTextField.text == "" || namePasscode.text == ""
+    {
+    
+    
         //
         // 4. Check whether there is text in BOTH the name and password textfields
         //
-        if <#?#>
-        {
+    
             //
             // 5. The greeting label needs to be populated with the the string "Good evening, Agent #", where # is the last name of
             //    the agent logging in. The agent's full name is listed in the text field, but you need to pull out just the last
@@ -57,12 +69,25 @@ class MissionBriefingViewController: UIViewController
             //    Strings". You should be able to find a method that allows you to break up a string using a delimiter. In our case,
             //    the delimiter would be a space character.
             //
-            
-            
-            
-            
-            
-            
+//    MARK: - Private
+    
+    func sayHello() -> Bool
+    {
+    var rc = false
+    
+    if let name = nameTextField.text
+    {
+    rc = true
+    nameTextField.resignFirstResponder()
+    let nameComponents = name.characters.split(" ").map {
+    String($0) }
+    messageLabel.text = "Good evening, Agent \(nameComponents[1])"
+    }
+    return rc
+    }
+
+    
+    
             //
             // 6. The mission briefing textview needs to be populated with the briefing from HQ, but it must also include the last
             //    name of the agent that logged in. Perhaps you could use the text in the textfield to get the agent's last name.
@@ -71,7 +96,7 @@ class MissionBriefingViewController: UIViewController
             //
             
             
-            
+            textField.text = "This mission will be an arduous one, fraught with peril. You will cover much strange and unfamiliar territory. Should you choose to accept this mission, Agent \(nameComponents[1]), you will certainly be disavowed, but you will be doing your country a great service. This message will self destruct in 5 seconds."
             
             
             //
@@ -109,4 +134,5 @@ class MissionBriefingViewController: UIViewController
             
         }
     }
+
 }

@@ -28,6 +28,9 @@
                                 <rect key="frame" x="256" y="139" width="88" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Authenticate"/>
+                                <connections>
+                                    <action selector="authenticateAgent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWJ-TJ-OS7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LD7-WE-MSQ">
                                 <rect key="frame" x="279" y="189" width="42" height="21"/>
@@ -45,7 +48,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="271" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-Fv-wgA">
                                 <rect key="frame" x="60" y="260" width="480" height="86"/>
                                 <animations/>
-                                <mutableString key="text">I...don't know where to start for the "hard" part of the assignment. I figured out ​_what_​ to look up, but not sure how to utilize the feature.I...don't know where to start for the "hard" part of the assignment. I figured out ​_what_​ to look up, but not sure how to utilize the feature.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -111,6 +113,12 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="LD7-WE-MSQ" id="lm7-PH-bid"/>
+                        <outlet property="namePasscode" destination="7ry-w6-GOx" id="JFP-hM-iBq"/>
+                        <outlet property="nameTextField" destination="5OP-7V-zFN" id="Nhw-xN-EbO"/>
+                        <outlet property="textField" destination="KRN-Fv-wgA" id="17A-Hw-lL6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
