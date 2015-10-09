@@ -8,47 +8,61 @@
 
 import UIKit
 
-@objc protocol TimeCircuitsDatePickerDelegate
+@objc protocol DatePickerDelegate
 {
     func timerWasChosen(timerCount: Int)
 }
 
-class OutaTimeViewController: UIViewController
-{
-    @IBOutlet weak var destinationTimeLabel: UILabel!
+@IBOutlet var picker: UIPickerView!
+var delegate: DatePickerDelegate?
 
+class OutaTimeViewController: UIViewController, DatePickerDelegate
+{
+ 
+    
     @IBOutlet weak var destinationTime: UILabel!
     
-    @IBOutlet weak var presentTimeLabel: UILabel!
     
     @IBOutlet weak var presentTime: UILabel!
     
-    @IBOutlet weak var lastTimeDepartedLabel: UILabel!
     
     @IBOutlet weak var lastTimeDeparted: UILabel!
     
-    @IBOutlet weak var speedLabel: UILabel!
     
     @IBOutlet weak var speed: UILabel!
     
-    @IBOutlet weak var setDestinationTimeButton: UIButton!
-    
-    @IBOutlet weak var travelBackButton: UIButton!
-    
-//    let NSDateFormatter: String
+    let formatter = NSDateFormatter()
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+       
+        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate(<#T##tmplate: String##String#>, options: <#T##Int#>, locale: <#T##NSLocale?#>)
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ShowDatePickerSegue"
+        {
+            let datePickerVC = segue.destinationViewController
+                as! DatePickerViewController
+            datePickerVC.delegate = self
+        }
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: TimerPicker Delegate
+    
+    func timerWasChosen(timerCount: Int)
+    {
+        destinationTime.text = "\(timerCount)"
+    }
 
 }
 

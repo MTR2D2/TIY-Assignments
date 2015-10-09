@@ -13,6 +13,8 @@
 		4CF61B191BC6D529002EF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B181BC6D529002EF03D /* Assets.xcassets */; };
 		4CF61B1C1BC6D529002EF03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B1A1BC6D529002EF03D /* LaunchScreen.storyboard */; };
 		4CF61B241BC6F03A002EF03D /* digital-7.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B231BC6F03A002EF03D /* digital-7.ttf */; settings = {ASSET_TAGS = (); }; };
+		4CF61B261BC7211D002EF03D /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B251BC7211D002EF03D /* DatePickerViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4CF61B281BC8144F002EF03D /*  TimeCircuitsViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B271BC8144F002EF03D /*  TimeCircuitsViewController .swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4CF61B1B1BC6D529002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CF61B1D1BC6D529002EF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF61B231BC6F03A002EF03D /* digital-7.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "digital-7.ttf"; sourceTree = "<group>"; };
+		4CF61B251BC7211D002EF03D /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		4CF61B271BC8144F002EF03D /*  TimeCircuitsViewController .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = " TimeCircuitsViewController .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				4CF61B111BC6D529002EF03D /* AppDelegate.swift */,
 				4CF61B131BC6D529002EF03D /* OutaTimeViewController.swift */,
+				4CF61B251BC7211D002EF03D /* DatePickerViewController.swift */,
+				4CF61B271BC8144F002EF03D /*  TimeCircuitsViewController .swift */,
 				4CF61B151BC6D529002EF03D /* Main.storyboard */,
 				4CF61B181BC6D529002EF03D /* Assets.xcassets */,
 				4CF61B1A1BC6D529002EF03D /* LaunchScreen.storyboard */,
@@ -139,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CF61B141BC6D529002EF03D /* OutaTimeViewController.swift in Sources */,
+				4CF61B281BC8144F002EF03D /*  TimeCircuitsViewController .swift in Sources */,
 				4CF61B121BC6D529002EF03D /* AppDelegate.swift in Sources */,
+				4CF61B261BC7211D002EF03D /* DatePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
