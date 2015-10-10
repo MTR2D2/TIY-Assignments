@@ -10,11 +10,8 @@ import UIKit
 
 @objc protocol DatePickerDelegate
 {
-    func timerWasChosen(timerCount: Int)
+    func dateWasChosen(date: NSDate)
 }
-
-@IBOutlet var picker: UIPickerView!
-var delegate: DatePickerDelegate?
 
 class OutaTimeViewController: UIViewController, DatePickerDelegate
 {
@@ -23,7 +20,7 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     @IBOutlet weak var destinationTime: UILabel!
     
     
-    @IBOutlet weak var presentTime: UILabel!
+    @IBOutlet var presentTime: UILabel!
     
     
     @IBOutlet weak var lastTimeDeparted: UILabel!
@@ -31,14 +28,23 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     @IBOutlet weak var speed: UILabel!
     
-    let formatter = NSDateFormatter()
+    var speedVariable: Int!
+    
+    var lastTimeDepartedVariable: Int!
+    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
-        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate(<#T##tmplate: String##String#>, options: <#T##Int#>, locale: <#T##NSLocale?#>)
+        
+       presentTime.text = dateFormat(NSDate())
+        
+        speedVariable = 0
+        
+        
+        setLabelSpeed()
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
@@ -57,12 +63,45 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    
     // MARK: TimerPicker Delegate
     
-    func timerWasChosen(timerCount: Int)
+    func dateWasChosen(date: NSDate)
     {
-        destinationTime.text = "\(timerCount)"
-    }
 
+        destinationTime.text = dateFormat(date)
+       
+    }
+    
+    func dateFormat(x: NSDate) -> String
+    {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = NSDateFormatter.dateFormatFromTemplate("MMM dd yyyy", options: 0, locale: NSLocale.currentLocale())
+        let formattedTime = formatter.stringFromDate(x).uppercaseString
+        
+        return String(formattedTime)
+    }
+    
+    func setLabelSpeed()
+    {
+        speed.text = "\(speedVariable)MPH"
+    }
+    
+    // MARK: Action Handlers
+    
+    @IBOutlet weak var travelBackButtonPressed: UIButton!
+    
+    func buttonTapped() -> Bool
+    {
+        
+    }
+    
+    private func startTimer()
+    {
+        if speedVariable == nil
+        {
+            speedVariable = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: (buttonTapped(), userInfo: nil, repeats: true)
+        }
+   
 }
 

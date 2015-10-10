@@ -8,35 +8,30 @@
 
 import UIKit
 
-class DatePickerViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate
-
-@IBOutlet var datePicker: UIDatePicker!
-@IBOutlet var timePicker: UIDatePicker!
-@IBOutlet var dateTimeDisplay: UILabel!
-
-let dateFormatter = NSDateFormatter()
-let timeFormatter = NSDateFormatter()
-
-override func viewDidLoad()
+class DatePickerViewController: UIViewController
 {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    @IBOutlet var datePicker: UIDatePicker!
+    var delegate: DatePickerDelegate?
 
-override func viewWillDisappear(animated: Bool)
-{
-    super.viewWillDisappear(animated)
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    override func viewWillDisappear(animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+        
+        delegate?.dateWasChosen(datePicker.date)
+    }
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
     
-    delegate?.timerWasChosen(60-picker.selectedRowInComponent(0))
-}
-override func didReceiveMemoryWarning()
-{
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-}
+    
 
-@IBAction func datePickerChanged(sender: AnyObject) {
 }
-
-
     

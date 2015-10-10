@@ -29,7 +29,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SET DESTINATION TIME"/>
                                 <connections>
-                                    <segue destination="CmL-qy-EI0" kind="show" identifier="ShowDatePickerSegue" id="WbA-Ha-Lf7"/>
+                                    <segue destination="CmL-qy-EI0" kind="show" identifier="ShowDatePickerSegue" id="7ow-vs-nLT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyj-C5-LJp">
@@ -37,6 +37,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="TRAVEL BACK"/>
+                                <connections>
+                                    <action selector="travelBackButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cUk-fY-4eg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JAN 01 2000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWu-CN-i2J">
                                 <rect key="frame" x="210" y="129" width="180" height="37"/>
@@ -248,15 +251,10 @@
                     <navigationItem key="navigationItem" id="xWq-4H-IDx"/>
                     <connections>
                         <outlet property="destinationTime" destination="FWu-CN-i2J" id="gQ7-m0-AR7"/>
-                        <outlet property="destinationTimeLabel" destination="I02-al-Ef1" id="qf6-Gs-FIG"/>
                         <outlet property="lastTimeDeparted" destination="CyA-Ej-qe8" id="UU1-zk-nKK"/>
-                        <outlet property="lastTimeDepartedLabel" destination="Y5w-vs-zQG" id="yWw-fd-ecf"/>
                         <outlet property="presentTime" destination="sgR-Bc-ggT" id="fEG-4n-xKh"/>
-                        <outlet property="presentTimeLabel" destination="J2Q-tN-azT" id="6Pg-bV-ucJ"/>
-                        <outlet property="setDestinationTimeButton" destination="NPr-Fz-0pU" id="HxR-df-Oik"/>
                         <outlet property="speed" destination="sXJ-j9-Jxv" id="qdh-Ae-KsH"/>
-                        <outlet property="speedLabel" destination="P7y-hd-MWy" id="hkM-lf-rUi"/>
-                        <outlet property="travelBackButton" destination="hyj-C5-LJp" id="0e9-Ut-ZQZ"/>
+                        <outlet property="travelBackButtonPressed" destination="hyj-C5-LJp" id="SZ9-Es-khk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -266,7 +264,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="aar-lV-46y">
             <objects>
-                <viewController id="CmL-qy-EI0" customClass="DatePickerViewController" sceneMemberID="viewController">
+                <viewController id="CmL-qy-EI0" customClass="DatePickerViewController" customModule="OutaTime" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AN1-zV-sPU"/>
                         <viewControllerLayoutGuide type="bottom" id="QnF-nu-wXK"/>
@@ -275,8 +273,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jvv-H9-zQm">
-                                <rect key="frame" x="140" y="158" width="320" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jvv-H9-zQm">
+                                <rect key="frame" x="140" y="192" width="320" height="216"/>
                                 <animations/>
                                 <date key="date" timeIntervalSinceReferenceDate="466035004.03217399">
                                     <!--2015-10-08 22:10:04 +0000-->
@@ -287,32 +285,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jvv-H9-zQm" firstAttribute="top" secondItem="AN1-zV-sPU" secondAttribute="bottom" constant="94" id="HNR-ot-y2y"/>
+                            <constraint firstItem="jvv-H9-zQm" firstAttribute="centerY" secondItem="gV4-OH-kA9" secondAttribute="centerY" id="Nqm-d1-VoU"/>
                             <constraint firstItem="jvv-H9-zQm" firstAttribute="centerX" secondItem="gV4-OH-kA9" secondAttribute="centerX" id="zGu-Xw-JKX"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HNR-ot-y2y"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="jvv-H9-zQm" id="bi8-r5-Z4m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1xG-2b-W5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1686" y="388"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="a28-tl-li7">
-            <objects>
-                <viewController id="U4t-wp-IgS" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3wB-m5-1R3"/>
-                        <viewControllerLayoutGuide type="bottom" id="peI-Hz-ZPC"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="O2K-wg-cJa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebh-Xl-3dd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2229" y="327"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="amV-D3-SA7">
