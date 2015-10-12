@@ -26,7 +26,7 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     @IBOutlet weak var lastTimeDeparted: UILabel!
     
     
-    @IBOutlet weak var speed: UILabel!
+    @IBOutlet weak var speedLabel: UILabel!
     
     var speedVariable: Int!
     
@@ -69,9 +69,7 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     func dateWasChosen(date: NSDate)
     {
-
         destinationTime.text = dateFormat(date)
-       
     }
     
     func dateFormat(x: NSDate) -> String
@@ -85,7 +83,7 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     func setLabelSpeed()
     {
-        speed.text = "\(speedVariable)MPH"
+        speedLabel.text = "\(speedVariable)MPH"
     }
     
     // MARK: Action Handlers
@@ -99,9 +97,27 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     private func startTimer()
     {
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateUI", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateUI", userInfo: nil, repeats: false)
     }
-   
+    
+    func updateUI()
+    {
+        if timer == nil
+        {
+            let newCount = Int(speedLabel.text!)! + 1
+            speedLabel.text = String(newCount)
+            if newCount == 88
+            {
+                stopTimer()
+            }
+        }
+    }
+    
+    private func stopTimer()
+    {
+        timer?.invalidate()
+        timer = nil
+    }
+    
 }
 

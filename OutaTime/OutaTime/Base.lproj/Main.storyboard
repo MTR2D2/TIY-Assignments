@@ -254,6 +254,7 @@
                         <outlet property="lastTimeDeparted" destination="CyA-Ej-qe8" id="UU1-zk-nKK"/>
                         <outlet property="presentTime" destination="sgR-Bc-ggT" id="fEG-4n-xKh"/>
                         <outlet property="speed" destination="sXJ-j9-Jxv" id="qdh-Ae-KsH"/>
+                        <outlet property="speedLabel" destination="sXJ-j9-Jxv" id="Mz3-lY-iWt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
