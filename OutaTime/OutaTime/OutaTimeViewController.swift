@@ -42,7 +42,6 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
         
         speedVariable = 0
         
-        
         setLabelSpeed()
         
     }
@@ -89,12 +88,11 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     // MARK: Action Handlers
     
-    @IBOutlet weak var travelBackButtonPressed: UIButton!
-    
-    func buttonTapped() -> Bool
+    @IBAction func travelBackButtonPressed(sender: UIButton)
     {
-        
     }
+    
+    // MARK: Private
     
     private func startTimer()
     {
