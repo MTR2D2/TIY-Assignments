@@ -30,6 +30,8 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     var speedVariable: Int!
     
+    var timer: NSTimer?
+    
     var lastTimeDepartedVariable: Int!
     
     
@@ -90,16 +92,16 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     @IBAction func travelBackButtonPressed(sender: UIButton)
     {
+        startTimer()
     }
     
     // MARK: Private
     
     private func startTimer()
     {
-        if speedVariable == nil
-        {
-            speedVariable = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: (buttonTapped(), userInfo: nil, repeats: true)
-        }
+        
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateUI", userInfo: nil, repeats: true)
+    }
    
 }
 
