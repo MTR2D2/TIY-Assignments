@@ -30,6 +30,8 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     var speedVariable: Int!
     
+    var currentSpeed = 0
+    
     var timer: NSTimer?
     
     var lastTimeDepartedVariable: Int!
@@ -97,20 +99,31 @@ class OutaTimeViewController: UIViewController, DatePickerDelegate
     
     private func startTimer()
     {
-        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateUI", userInfo: nil, repeats: false)
+        if timer == nil
+        {
+            
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "updateUI", userInfo: nil, repeats: true)
+        }
     }
     
     func updateUI()
     {
-        if timer == nil
+        if currentSpeed != 88 //does not equal
         {
-            let newCount = Int(speedLabel.text!)! + 1
-            speedLabel.text = String(newCount)
-            if newCount == 88
-            {
-                stopTimer()
-            }
+            currentSpeed += 1
+            speedLabel.text = String(currentSpeed)
         }
+        
+        else
+            
+        {
+            stopTimer()
+            lastTimeDeparted.text = presentTime.text
+            presentTime.text = destinationTime.text
+            currentSpeed=0
+            speedLabel.text = String(currentSpeed)
+        }
+        
     }
     
     private func stopTimer()

@@ -12,9 +12,10 @@ class DatePickerViewController: UIViewController
 {
     @IBOutlet var datePicker: UIDatePicker!
     var delegate: DatePickerDelegate?
+    //question mark means optional, doesn't have to have a value
 
     override func viewDidLoad()
-    {
+    { 
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
