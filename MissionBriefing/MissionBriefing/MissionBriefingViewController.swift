@@ -21,9 +21,9 @@ class MissionBriefingViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        messageLabel.text = ""
-        namePasscode.text = ""
-        textField.text = ""
+        messageLabel.text = " "
+        namePasscode.text = " "
+        textField.text = " "
         
         //
         // 3. The three UI elements need to be emptied on launch
@@ -41,26 +41,22 @@ class MissionBriefingViewController: UIViewController
     // MARK: - Action Handlers
     
     @IBAction func authenticateAgent(sender: UIButton)
-        
     {
         func signInAgent()
         {
-            
-        }
-    
+
         // This will cause the keyboard to dismiss when the authenticate button is tapped
         
         if nameTextField.isFirstResponder()
-        {
-           nameTextField.resignFirstResponder()
-        }
+            {
+               nameTextField.resignFirstResponder()
+            }
         if namePasscode.isFirstResponder()
-        {
-            namePasscode.resignFirstResponder()
+            {
+                namePasscode.resignFirstResponder()
+            }
         }
-    }
-    
-    if nameTextField.text != "" && namePasscode.text != ""
+    if nameTextField.text != " " && namePasscode.text != " "
     {
     
     
@@ -75,13 +71,12 @@ class MissionBriefingViewController: UIViewController
             //    Strings". You should be able to find a method that allows you to break up a string using a delimiter. In our case,
             //    the delimiter would be a space character.
             //
-//    MARK: - Private
     
   
         let nameComponents = nameTextField.text!.characters.split(" ").map {
         String($0) }
-        messageLabel.text = "Hello, Good evening, Agent \(nameComponents[0])"
-        }
+        messageLabel.text = "Hello, Good evening, Agent \(nameComponents[1])"
+        
     
     
     
@@ -106,14 +101,12 @@ class MissionBriefingViewController: UIViewController
             //    Once you have the color object, you should be able to set the view's background color to this object.
             //
             
-            view.backgroundColor = UIColor(
-            
-            
-            
-            
-        }
+        
+            view.backgroundColor = UIColor(red: 0.585, green: 0.78, blue: 0.188, alpha: 1)
+            }
         else
-        {
+            {
+                
             //
             // 8. The view's background color needs to switch to red to indicate a failed login by the agent.
             //
@@ -124,12 +117,8 @@ class MissionBriefingViewController: UIViewController
             //    Once you have the color object, you should be able to set the view's background color to this object.
             //
             
-            
-    view.backgroundColor = UIColor(red: 0.78, Green: 0.188, Blue: 0.188, alpha: 1)
-    
-            
-            
-        }
+            view.backgroundColor = UIColor(red: 0.78, green: 0.188, blue: 0.188, alpha: 1)
+            }
     }
 
 }

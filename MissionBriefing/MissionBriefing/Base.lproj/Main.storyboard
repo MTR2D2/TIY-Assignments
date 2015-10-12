@@ -43,7 +43,7 @@
                                 <rect key="frame" x="60" y="81" width="480" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" returnKeyType="go" secureTextEntry="YES"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="271" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KRN-Fv-wgA">
                                 <rect key="frame" x="60" y="260" width="480" height="86"/>
