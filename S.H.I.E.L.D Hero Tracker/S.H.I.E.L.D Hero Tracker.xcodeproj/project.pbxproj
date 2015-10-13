@@ -15,6 +15,7 @@
 		4CF61B701BCC37B8002EF03D /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4CF61B721BCC3840002EF03D /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B711BCC3840002EF03D /* heroes.json */; settings = {ASSET_TAGS = (); }; };
 		4CF61B741BCC398A002EF03D /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B731BCC398A002EF03D /* Hero.swift */; settings = {ASSET_TAGS = (); }; };
+		4CF61B761BCD1E2A002EF03D /* Iron-Man.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B751BCD1E2A002EF03D /* Iron-Man.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		4CF61B711BCC3840002EF03D /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
 		4CF61B731BCC398A002EF03D /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		4CF61B751BCD1E2A002EF03D /* Iron-Man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Iron-Man.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,
 				4CF61B651BCC3497002EF03D /* Info.plist */,
 				4CF61B711BCC3840002EF03D /* heroes.json */,
+				4CF61B751BCD1E2A002EF03D /* Iron-Man.png */,
 			);
 			path = "S.H.I.E.L.D Hero Tracker";
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 				4CF61B721BCC3840002EF03D /* heroes.json in Resources */,
 				4CF61B611BCC3497002EF03D /* Assets.xcassets in Resources */,
 				4CF61B5F1BCC3497002EF03D /* Main.storyboard in Resources */,
+				4CF61B761BCD1E2A002EF03D /* Iron-Man.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +299,7 @@
 				4CF61B6A1BCC3497002EF03D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

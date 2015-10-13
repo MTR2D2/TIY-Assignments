@@ -10,10 +10,15 @@ import UIKit
 
 class HeroTableViewController: UITableViewController
 {
+    var customHeroModels = Array<Hero>()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        title = "S.H.I.E.L.D. Hero Tracker"
+        
+        loadHeroes()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,24 +38,28 @@ class HeroTableViewController: UITableViewController
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 10
     }
 
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HeroCell", forIndexPath: indexPath)
 
+        let aHero = heros[indexPath.row]
+        cell.textLabel?.text = aHero.name
+        cell.detailTextLabel?.text = aHero.homeworld
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -97,4 +106,10 @@ class HeroTableViewController: UITableViewController
     }
     */
 
+    // Private Functions
+    
+    private func loadHeroes()
+    {
+        
+    }
 }
