@@ -69,22 +69,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-87-NqU">
-                                <rect key="frame" x="20" y="72" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hero's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9iq-87-NqU">
+                                <rect key="frame" x="20" y="28" width="99" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-zC-Nfw">
-                                <rect key="frame" x="20" y="117" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homeworld" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dK2-zC-Nfw">
+                                <rect key="frame" x="20" y="69" width="88" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmH-Cv-1Br">
-                                <rect key="frame" x="20" y="170" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OmH-Cv-1Br">
+                                <rect key="frame" x="20" y="98" width="56" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -97,10 +97,17 @@
                             <constraint firstItem="dK2-zC-Nfw" firstAttribute="top" secondItem="9iq-87-NqU" secondAttribute="bottom" constant="24" id="2kW-80-Das"/>
                             <constraint firstItem="OmH-Cv-1Br" firstAttribute="leading" secondItem="dK2-zC-Nfw" secondAttribute="leading" id="4Nm-JI-gwN"/>
                             <constraint firstItem="9iq-87-NqU" firstAttribute="leading" secondItem="ESj-0m-ng8" secondAttribute="leading" constant="20" id="5kg-vd-XsI"/>
+                            <constraint firstItem="dK2-zC-Nfw" firstAttribute="top" secondItem="9iq-87-NqU" secondAttribute="bottom" constant="20" id="I2k-JC-xIx"/>
                             <constraint firstItem="dK2-zC-Nfw" firstAttribute="leading" secondItem="9iq-87-NqU" secondAttribute="leading" id="bg7-x1-Nsj"/>
+                            <constraint firstItem="OmH-Cv-1Br" firstAttribute="top" secondItem="dK2-zC-Nfw" secondAttribute="bottom" constant="8" id="dOG-yI-5yk"/>
                             <constraint firstItem="9iq-87-NqU" firstAttribute="top" secondItem="37c-xm-uUu" secondAttribute="bottom" constant="8" id="wyS-9H-ezO"/>
                             <constraint firstItem="OmH-Cv-1Br" firstAttribute="top" secondItem="dK2-zC-Nfw" secondAttribute="bottom" constant="32" id="xyh-xh-rQI"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="xyh-xh-rQI"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SV4-c8-3yk" userLabel="First Responder" sceneMemberID="firstResponder"/>
