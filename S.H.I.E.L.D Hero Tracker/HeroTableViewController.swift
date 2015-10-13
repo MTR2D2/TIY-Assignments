@@ -10,7 +10,7 @@ import UIKit
 
 class HeroTableViewController: UITableViewController
 {
-    var customHeroModels = Array<Hero>()
+    var heroes = Array<String>()
 
     override func viewDidLoad()
     {
@@ -19,6 +19,8 @@ class HeroTableViewController: UITableViewController
         title = "S.H.I.E.L.D. Hero Tracker"
         
         loadHeroes()
+        
+        heroes.append("Iron Man")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,25 +39,20 @@ class HeroTableViewController: UITableViewController
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        // #warning Incomplete implementation, return the number of rows
-        return 10
+        return heroes.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("HeroCell", forIndexPath: indexPath)
-
-        let aHero = heros[indexPath.row]
-        cell.textLabel?.text = aHero.name
-        cell.detailTextLabel?.text = aHero.homeworld
-        // Configure the cell...
+        
+        cell.textLabel?.text = heroes[indexPath.row]
 
         return cell
     }
