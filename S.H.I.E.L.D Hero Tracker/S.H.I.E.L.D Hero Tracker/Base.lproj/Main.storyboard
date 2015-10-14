@@ -49,9 +49,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="ETM-Ct-w9b"/>
-                    <connections>
-                        <segue destination="QPh-sA-3Ij" kind="show" identifier="ShowTableDetailViewSegue" id="xze-0n-AWW"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXp-ke-AH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

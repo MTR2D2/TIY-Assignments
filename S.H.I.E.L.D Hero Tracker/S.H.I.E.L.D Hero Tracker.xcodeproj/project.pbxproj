@@ -63,9 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				4CF61B591BCC3497002EF03D /* AppDelegate.swift */,
+				4CF61B731BCC398A002EF03D /* Hero.swift */,
 				4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */,
 				4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */,
-				4CF61B731BCC398A002EF03D /* Hero.swift */,
 				4CF61B5D1BCC3497002EF03D /* Main.storyboard */,
 				4CF61B601BCC3497002EF03D /* Assets.xcassets */,
 				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,

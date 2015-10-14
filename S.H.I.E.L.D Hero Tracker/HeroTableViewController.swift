@@ -10,7 +10,7 @@ import UIKit
 
 class HeroTableViewController: UITableViewController
 {
-    var heroes = Array<String>()
+    var heroes = Array<Hero>()
 
     override func viewDidLoad()
     {
@@ -20,7 +20,6 @@ class HeroTableViewController: UITableViewController
         
         loadHeroes()
         
-        heroes.append("Iron Man")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -52,8 +51,10 @@ class HeroTableViewController: UITableViewController
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("HeroCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = heroes[indexPath.row]
-
+        let aHero = heroes[indexPath.row]
+        cell.textLabel?.text = aHero.name
+        cell.detailTextLabel?.text = aHero.homeworld
+    
         return cell
     }
 
@@ -107,6 +108,22 @@ class HeroTableViewController: UITableViewController
     
     private func loadHeroes()
     {
-        
+        do
+        {
+            let filePath = NSBundle.mainBundle().pathForResource("heroes", ofType: "json")
+            let dataFromFile = NSData(contentsOfFile: filePath!)
+            let heroData: NSArray! = try NSJSONSerialization.JSONObjectWithData(dataFromFile!, options: []) as! NSArray
+            for heroDictionary in heroData
+            {
+                let aHero = Hero(heroDictionary: heroDictionary as! NSDictionary)
+                
+                heroes.append(aHero)
+            }
+            heroes.sortInPlace({ $0.name < $1.name})
+        }
+        catch let error as NSError
+        {
+            print(error)
+        }
     }
 }
