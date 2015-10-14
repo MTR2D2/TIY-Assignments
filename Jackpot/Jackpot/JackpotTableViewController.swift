@@ -10,6 +10,7 @@ import UIKit
 
 class JackpotTableViewController: UITableViewController
 {
+    var storedTickets = Array<Numbers>()
 
     override func viewDidLoad()
     {
@@ -33,21 +34,22 @@ class JackpotTableViewController: UITableViewController
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return storedTickets.count
     }
 
-    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("jackpotCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let insideEachCell = storedTickets[indexPath.row]
+        cell.textLabel?.text = "\(insideEachCell.ticket)"
 
         return cell
     }
@@ -80,13 +82,14 @@ class JackpotTableViewController: UITableViewController
     }
     */
 
-    /*
+    
     // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
         // Return false if you do not want the item to be re-orderable.
         return true
     }
-    */
+
 
     /*
     // MARK: - Navigation
@@ -98,4 +101,10 @@ class JackpotTableViewController: UITableViewController
     }
     */
 
+    @IBAction func numberGenerator(sender: UIBarButtonItem)
+    {
+        let newPath = NSIndexPath(forRow: storedTickets.count, inSection: 0)
+        storedTickets.append(Numbers())
+        tableView.insertRowsAtIndexPaths([newPath], withRowAnimation: .Top)
+    }
 }
