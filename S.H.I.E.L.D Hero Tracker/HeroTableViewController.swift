@@ -57,7 +57,16 @@ class HeroTableViewController: UITableViewController
     
         return cell
     }
-
+    
+    override func tableView(tableview: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        tableview.deselectRowAtIndexPath(indexPath, animated: true)
+    
+    let selectedHero = heroes[indexPath.row]
+    let detailVC = storyboard?.instantiateViewControllerWithIdentifier("HeroDetailViewController") as! HeroDetailViewController
+    detailVC.hero = selectedHero
+    navigationController?.pushViewController(detailVC, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.

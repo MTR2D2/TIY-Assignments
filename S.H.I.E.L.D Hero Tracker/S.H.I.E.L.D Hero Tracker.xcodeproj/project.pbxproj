@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CE847801BCEE45D00BDF588 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4CF61B5A1BCC3497002EF03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B591BCC3497002EF03D /* AppDelegate.swift */; };
 		4CF61B5F1BCC3497002EF03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B5D1BCC3497002EF03D /* Main.storyboard */; };
 		4CF61B611BCC3497002EF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B601BCC3497002EF03D /* Assets.xcassets */; };
 		4CF61B641BCC3497002EF03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */; };
 		4CF61B6E1BCC358C002EF03D /* HeroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		4CF61B701BCC37B8002EF03D /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4CF61B721BCC3840002EF03D /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B711BCC3840002EF03D /* heroes.json */; settings = {ASSET_TAGS = (); }; };
 		4CF61B741BCC398A002EF03D /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B731BCC398A002EF03D /* Hero.swift */; settings = {ASSET_TAGS = (); }; };
 		4CF61B761BCD1E2A002EF03D /* Iron-Man.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B751BCD1E2A002EF03D /* Iron-Man.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		4CF61B561BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "S.H.I.E.L.D Hero Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF61B591BCC3497002EF03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CF61B5E1BCC3497002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -26,7 +27,6 @@
 		4CF61B631BCC3497002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CF61B651BCC3497002EF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTableViewController.swift; path = ../HeroTableViewController.swift; sourceTree = "<group>"; };
-		4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
 		4CF61B711BCC3840002EF03D /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
 		4CF61B731BCC398A002EF03D /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		4CF61B751BCD1E2A002EF03D /* Iron-Man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Iron-Man.png"; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 				4CF61B591BCC3497002EF03D /* AppDelegate.swift */,
 				4CF61B731BCC398A002EF03D /* Hero.swift */,
 				4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */,
-				4CF61B6F1BCC37B8002EF03D /* HeroDetailViewController.swift */,
+				4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */,
 				4CF61B5D1BCC3497002EF03D /* Main.storyboard */,
 				4CF61B601BCC3497002EF03D /* Assets.xcassets */,
 				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,
@@ -148,8 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CF61B701BCC37B8002EF03D /* HeroDetailViewController.swift in Sources */,
 				4CF61B5A1BCC3497002EF03D /* AppDelegate.swift in Sources */,
+				4CE847801BCEE45D00BDF588 /* HeroDetailViewController.swift in Sources */,
 				4CF61B6E1BCC358C002EF03D /* HeroTableViewController.swift in Sources */,
 				4CF61B741BCC398A002EF03D /* Hero.swift in Sources */,
 			);
