@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4CE847801BCEE45D00BDF588 /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4CF61B5A1BCC3497002EF03D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B591BCC3497002EF03D /* AppDelegate.swift */; };
+		4CF61B5F1BCC3497002EF03D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B5D1BCC3497002EF03D /* Main.storyboard */; };
+		4CF61B611BCC3497002EF03D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B601BCC3497002EF03D /* Assets.xcassets */; };
+		4CF61B641BCC3497002EF03D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */; };
+		4CF61B6E1BCC358C002EF03D /* HeroTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4CF61B721BCC3840002EF03D /* heroes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B711BCC3840002EF03D /* heroes.json */; settings = {ASSET_TAGS = (); }; };
+		4CF61B741BCC398A002EF03D /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF61B731BCC398A002EF03D /* Hero.swift */; settings = {ASSET_TAGS = (); }; };
+		4CF61B761BCD1E2A002EF03D /* Iron-Man.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CF61B751BCD1E2A002EF03D /* Iron-Man.png */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
+		4CF61B561BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "S.H.I.E.L.D Hero Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CF61B591BCC3497002EF03D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4CF61B5E1BCC3497002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4CF61B601BCC3497002EF03D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4CF61B631BCC3497002EF03D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4CF61B651BCC3497002EF03D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeroTableViewController.swift; path = ../HeroTableViewController.swift; sourceTree = "<group>"; };
+		4CF61B711BCC3840002EF03D /* heroes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = heroes.json; sourceTree = "<group>"; };
+		4CF61B731BCC398A002EF03D /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		4CF61B751BCD1E2A002EF03D /* Iron-Man.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Iron-Man.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CF61B531BCC3497002EF03D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4CF61B4D1BCC3497002EF03D = {
+			isa = PBXGroup;
+			children = (
+				4CF61B581BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker */,
+				4CF61B571BCC3497002EF03D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4CF61B571BCC3497002EF03D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CF61B561BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4CF61B581BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				4CF61B591BCC3497002EF03D /* AppDelegate.swift */,
+				4CF61B731BCC398A002EF03D /* Hero.swift */,
+				4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */,
+				4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */,
+				4CF61B5D1BCC3497002EF03D /* Main.storyboard */,
+				4CF61B601BCC3497002EF03D /* Assets.xcassets */,
+				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,
+				4CF61B651BCC3497002EF03D /* Info.plist */,
+				4CF61B711BCC3840002EF03D /* heroes.json */,
+				4CF61B751BCD1E2A002EF03D /* Iron-Man.png */,
+			);
+			path = "S.H.I.E.L.D Hero Tracker";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CF61B551BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CF61B681BCC3497002EF03D /* Build configuration list for PBXNativeTarget "S.H.I.E.L.D Hero Tracker" */;
+			buildPhases = (
+				4CF61B521BCC3497002EF03D /* Sources */,
+				4CF61B531BCC3497002EF03D /* Frameworks */,
+				4CF61B541BCC3497002EF03D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "S.H.I.E.L.D Hero Tracker";
+			productName = "S.H.I.E.L.D Hero Tracker";
+			productReference = 4CF61B561BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CF61B4E1BCC3497002EF03D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "The Iron Yard";
+				TargetAttributes = {
+					4CF61B551BCC3497002EF03D = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 4CF61B511BCC3497002EF03D /* Build configuration list for PBXProject "S.H.I.E.L.D Hero Tracker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CF61B4D1BCC3497002EF03D;
+			productRefGroup = 4CF61B571BCC3497002EF03D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CF61B551BCC3497002EF03D /* S.H.I.E.L.D Hero Tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4CF61B541BCC3497002EF03D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF61B641BCC3497002EF03D /* LaunchScreen.storyboard in Resources */,
+				4CF61B721BCC3840002EF03D /* heroes.json in Resources */,
+				4CF61B611BCC3497002EF03D /* Assets.xcassets in Resources */,
+				4CF61B5F1BCC3497002EF03D /* Main.storyboard in Resources */,
+				4CF61B761BCD1E2A002EF03D /* Iron-Man.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CF61B521BCC3497002EF03D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4CF61B5A1BCC3497002EF03D /* AppDelegate.swift in Sources */,
+				4CE847801BCEE45D00BDF588 /* HeroDetailViewController.swift in Sources */,
+				4CF61B6E1BCC358C002EF03D /* HeroTableViewController.swift in Sources */,
+				4CF61B741BCC398A002EF03D /* Hero.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4CF61B5D1BCC3497002EF03D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CF61B5E1BCC3497002EF03D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4CF61B631BCC3497002EF03D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4CF61B661BCC3497002EF03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4CF61B671BCC3497002EF03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4CF61B691BCC3497002EF03D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "S.H.I.E.L.D Hero Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiy.S-H-I-E-L-D-Hero-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4CF61B6A1BCC3497002EF03D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "S.H.I.E.L.D Hero Tracker/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tiy.S-H-I-E-L-D-Hero-Tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CF61B511BCC3497002EF03D /* Build configuration list for PBXProject "S.H.I.E.L.D Hero Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CF61B661BCC3497002EF03D /* Debug */,
+				4CF61B671BCC3497002EF03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CF61B681BCC3497002EF03D /* Build configuration list for PBXNativeTarget "S.H.I.E.L.D Hero Tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CF61B691BCC3497002EF03D /* Debug */,
+				4CF61B6A1BCC3497002EF03D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CF61B4E1BCC3497002EF03D /* Project object */;
+}
