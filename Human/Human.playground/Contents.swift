@@ -3,10 +3,10 @@
 class BodyPart
 {
     let infected: Bool
-    let vascularized: String
+    let vascularized: Bool
     let hairy: Bool
         
-    init(infected: Bool, vascularized: String, hairy: Bool)
+    init(infected: Bool, vascularized: Bool, hairy: Bool)
     {
         self.infected = infected
         self.vascularized = vascularized
@@ -29,15 +29,16 @@ class BodyPart
 //01
 class Leg : BodyPart
 {
-    let bony: String
-    let fatty: String
+    let bony: Bool
+    let fatty: Bool
     let fake: Bool
     
-    init(bony: String, fatty: String, fake: Bool)
+    init(bony: Bool, fatty: Bool, fake: Bool)
     {
         self.bony = bony
         self.fatty = fatty
         self.fake = fake
+        super.init(infected: true, vascularized: true, hairy: true)
     }
     func enablesWalking()
     {
@@ -54,15 +55,17 @@ class Leg : BodyPart
     //02
     class Knee : Leg
     {
-        var isBroken: String
+        var isBroken: Bool
         let isMissing: Bool
-        let hadSurgery: String
+        let hadSurgery: Bool
     
-    init(isBroken: String, isMissing: Bool, hadSurgery: String)
+        init(isBroken: Bool, isMissing: Bool, hadSurgery: Bool)
         {
-        self.isBroken = isBroken
-        self.isMissing = isMissing
-        self.hadSurgery = hadSurgery
+            
+            self.isBroken = isBroken
+            self.isMissing = isMissing
+            self.hadSurgery = hadSurgery
+            super.init(bony: false, fatty: false, fake: false)
         }
         
         func blocksArrows()
@@ -80,15 +83,17 @@ class Leg : BodyPart
     //03
     class Foot : Leg
     {
-        var isBroken: String
+        var isBroken: Bool
         let isMissing: Bool
-        let hadSurgery: String
+        let hadSurgery: Bool
         
-        init(isBroken: String, isMissing: Bool, hadSurgery: String)
+        init(isBroken: Bool, isMissing: Bool, hadSurgery: Bool)
         {
+            
             self.isBroken = isBroken
             self.isMissing = isMissing
             self.hadSurgery = hadSurgery
+            super.init(bony: false, fatty: false, fake: false)
         }
         
         func stands()
@@ -201,12 +206,14 @@ class Brain : BodyPart
 class Neuron : BodyPart
 {
     let synapse = 1
-    let dendrites: Double
+    var dendrites: Double
     let nucleus = 1
     
     init(dendrites: Double)
     {
+        
         self.dendrites = dendrites
+        super.init(infected: false, vascularized: false, hairy: false)
     }
     
     func transferOfEnergy()
@@ -257,6 +264,7 @@ class Mouth : BodyPart
     {
     }
 }
+
 
 //12
 class Buttocks : BodyPart
@@ -426,4 +434,4 @@ class Chest : BodyPart
     func liftsThings()
     {
     }
-};}
+}
