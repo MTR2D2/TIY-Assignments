@@ -39,8 +39,38 @@ class CalculatorBrain
     
     func calculateAnswer(equals: String) -> String
     {
+        var answer = 0.0
+        let op1asDouble = NSString(string: operandOne).doubleValue
+        let op2asDouble = NSString(string: operandTwo).doubleValue
         
-        return operandOne +  operandTwo
+        if symbol == "+"
+        {
+            answer = op1asDouble + op2asDouble
+        }
+        
+        if symbol == "-"
+        {
+            answer = op1asDouble - op2asDouble
+        }
+        if symbol == "x"
+        {
+            answer = op1asDouble * op2asDouble
+        }
+        if symbol == "÷"
+        {
+            answer = op1asDouble / op2asDouble
+        }
+        if symbol == "%"
+        {
+            answer = op1asDouble/100
+        }
+//        if symbol == "+/-"
+//        {
+//            answer = op1asDouble * (-1)
+//        }
+
+        
+        return String(answer)
     }
     
 }
