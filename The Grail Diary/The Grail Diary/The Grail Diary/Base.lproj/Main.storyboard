@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ayP-a3-XO7">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--The Grail Table View Controller-->
@@ -14,15 +15,41 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TheGrail" id="UJ8-wO-lVg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TheGrail" id="UJ8-wO-lVg" customClass="OneCell" customModule="The_Grail_Diary" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UJ8-wO-lVg" id="jZz-LM-YHR">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIM-mN-WiQ">
+                                            <rect key="frame" x="23" y="11" width="42" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0jA-3u-84n">
+                                            <rect key="frame" x="533" y="11" width="52" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="0jA-3u-84n" secondAttribute="trailing" constant="15" id="Ibf-Cp-C86"/>
+                                        <constraint firstItem="WIM-mN-WiQ" firstAttribute="leading" secondItem="jZz-LM-YHR" secondAttribute="leadingMargin" constant="15" id="WfM-uP-I8n"/>
+                                        <constraint firstItem="WIM-mN-WiQ" firstAttribute="centerY" secondItem="jZz-LM-YHR" secondAttribute="centerY" id="m1p-f9-2JE"/>
+                                        <constraint firstItem="0jA-3u-84n" firstAttribute="centerY" secondItem="WIM-mN-WiQ" secondAttribute="centerY" id="ovw-tp-RSl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="labelOne" destination="WIM-mN-WiQ" id="Xim-Ta-moC"/>
+                                    <outlet property="labelTwo" destination="0jA-3u-84n" id="FLa-ZT-Hbi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

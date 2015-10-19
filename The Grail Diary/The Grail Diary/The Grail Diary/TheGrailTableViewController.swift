@@ -44,7 +44,7 @@ class TheGrailTableViewController: UITableViewController
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TheGrail", forIndexPath: indexPath) as! Site
+        let cell = tableView.dequeueReusableCellWithIdentifier("TheGrail", forIndexPath: indexPath) as! OneCell
 
         // Configure the cell...
         
