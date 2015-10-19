@@ -1,0 +1,52 @@
+[
+{
+  	"name": "Machu Picchu",
+  	"built": "1450 AD",
+  	"location": "Peru",
+},
+{
+  	"name": "Tikal",
+  	"built": "8th Century",
+  	"location": "Guatemala",
+},
+{
+	"name": "The Pyramids at Giza",
+	"built": "2560 BC",
+	"location": "Egypt",
+},
+{
+	"name": "Angkor Wat",
+  	"built": "12th Century",
+  	"location": "Cambodia",
+},
+{
+	"name": "Petra",
+  	"built": "5th Century",
+  	"location": "Jordan",
+},
+{
+	"name": "Stonehenge",
+  	"built": "2600 BC",
+  	"location": "UK",
+},
+{
+	"name": "Colosseum",
+  	"built": "70 AD",
+  	"location": "Italy",
+},
+{
+	"name": "Parthenon",
+  	"built": "447 BC",
+  	"location": "Greece",
+},
+{
+	"name": "Easter Island",
+  	"built": "700 CE",
+  	"location": "Chile",
+},
+{
+	"name": "Taj Mahal",
+  	"built": "1648 AD",
+  	"location": "India",
+},
+]

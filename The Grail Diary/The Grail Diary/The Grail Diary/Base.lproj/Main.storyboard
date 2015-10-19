@@ -46,6 +46,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <color key="backgroundColor" red="1" green="0.77577634076916935" blue="0.37365237645695115" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="labelOne" destination="WIM-mN-WiQ" id="Xim-Ta-moC"/>
                                     <outlet property="labelTwo" destination="0jA-3u-84n" id="FLa-ZT-Hbi"/>
@@ -58,10 +59,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="tsl-Ed-U8n"/>
+                    <connections>
+                        <segue destination="CQG-yu-e3E" kind="show" id="sUt-GC-SBG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5r-5L-SkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1248" y="378"/>
+        </scene>
+        <!--Site Detail View Controller-->
+        <scene sceneID="1J5-ke-h1L">
+            <objects>
+                <viewController id="CQG-yu-e3E" customClass="SiteDetailViewController" customModule="current - SiteDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2KQ-zP-udb"/>
+                        <viewControllerLayoutGuide type="bottom" id="FvG-As-ZCB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MUb-cU-zRs">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="0.77577634080000002" blue="0.37365237649999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9D8-Oe-VHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1913" y="378"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KnB-Ou-Zsq">

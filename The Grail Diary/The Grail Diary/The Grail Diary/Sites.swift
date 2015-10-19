@@ -11,13 +11,13 @@ import Foundation
 class Sites
 {
     var name: String
-    var age: String
+    var built: String
     var location: String
     
-    init(name: String, age: String, location: String)
+    init(siteDictionary: NSDictionary)
     {
-        self.name = name
-        self.age = age
-        self.location = location
+        name = siteDictionary["name"] as! String
+        built = siteDictionary["built"] as! String
+        location = siteDictionary["location"] as! String
     }
 }

@@ -10,10 +10,16 @@ import UIKit
 
 class TheGrailTableViewController: UITableViewController
 {
+    var historicalSites = Array<Sites>()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        title = "10 Famous Historical Sites"
+        
+        loadSites()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,7 +45,7 @@ class TheGrailTableViewController: UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 10
+        return historicalSites.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -47,7 +53,9 @@ class TheGrailTableViewController: UITableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier("TheGrail", forIndexPath: indexPath) as! OneCell
 
         // Configure the cell...
-        
+        let aSite = historicalSites[indexPath.row]
+        cell.labelOne.text = aSite.name
+        cell.labelTwo.text = aSite.location
 
         return cell
     }
@@ -87,14 +95,36 @@ class TheGrailTableViewController: UITableViewController
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
+    
+    private func loadSites()
+    {
+        do
+        {
+            let filePath = NSBundle.mainBundle().pathForResource("Sites", ofType: "json")
+            let dataFromFile = NSData(contentsOfFile: filePath!)
+            let siteData: NSArray! = try NSJSONSerialization.JSONObjectWithData(dataFromFile!, options: []) as! NSArray
+            for siteDictionary in siteData
+            {
+                let aSite = Sites(siteDictionary: siteDictionary as! NSDictionary)
+                historicalSites.append(aSite)
+            }
+            historicalSites.sortInPlace({ $0.name < $1.name})
+        }
+        catch let error as NSError
+        {
+            print(error)
+        }
+    
+    }
 
 }

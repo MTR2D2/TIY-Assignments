@@ -14,6 +14,8 @@
 		4CBB8EEC1BD5827F008C1D7F /* TheGrailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		4CBB8EF01BD59373008C1D7F /* OneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EEF1BD59373008C1D7F /* OneCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4CBB8EF21BD593F1008C1D7F /* Sites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EF11BD593F1008C1D7F /* Sites.swift */; settings = {ASSET_TAGS = (); }; };
+		4CBB8EF41BD5AA9E008C1D7F /* Sites.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CBB8EF31BD5AA9E008C1D7F /* Sites.json */; settings = {ASSET_TAGS = (); }; };
+		4CBB8EF61BD5B16F008C1D7F /* SiteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EF51BD5B16F008C1D7F /* SiteDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheGrailTableViewController.swift; sourceTree = "<group>"; };
 		4CBB8EEF1BD59373008C1D7F /* OneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCell.swift; sourceTree = "<group>"; };
 		4CBB8EF11BD593F1008C1D7F /* Sites.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sites.swift; sourceTree = "<group>"; };
+		4CBB8EF31BD5AA9E008C1D7F /* Sites.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Sites.json; sourceTree = "<group>"; };
+		4CBB8EF51BD5B16F008C1D7F /* SiteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +64,14 @@
 			children = (
 				4CBB8ED91BD58234008C1D7F /* AppDelegate.swift */,
 				4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */,
-				4CBB8EEF1BD59373008C1D7F /* OneCell.swift */,
 				4CBB8EF11BD593F1008C1D7F /* Sites.swift */,
+				4CBB8EEF1BD59373008C1D7F /* OneCell.swift */,
+				4CBB8EF51BD5B16F008C1D7F /* SiteDetailViewController.swift */,
 				4CBB8EDD1BD58234008C1D7F /* Main.storyboard */,
 				4CBB8EE01BD58234008C1D7F /* Assets.xcassets */,
 				4CBB8EE21BD58234008C1D7F /* LaunchScreen.storyboard */,
 				4CBB8EE51BD58234008C1D7F /* Info.plist */,
+				4CBB8EF31BD5AA9E008C1D7F /* Sites.json */,
 			);
 			path = "The Grail Diary";
 			sourceTree = "<group>";
@@ -129,6 +135,7 @@
 			files = (
 				4CBB8EE41BD58234008C1D7F /* LaunchScreen.storyboard in Resources */,
 				4CBB8EE11BD58234008C1D7F /* Assets.xcassets in Resources */,
+				4CBB8EF41BD5AA9E008C1D7F /* Sites.json in Resources */,
 				4CBB8EDF1BD58234008C1D7F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +151,7 @@
 				4CBB8EF01BD59373008C1D7F /* OneCell.swift in Sources */,
 				4CBB8EF21BD593F1008C1D7F /* Sites.swift in Sources */,
 				4CBB8EEC1BD5827F008C1D7F /* TheGrailTableViewController.swift in Sources */,
+				4CBB8EF61BD5B16F008C1D7F /* SiteDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
