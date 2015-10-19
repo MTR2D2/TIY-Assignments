@@ -42,7 +42,7 @@ class CalculatorViewController: UIViewController
     @IBAction func Input(sender: UIButton)
     {
         Display.text = brain.assignOperand(sender.currentTitle!)
-        
+         
 // When the sender UIButton selects an input number currentTitle, the result of calling the assignOperand function from the BrainCalculator class updates the display.text
     }
 
