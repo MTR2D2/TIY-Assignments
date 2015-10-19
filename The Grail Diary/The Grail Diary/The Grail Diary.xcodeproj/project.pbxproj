@@ -12,6 +12,7 @@
 		4CBB8EE11BD58234008C1D7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CBB8EE01BD58234008C1D7F /* Assets.xcassets */; };
 		4CBB8EE41BD58234008C1D7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CBB8EE21BD58234008C1D7F /* LaunchScreen.storyboard */; };
 		4CBB8EEC1BD5827F008C1D7F /* TheGrailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4CBB8EEE1BD587C7008C1D7F /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB8EED1BD587C7008C1D7F /* Site.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		4CBB8EE31BD58234008C1D7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4CBB8EE51BD58234008C1D7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheGrailTableViewController.swift; sourceTree = "<group>"; };
+		4CBB8EED1BD587C7008C1D7F /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				4CBB8ED91BD58234008C1D7F /* AppDelegate.swift */,
+				4CBB8EED1BD587C7008C1D7F /* Site.swift */,
 				4CBB8EEB1BD5827F008C1D7F /* TheGrailTableViewController.swift */,
 				4CBB8EDD1BD58234008C1D7F /* Main.storyboard */,
 				4CBB8EE01BD58234008C1D7F /* Assets.xcassets */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CBB8EDA1BD58234008C1D7F /* AppDelegate.swift in Sources */,
+				4CBB8EEE1BD587C7008C1D7F /* Site.swift in Sources */,
 				4CBB8EEC1BD5827F008C1D7F /* TheGrailTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +287,7 @@
 				4CBB8EEA1BD58234008C1D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
