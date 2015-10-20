@@ -14,37 +14,44 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uOF-Vs-FUk">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoList" id="uOF-Vs-FUk" customClass="ToDoCell" customModule="ToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOF-Vs-FUk" id="CFU-ni-8Nn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
-                                            <rect key="frame" x="15" y="7" width="520" height="30"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits"/>
-                                        </textField>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJZ-Of-uqs">
-                                            <rect key="frame" x="543" y="11" width="42" height="21"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
+                                            <rect key="frame" x="15" y="7" width="521" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
+                                            <rect key="frame" x="544" y="5" width="41" height="33"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="Done">
+                                                <color key="titleShadowColor" red="0.63529411759999999" green="0.68627450980000004" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="doneButton:" destination="9fg-Ne-GDq" eventType="touchUpInside" id="xOb-X5-Q4R"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="Jeb-CA-t1U"/>
-                                        <constraint firstItem="KJZ-Of-uqs" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="PUh-5Y-WmB"/>
-                                        <constraint firstAttribute="trailing" secondItem="KJZ-Of-uqs" secondAttribute="trailing" constant="15" id="WSw-L5-aDC"/>
-                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="cCg-jG-Lvb"/>
-                                        <constraint firstItem="KJZ-Of-uqs" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="8" id="d2g-ng-M5u"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="8" id="3ue-xR-Vmu"/>
+                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="jbE-Jg-0DS"/>
+                                        <constraint firstAttribute="trailing" secondItem="qw4-gt-KBY" secondAttribute="trailing" constant="15" id="onf-tV-CDo"/>
+                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="r5I-eB-yzz"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="tSZ-MW-9Iv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="toDoText" destination="HAc-x9-B3D" id="FFs-Vm-3wc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -52,7 +59,9 @@
                             <outlet property="delegate" destination="9fg-Ne-GDq" id="Ox1-Pg-Sx8"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="txa-t2-QmX"/>
+                    <navigationItem key="navigationItem" id="txa-t2-QmX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iO2-hA-pBs"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUG-rc-8Mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +84,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IRj-wX-yRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="470" y="366"/>
+            <point key="canvasLocation" x="620" y="366"/>
         </scene>
     </scenes>
 </document>

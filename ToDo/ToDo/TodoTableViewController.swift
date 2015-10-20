@@ -10,10 +10,27 @@ import UIKit
 
 class TodoTableViewController: UITableViewController
 {
+    let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+    var itemDescription = Array<ToDoCore>()
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        title = "Get em' Done"
+        
+//        let fetchRequest = NSFetchRequest(entityName: "ToDoCore")
+//        do
+//        {
+//            let fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Counter]
+//            counters = fetchResults!
+//        }
+//        catch
+//        {
+//            let nserror = error as NSError
+//            NSLog("Unresoved error \(nserror), \(nserror.userInfo)")
+//            abort()
+//        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,13 +56,23 @@ class TodoTableViewController: UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return itemDescription.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ToDoList", forIndexPath: indexPath) as! ToDoCell
 
         // Configure the cell...
+        
+        let aTask = itemDescription[indexPath.row]
+        if aTask.something == nil
+        {
+            cell.toDoText.becomeFirstResponder()
+        }
+        else
+        {
+            cell.toDoText.text = aTask.something
+        }
 
         return cell
     }
@@ -95,5 +122,12 @@ class TodoTableViewController: UITableViewController
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Action Handlers
+    
+    @IBAction func doneButton(sender: UIButton)
+    {
+    }
+    
 
 }
