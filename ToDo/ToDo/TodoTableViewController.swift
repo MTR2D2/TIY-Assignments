@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TodoTableViewController: UITableViewController
+class TodoTableViewController: UITableViewController, UITextFieldDelegate
 {
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var itemDescription = Array<ToDoCore>()
@@ -122,28 +122,28 @@ class TodoTableViewController: UITableViewController
     }
     */
     
-    // MARK: TextField Delegate
+//     MARK: TextField Delegate
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool
-//    {
-//        var rc = false
-//        
-//        if toDoText.text != ""
-//        {
-//            rc = true
-//            let contentView = toDoText.superview
-//            let cell = contentView?.superview as! CounterCell
-//            let indexPath = tableView.indexPathForCell(cell)
-//            // tableView, here is the cell, give me the indexPath
-//            let aTask = itemDescription[indexPath!.row]
-//            aTask.title = toDoText.text
-//            toDoText.resignFirstResponder()
-//            saveContext()
-//        }
-//        
-//        return rc
-//    }
-//    
+    func textFieldShouldReturn(toDoText: UITextField) -> Bool
+    {
+        var rc = false //rc stands for return code
+        
+        if toDoText.text != ""
+        {
+            rc = true
+            let contentView = toDoText.superview
+            let cell = contentView?.superview as! ToDoCell
+            let indexPath = tableView.indexPathForCell(cell)
+            // tableView, here is the cell, give me the indexPath
+            let aTask = itemDescription[indexPath!.row]
+            aTask.something = toDoText.text
+            toDoText.resignFirstResponder()
+            saveContext()
+        }
+        
+        return rc
+    }
+    
 
     // MARK: Action Handlers
     
@@ -152,7 +152,7 @@ class TodoTableViewController: UITableViewController
         let aTask = NSEntityDescription.insertNewObjectForEntityForName("ToDoCore", inManagedObjectContext: managedObjectContext) as! ToDoCore
         itemDescription.append(aTask)
         tableView.reloadData()
-        saveContext()
+//        saveContext()
     }
     
     @IBAction func doneButton(sender: UIButton)
