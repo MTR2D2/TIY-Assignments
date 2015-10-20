@@ -60,7 +60,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="tsl-Ed-U8n"/>
                     <connections>
-                        <segue destination="CQG-yu-e3E" kind="show" id="sUt-GC-SBG"/>
+                        <segue destination="CQG-yu-e3E" kind="show" identifier="siteDetailIdentifier" id="sUt-GC-SBG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a5r-5L-SkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -78,10 +78,64 @@
                     <view key="view" contentMode="scaleToFill" id="MUb-cU-zRs">
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bS-x0-nj1">
+                                <rect key="frame" x="20" y="20" width="85" height="39"/>
+                                <animations/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Name">
+                                        <attributes>
+                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="32" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJV-dS-qH3">
+                                <rect key="frame" x="20" y="67" width="87" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="24"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Built" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbu-wK-vMZ">
+                                <rect key="frame" x="20" y="104" width="51" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQx-T7-zfB">
+                                <rect key="frame" x="20" y="145" width="88" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.77577634080000002" blue="0.37365237649999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="CQx-T7-zfB" firstAttribute="top" secondItem="Hbu-wK-vMZ" secondAttribute="bottom" constant="8" id="10L-bq-Q4I"/>
+                            <constraint firstItem="Hbu-wK-vMZ" firstAttribute="leading" secondItem="MUb-cU-zRs" secondAttribute="leading" constant="20" id="9R1-qC-3fA"/>
+                            <constraint firstItem="NJV-dS-qH3" firstAttribute="top" secondItem="0bS-x0-nj1" secondAttribute="bottom" constant="8" id="AsA-F9-Fv0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="CQx-T7-zfB" secondAttribute="leading" id="ETQ-oO-ofK"/>
+                            <constraint firstItem="NJV-dS-qH3" firstAttribute="leading" secondItem="MUb-cU-zRs" secondAttribute="leading" constant="20" id="H9D-KI-3Zx"/>
+                            <constraint firstItem="0bS-x0-nj1" firstAttribute="top" secondItem="2KQ-zP-udb" secondAttribute="bottom" constant="20" id="geU-Xm-I8b"/>
+                            <constraint firstItem="Hbu-wK-vMZ" firstAttribute="top" secondItem="NJV-dS-qH3" secondAttribute="bottom" constant="8" id="iwl-vq-Zdn"/>
+                            <constraint firstItem="0bS-x0-nj1" firstAttribute="leading" secondItem="MUb-cU-zRs" secondAttribute="leading" constant="20" id="pGl-rB-Akf"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="built" destination="Hbu-wK-vMZ" id="5mY-MU-1j7"/>
+                        <outlet property="description" destination="CQx-T7-zfB" id="CJ1-Sh-qDy"/>
+                        <outlet property="location" destination="NJV-dS-qH3" id="rNV-Qa-pVn"/>
+                        <outlet property="name" destination="0bS-x0-nj1" id="YuV-G9-7Or"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9D8-Oe-VHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,10 +10,20 @@ import UIKit
 
 class SiteDetailViewController: UICollectionViewController
 {
+//    var site = Sites?
+    
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var location: UILabel!
+    @IBOutlet weak var built: UILabel!
+//    @IBOutlet weak var description: UILabel!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+//        name.text = site?.name
+//        location.text = site?.location
+//        built.text = site?.built
 
     }
 
