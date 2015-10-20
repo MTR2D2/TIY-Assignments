@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TodoTableViewController: UITableViewController
 {
@@ -78,13 +79,11 @@ class TodoTableViewController: UITableViewController
     }
 
 
-    /*
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
         return true
     }
-    */
 
     /*
     // Override to support editing the table view.
@@ -123,11 +122,57 @@ class TodoTableViewController: UITableViewController
     }
     */
     
+    // MARK: TextField Delegate
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool
+//    {
+//        var rc = false
+//        
+//        if toDoText.text != ""
+//        {
+//            rc = true
+//            let contentView = toDoText.superview
+//            let cell = contentView?.superview as! CounterCell
+//            let indexPath = tableView.indexPathForCell(cell)
+//            // tableView, here is the cell, give me the indexPath
+//            let aTask = itemDescription[indexPath!.row]
+//            aTask.title = toDoText.text
+//            toDoText.resignFirstResponder()
+//            saveContext()
+//        }
+//        
+//        return rc
+//    }
+//    
+
     // MARK: Action Handlers
+    
+    @IBAction func newTask(sender: UIBarButtonItem)
+    {
+        let aTask = NSEntityDescription.insertNewObjectForEntityForName("ToDoCore", inManagedObjectContext: managedObjectContext) as! ToDoCore
+        itemDescription.append(aTask)
+        tableView.reloadData()
+        saveContext()
+    }
     
     @IBAction func doneButton(sender: UIButton)
     {
     }
     
+    //MARK: - Private
+    
+    func saveContext()
+    {
+        do
+        {
+            try managedObjectContext.save()
+        }
+        catch
+        {
+            let nserror = error as NSError
+            NSLog("Unresoved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
+    }
 
 }

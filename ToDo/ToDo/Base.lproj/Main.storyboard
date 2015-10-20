@@ -21,13 +21,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
-                                            <rect key="frame" x="15" y="7" width="521" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
+                                            <rect key="frame" x="15" y="7" width="260" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
                                             <rect key="frame" x="544" y="5" width="41" height="33"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -42,11 +42,22 @@
                                     <animations/>
                                     <constraints>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="8" id="3ue-xR-Vmu"/>
+                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="LQc-WE-pca"/>
+                                        <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="Xg5-EU-zcD"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="jbE-Jg-0DS"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="15" id="nBj-7z-C0c"/>
                                         <constraint firstAttribute="trailing" secondItem="qw4-gt-KBY" secondAttribute="trailing" constant="15" id="onf-tV-CDo"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="r5I-eB-yzz"/>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="tSZ-MW-9Iv"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="jbE-Jg-0DS"/>
+                                            <exclude reference="r5I-eB-yzz"/>
+                                            <exclude reference="3ue-xR-Vmu"/>
+                                            <exclude reference="nBj-7z-C0c"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -60,7 +71,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="txa-t2-QmX">
-                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iO2-hA-pBs"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iO2-hA-pBs">
+                            <connections>
+                                <action selector="newTask:" destination="9fg-Ne-GDq" id="QbW-R4-dQp"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUG-rc-8Mq" userLabel="First Responder" sceneMemberID="firstResponder"/>
