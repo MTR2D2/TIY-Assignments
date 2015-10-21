@@ -155,16 +155,12 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
         let aTask = NSEntityDescription.insertNewObjectForEntityForName("ToDoCore", inManagedObjectContext: managedObjectContext) as! ToDoCore
         itemDescription.append(aTask)
         tableView.reloadData()
-        saveContext()
+//        saveContext()
     }
     
     @IBAction func doneButton(sender: UIButton)
     {
-//        let contentView = sender.superview
-//        let cell = contentView?.superview as! ToDoCell
-//        let indexPath = tableView.indexPathForCell(cell)
-//        // tableView, here is the cell, give me the indexPath
-//        let aTask = itemDescription[indexPath!.row]
+
     }
     
     //MARK: - Private

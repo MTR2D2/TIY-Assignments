@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qi4-PD-KZx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Todo Table View Controller-->
@@ -21,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
-                                            <rect key="frame" x="15" y="7" width="260" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
+                                            <rect key="frame" x="15" y="7" width="520" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -30,8 +31,8 @@
                                                 <outlet property="delegate" destination="9fg-Ne-GDq" id="Lqu-cg-RCk"/>
                                             </connections>
                                         </textField>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
-                                            <rect key="frame" x="544" y="5" width="41" height="33"/>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
+                                            <rect key="frame" x="543" y="5" width="41" height="33"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <state key="normal" title="Done">
@@ -46,14 +47,16 @@
                                     <constraints>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="8" id="3ue-xR-Vmu"/>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="269" id="6Nb-dL-Xqr"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="269" id="8wu-Gt-weP"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="8" id="GOq-sh-mFy"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="qw4-gt-KBY" secondAttribute="trailing" constant="8" id="IZH-gA-iSS"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="LQc-WE-pca"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="Xg5-EU-zcD"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="leading" secondItem="CFU-ni-8Nn" secondAttribute="leading" constant="15" id="jbE-Jg-0DS"/>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="15" id="nBj-7z-C0c"/>
-                                        <constraint firstAttribute="trailing" secondItem="qw4-gt-KBY" secondAttribute="trailing" constant="15" id="onf-tV-CDo"/>
                                         <constraint firstItem="HAc-x9-B3D" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="r5I-eB-yzz"/>
-                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="tSZ-MW-9Iv"/>
                                         <constraint firstItem="qw4-gt-KBY" firstAttribute="leading" secondItem="HAc-x9-B3D" secondAttribute="trailing" constant="269" id="uxJ-cH-wCe"/>
+                                        <constraint firstItem="qw4-gt-KBY" firstAttribute="centerY" secondItem="CFU-ni-8Nn" secondAttribute="centerY" id="yKv-Tx-AwT"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -61,6 +64,7 @@
                                             <exclude reference="r5I-eB-yzz"/>
                                             <exclude reference="3ue-xR-Vmu"/>
                                             <exclude reference="6Nb-dL-Xqr"/>
+                                            <exclude reference="8wu-Gt-weP"/>
                                             <exclude reference="nBj-7z-C0c"/>
                                             <exclude reference="uxJ-cH-wCe"/>
                                         </mask>
