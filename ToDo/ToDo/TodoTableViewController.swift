@@ -20,18 +20,18 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
         
         title = "Get em' Done"
         
-//        let fetchRequest = NSFetchRequest(entityName: "ToDoCore")
-//        do
-//        {
-//            let fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as? [Counter]
-//            counters = fetchResults!
-//        }
-//        catch
-//        {
-//            let nserror = error as NSError
-//            NSLog("Unresoved error \(nserror), \(nserror.userInfo)")
-//            abort()
-//        }
+        let fetchRequest = NSFetchRequest(entityName: "ToDoCore")
+        do
+        {
+            let fetchResults = try managedObjectContext.executeFetchRequest(fetchRequest) as? [ToDoCore]
+            itemDescription = fetchResults!
+        }
+        catch
+        {
+            let nserror = error as NSError
+            NSLog("Unresoved error \(nserror), \(nserror.userInfo)")
+            abort()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -85,17 +85,20 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
         return true
     }
 
-    /*
     // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == .Delete
+        {
             // Delete the row from the data source
+            let aTask = itemDescription[indexPath.row]
+            itemDescription.removeAtIndex(indexPath.row)
+            managedObjectContext.deleteObject(aTask)
+            saveContext()
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
 
     /*
     // Override to support rearranging the table view.
@@ -152,11 +155,16 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
         let aTask = NSEntityDescription.insertNewObjectForEntityForName("ToDoCore", inManagedObjectContext: managedObjectContext) as! ToDoCore
         itemDescription.append(aTask)
         tableView.reloadData()
-//        saveContext()
+        saveContext()
     }
     
     @IBAction func doneButton(sender: UIButton)
     {
+//        let contentView = sender.superview
+//        let cell = contentView?.superview as! ToDoCell
+//        let indexPath = tableView.indexPathForCell(cell)
+//        // tableView, here is the cell, give me the indexPath
+//        let aTask = itemDescription[indexPath!.row]
     }
     
     //MARK: - Private
