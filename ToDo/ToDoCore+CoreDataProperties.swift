@@ -15,5 +15,5 @@ import CoreData
 extension ToDoCore {
 
     @NSManaged var something: String?
-
+    @NSManaged var done: Bool
 }

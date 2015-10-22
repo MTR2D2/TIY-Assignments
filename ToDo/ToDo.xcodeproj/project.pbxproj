@@ -62,18 +62,26 @@
 		4CBB8F2B1BD6BD12008C1D7F /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
-				4CBB8F2C1BD6BD12008C1D7F /* AppDelegate.swift */,
 				4CBB8F451BD6CF2A008C1D7F /* ToDoCore+CoreDataProperties.swift */,
 				4CBB8F461BD6CF2A008C1D7F /* ToDoCore.swift */,
-				4CBB8F361BD6BD12008C1D7F /* Assets.xcassets */,
 				4CBB8F411BD6BDCC008C1D7F /* TodoTableViewController.swift */,
 				4CBB8F431BD6CCC6008C1D7F /* ToDoCell.swift */,
 				4CBB8F301BD6BD12008C1D7F /* Main.storyboard */,
+				4CBB8F741BD839A6008C1D7F /* other */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		4CBB8F741BD839A6008C1D7F /* other */ = {
+			isa = PBXGroup;
+			children = (
+				4CBB8F2C1BD6BD12008C1D7F /* AppDelegate.swift */,
+				4CBB8F361BD6BD12008C1D7F /* Assets.xcassets */,
 				4CBB8F381BD6BD12008C1D7F /* LaunchScreen.storyboard */,
 				4CBB8F3B1BD6BD12008C1D7F /* Info.plist */,
 				4CBB8F331BD6BD12008C1D7F /* ToDo.xcdatamodeld */,
 			);
-			path = ToDo;
+			name = other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +307,7 @@
 				4CBB8F401BD6BD12008C1D7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

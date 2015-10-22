@@ -9,33 +9,34 @@
         <scene sceneID="wCb-4C-aAz">
             <objects>
                 <tableViewController id="9fg-Ne-GDq" customClass="TodoTableViewController" customModule="ToDo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="twe-dO-kVz">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="twe-dO-kVz">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoList" id="uOF-Vs-FUk" customClass="ToDoCell" customModule="ToDo" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ToDoList" id="uOF-Vs-FUk" customClass="ToDoCell" customModule="ToDo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uOF-Vs-FUk" id="CFU-ni-8Nn">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
-                                            <rect key="frame" x="15" y="7" width="520" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need to do today?" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="HAc-x9-B3D">
+                                            <rect key="frame" x="15" y="7" width="531" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <textInputTraits key="textInputTraits"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                             <connections>
                                                 <outlet property="delegate" destination="9fg-Ne-GDq" id="Lqu-cg-RCk"/>
                                             </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-gt-KBY">
-                                            <rect key="frame" x="543" y="5" width="41" height="33"/>
+                                            <rect key="frame" x="554" y="-3" width="30" height="49"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <state key="normal" title="Done">
+                                            <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                            <state key="normal" title="☐">
+                                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="titleShadowColor" red="0.63529411759999999" green="0.68627450980000004" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                             <connections>
@@ -83,6 +84,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="txa-t2-QmX">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="iO2-hA-pBs">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="newTask:" destination="9fg-Ne-GDq" id="QbW-R4-dQp"/>
                             </connections>
@@ -96,7 +98,7 @@
         <!--Navigation Controller-->
         <scene sceneID="aQT-rA-CH9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsWhenKeyboardAppears="YES" id="qi4-PD-KZx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qi4-PD-KZx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AjG-A9-C4k">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

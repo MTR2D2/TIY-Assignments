@@ -18,7 +18,7 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
     {
         super.viewDidLoad()
         
-        title = "Get em' Done"
+        title = "Task List"
         
         let fetchRequest = NSFetchRequest(entityName: "ToDoCore")
         do
@@ -160,7 +160,24 @@ class TodoTableViewController: UITableViewController, UITextFieldDelegate
     
     @IBAction func doneButton(sender: UIButton)
     {
-
+        let contentView = sender.superview
+        let cell = contentView?.superview as! ToDoCell
+        let indexPath = tableView.indexPathForCell(cell)
+        // tableView, here is the cell, give me the indexPath
+        let aTask = itemDescription[indexPath!.row]
+        
+        if sender.currentTitle == "☑"
+        {
+            cell.backgroundColor = UIColor.whiteColor()
+            sender.setTitle("☐", forState: UIControlState.Normal)
+            aTask.done = false
+        }
+        else
+        {
+            cell.backgroundColor = UIColor.greenColor()
+            sender.setTitle("☑", forState: UIControlState.Normal)
+            aTask.done = true
+        }
     }
     
     //MARK: - Private
