@@ -1,5 +1,5 @@
 //
-//  CalculationsTableViewController.swift
+//  HighVoltageTableViewController.swift
 //  HighVoltage
 //
 //  Created by Michael Reynolds on 10/23/15.
@@ -8,12 +8,23 @@
 
 import UIKit
 
-class CalculationsTableViewController: UITableViewController
+protocol ValuesTableViewControllerDelegate
 {
+    func valueWasChosen(chosenValue: String)
+}
+
+class HighVoltageTableViewController: UITableViewController, UIPopoverPresentationControllerDelegate, ValuesTableViewControllerDelegate
+{
+    @IBOutlet weak var addButton: UIBarButtonItem!
+    
+    var remainingValues = ["Watts (W)", "Volts (V)", "Amps (A)", "Ohms (Ω)"]
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        title = "High Voltage"
+
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -85,14 +96,41 @@ class CalculationsTableViewController: UITableViewController
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ValuesPopoverSegue"
+        {
+            let destVC = segue.destinationViewController as! ValuesTableViewController
+            destVC.values = remainingValues
+            destVC.popoverPresentationController?.delegate = self
+            destVC.delegate = self //connects
+            let contentHeight = 44.0 * CGFloat(remainingCharacters.count)
+            destVC.preferredContentSize = CGSizeMake(200.0, contentHeight)
+        }
+
+        
     }
-    */
+
+    // MARK: - CharacterListTableViewController Delegate
+    
+    func valueWasChosen(chosenValue: String)
+    {
+        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        visibleCards.append(chosenCharacter)
+        
+        let rowToRemove = (remainingCharacters as NSArray).indexOfObject(chosenCharacter)
+        remainingCharacters.removeAtIndex(rowToRemove)
+        if remainingCharacters.count == 0
+        {
+            self.navigationItem.rightBarButtonItem?.enabled = false
+        }
+        
+        collectionView?.reloadData()
+    }
 
 }
