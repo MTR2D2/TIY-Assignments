@@ -13,6 +13,8 @@ class ValuesTableViewController: UITableViewController
     var values: [String]?
     var delegate: ValuesTableViewControllerDelegate?
 
+    @IBOutlet weak var valuesLabel: UILabel!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -41,13 +43,16 @@ class ValuesTableViewController: UITableViewController
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return values!.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("popoverCell", forIndexPath: indexPath)
 
         // Configure the cell...
+        let aValue = values?[indexPath.row]
+        cell.textLabel?.text = aValue
 
         return cell
     }

@@ -18,6 +18,10 @@ class HighVoltageTableViewController: UITableViewController, UIPopoverPresentati
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     var remainingValues = ["Watts (W)", "Volts (V)", "Amps (A)", "Ohms (Ω)"]
+    
+    let allValues = ["Watts (W)", "Volts (V)", "Amps (A)", "Ohms (Ω)"]
+    
+    var visibleValues = [String]()
 
     override func viewDidLoad()
     {
@@ -50,13 +54,16 @@ class HighVoltageTableViewController: UITableViewController, UIPopoverPresentati
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return visibleValues.count
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ElectricityCell", forIndexPath: indexPath) as! ElectricityCell
 
         // Configure the cell...
+        let aCell = visibleValues[indexPath.item]
+        cell.valueLabel.text = aCell
 
         return cell
     }
@@ -96,7 +103,14 @@ class HighVoltageTableViewController: UITableViewController, UIPopoverPresentati
     }
     */
 
+    // MARK: - UIPopoverPresentationController Delegate
     
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+    {
+        return UIModalPresentationStyle.None
+        //can also just type: return .None
+    }
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -109,28 +123,41 @@ class HighVoltageTableViewController: UITableViewController, UIPopoverPresentati
             destVC.values = remainingValues
             destVC.popoverPresentationController?.delegate = self
             destVC.delegate = self //connects
-            let contentHeight = 44.0 * CGFloat(remainingCharacters.count)
+            let contentHeight = 44.0 * CGFloat(remainingValues.count)
             destVC.preferredContentSize = CGSizeMake(200.0, contentHeight)
         }
 
         
     }
 
-    // MARK: - CharacterListTableViewController Delegate
+    // MARK: - ValuesTableViewController Delegate
     
     func valueWasChosen(chosenValue: String)
     {
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
-        visibleCards.append(chosenCharacter)
+        visibleValues.append(chosenValue)
         
-        let rowToRemove = (remainingCharacters as NSArray).indexOfObject(chosenCharacter)
-        remainingCharacters.removeAtIndex(rowToRemove)
-        if remainingCharacters.count == 0
+        let rowToRemove = (remainingValues as NSArray).indexOfObject(chosenValue)
+        remainingValues.removeAtIndex(rowToRemove)
+        if remainingValues.count == 0
         {
             self.navigationItem.rightBarButtonItem?.enabled = false
         }
         
-        collectionView?.reloadData()
+        tableView?.reloadData()
     }
+    
+    // MARK: - Action Handlers
+    
+    @IBAction func resetValueList(sender: UIBarButtonItem)
+    {
+        visibleValues.removeAll()
+        tableView?.reloadData()
+        self.navigationItem.rightBarButtonItem?.enabled = true
+        tableView?.reloadData()
+        
+        remainingValues = allValues
+    }
+    
 
 }
