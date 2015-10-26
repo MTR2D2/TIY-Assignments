@@ -91,6 +91,15 @@ class ViewController: UIViewController
         
         isPlayer1Turn = !isPlayer1Turn
         
+        if isPlayer1Turn
+        {
+            gameStatusLabel.text = "Player 1 Turn"
+        }
+        else
+        {
+            gameStatusLabel.text = "Player 2 Turn"
+        }
+        
         checkForWinner()
     }
 
