@@ -204,6 +204,8 @@ class ViewController: UIViewController
 //        }
         if playerWon == true
         {
+            randomColor()
+
             resetButton.setTitle("Play New Game", forState: .Normal)
             resetButton.setTitle("Let's Get it ON!", forState: .Selected)
             resetButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
