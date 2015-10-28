@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M56-cz-foL">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M56-cz-foL">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <animations/>
                             </mapView>
                         </subviews>
@@ -31,16 +31,78 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jDO-fx-98J">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kO-nM-20K"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kO-nM-20K">
+                            <connections>
+                                <segue destination="fjd-hp-ci6" kind="popoverPresentation" identifier="CityStateSegue" popoverAnchorBarButtonItem="8kO-nM-20K" id="HL6-nz-tZE">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
-                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="mapView" destination="M56-cz-foL" id="u8d-LN-zJa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1197" y="400"/>
+            <point key="canvasLocation" x="1022" y="405"/>
+        </scene>
+        <!--City State View Controller-->
+        <scene sceneID="BBr-Is-GkJ">
+            <objects>
+                <viewController id="fjd-hp-ci6" customClass="CityStateViewController" customModule="MuttCuts" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ka7-CI-vph"/>
+                        <viewControllerLayoutGuide type="bottom" id="2im-hm-rur"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ENt-yN-Ay2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-MO-TpN">
+                                <rect key="frame" x="256" y="335" width="88" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-Ss-uA8">
+                                <rect key="frame" x="276" y="385" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButton:" destination="fjd-hp-ci6" eventType="touchUpInside" id="56A-iG-lNJ"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City, State" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="BsE-Hh-x1c">
+                                <rect key="frame" x="256" y="285" width="88" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.37792952800000001" green="0.68627450980000004" blue="0.64776577130000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jPd-Ss-uA8" firstAttribute="centerX" secondItem="ENt-yN-Ay2" secondAttribute="centerX" id="ZmQ-kk-3iE"/>
+                            <constraint firstItem="Dwo-MO-TpN" firstAttribute="centerX" secondItem="ENt-yN-Ay2" secondAttribute="centerX" id="aHe-3N-c8p"/>
+                            <constraint firstItem="jPd-Ss-uA8" firstAttribute="centerY" secondItem="ENt-yN-Ay2" secondAttribute="centerY" constant="100" id="b0e-IW-ZL0"/>
+                            <constraint firstItem="BsE-Hh-x1c" firstAttribute="centerY" secondItem="ENt-yN-Ay2" secondAttribute="centerY" id="lJE-mm-T0Z"/>
+                            <constraint firstItem="Dwo-MO-TpN" firstAttribute="centerY" secondItem="ENt-yN-Ay2" secondAttribute="centerY" constant="50" id="rvG-yG-3hT"/>
+                            <constraint firstItem="BsE-Hh-x1c" firstAttribute="centerX" secondItem="ENt-yN-Ay2" secondAttribute="centerX" id="ve9-Qi-gkh"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="cityState1TextField" destination="BsE-Hh-x1c" id="G2o-p1-xz6"/>
+                        <outlet property="cityState2TextField" destination="Dwo-MO-TpN" id="lpK-Tt-D1X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k25-FZ-NFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1671" y="405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jwO-tX-w6Y">

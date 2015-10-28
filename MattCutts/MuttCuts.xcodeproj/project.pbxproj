@@ -12,6 +12,8 @@
 		4C01FD3E1BE106CF000BE416 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C01FD3C1BE106CF000BE416 /* Main.storyboard */; };
 		4C01FD401BE106CF000BE416 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C01FD3F1BE106CF000BE416 /* Assets.xcassets */; };
 		4C01FD431BE106CF000BE416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C01FD411BE106CF000BE416 /* LaunchScreen.storyboard */; };
+		4C01FD4B1BE123E3000BE416 /* CityStateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01FD4A1BE123E3000BE416 /* CityStateViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4C01FD4D1BE143F3000BE416 /* TextFieldDelegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01FD4C1BE143F3000BE416 /* TextFieldDelegation.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4C01FD3F1BE106CF000BE416 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C01FD421BE106CF000BE416 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C01FD441BE106CF000BE416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C01FD4A1BE123E3000BE416 /* CityStateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityStateViewController.swift; sourceTree = "<group>"; };
+		4C01FD4C1BE143F3000BE416 /* TextFieldDelegation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDelegation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				4C01FD381BE106CF000BE416 /* AppDelegate.swift */,
 				4C01FD3A1BE106CF000BE416 /* MapViewController.swift */,
+				4C01FD4A1BE123E3000BE416 /* CityStateViewController.swift */,
+				4C01FD4C1BE143F3000BE416 /* TextFieldDelegation.swift */,
 				4C01FD3C1BE106CF000BE416 /* Main.storyboard */,
 				4C01FD3F1BE106CF000BE416 /* Assets.xcassets */,
 				4C01FD411BE106CF000BE416 /* LaunchScreen.storyboard */,
@@ -135,7 +141,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C01FD3B1BE106CF000BE416 /* MapViewController.swift in Sources */,
+				4C01FD4D1BE143F3000BE416 /* TextFieldDelegation.swift in Sources */,
 				4C01FD391BE106CF000BE416 /* AppDelegate.swift in Sources */,
+				4C01FD4B1BE123E3000BE416 /* CityStateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +293,7 @@
 				4C01FD491BE106CF000BE416 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
