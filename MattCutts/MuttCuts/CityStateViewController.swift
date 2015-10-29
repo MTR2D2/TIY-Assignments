@@ -8,13 +8,13 @@
 
 import UIKit
 
-class CityStateViewController: UIViewController
+class CityStateViewController: UIViewController, UITextFieldDelegate
 {
-    var delegate: CityStateViewControllerDelegate?
 
     @IBOutlet weak var cityState1TextField: UITextField!
     @IBOutlet weak var cityState2TextField: UITextField!
     
+    var delegate: CityStateViewControllerDelegate?
     let textFieldDelegation = TextFieldDelegation()
     
     override func viewDidLoad()
@@ -55,6 +55,10 @@ class CityStateViewController: UIViewController
     
     @IBAction func searchButton(sender: UIButton)
     {
-        
+        if cityState1TextField.text != "" && cityState2TextField.text != ""
+        {
+            delegate!.locationWasEntered([cityState1TextField.text!, cityState2TextField.text!])
+        }
     }
+        
 }

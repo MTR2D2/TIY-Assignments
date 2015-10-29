@@ -12,10 +12,10 @@ import CoreLocation
 
 protocol CityStateViewControllerDelegate
 {
-    func locationWasEntered(chosenlocation: String)
+    func locationWasEntered(cities: [String])
 }
 
-class MapViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate,CityStateViewControllerDelegate
+class MapViewController: UIViewController, UIPopoverPresentationControllerDelegate, UITextFieldDelegate, CityStateViewControllerDelegate
 {
 
     @IBOutlet weak var mapView: MKMapView!
@@ -25,18 +25,22 @@ class MapViewController: UIViewController, UIPopoverPresentationControllerDelega
     {
         super.viewDidLoad()
         
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString("Lakeland, FL", completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
-            if let placemark = placemarks?[0]
-            {
-                let annotation = MKPointAnnotation()
-                annotation.coordinate = (placemark.location?.coordinate)!
-                annotation.title = "Lakeland, FL"
-                self.mapView.addAnnotation(annotation)
-            }
-        })
+//        let geocoder = CLGeocoder()
+//        geocoder.geocodeAddressString("Portland, OR", completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+//            if let placemark = placemarks?[0]
+//            {
+//                let annotation = MKPointAnnotation()
+//                annotation.coordinate = (placemark.location?.coordinate)!
+//                annotation.title = "Portland, OR"
+//                self.mapView.addAnnotation(annotation)
+//                
+//            }
+//        })
     }
-        
+    
+    
+    
+    
 //        let tiyOrlando = CLLocationCoordinate2DMake(28.540923, -81.38216)
 //        //need to import CoreLocation for this
 //        let tiyOrlandoAnnotation = MKPointAnnotation()
@@ -58,7 +62,7 @@ class MapViewController: UIViewController, UIPopoverPresentationControllerDelega
         
 //        let viewRegion = MKCoordinateRegionMakeWithDistance(tiyOrlando, 2000, 2000)
 //        mapView.setRegion(viewRegion, animated: true)
-        
+    
 //        let orlandoLocation = CLLocation(coordinate: tiyOrlando, altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: NSDate())
 //        let tampaLocation = CLLocation(coordinate: tiyTampa, altitude: 0, horizontalAccuracy: 0, verticalAccuracy: 0, timestamp: NSDate())
 //        let lineOfSightDistance = orlandoLocation.distanceFromLocation(tampaLocation)
@@ -79,7 +83,7 @@ class MapViewController: UIViewController, UIPopoverPresentationControllerDelega
             let destVC = segue.destinationViewController as! CityStateViewController
 //            destVC.characters = remainingCharacters
             destVC.popoverPresentationController?.delegate = self
-//            destVC.delegate = self //connects
+            destVC.delegate = self //connects
 //            let contentHeight = 44.0 * CGFloat(remainingCharacters.count)
 //            destVC.preferredContentSize = CGSizeMake(200.0, contentHeight)
         }
@@ -93,21 +97,26 @@ class MapViewController: UIViewController, UIPopoverPresentationControllerDelega
         //can also just type return .None
     }
     
-    // MARK: - CityStateViewController Delegate
+    // MARK: - TextField Delegate
     
-    func locationWasEntered(chosenlocation: String)
+    func locationWasEntered(cities: [String])
     {
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
-//        visibleCards.append(chosenCharacter)
-        
-//        let rowToRemove = (remainingCharacters as NSArray).indexOfObject(chosenCharacter)
-//        remainingCharacters.removeAtIndex(rowToRemove)
-//        if remainingCharacters.count == 0
-//        {
-//            self.navigationItem.rightBarButtonItem?.enabled = false
-//        }
-        
-//        collectionView?.reloadData()
+        for _ in cities
+        {
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString("_", completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
+                if let placemark = placemarks?[0]
+                {
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = (placemark.location?.coordinate)!
+                    annotation.title = "_"
+                    self.mapView.addAnnotation(annotation)
+                    
+                }
+            })
+        }
+
     }
 
 

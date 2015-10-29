@@ -10,6 +10,8 @@ import Foundation
 
 class TextFieldDelegation
 {
+//    var delegate = TextFieldDelegationDelegate?
+    
     func validateCityState1(cityState1: String) -> Bool
     {
         if cityState1.characters.count > 0

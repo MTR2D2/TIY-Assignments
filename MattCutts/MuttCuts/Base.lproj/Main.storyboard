@@ -31,7 +31,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jDO-fx-98J">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8kO-nM-20K">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="8kO-nM-20K">
                             <connections>
                                 <segue destination="fjd-hp-ci6" kind="popoverPresentation" identifier="CityStateSegue" popoverAnchorBarButtonItem="8kO-nM-20K" id="HL6-nz-tZE">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
@@ -64,13 +64,17 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fjd-hp-ci6" id="h0o-XN-aKI"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jPd-Ss-uA8">
-                                <rect key="frame" x="276" y="385" width="48" height="30"/>
+                                <rect key="frame" x="251" y="375" width="99" height="51"/>
                                 <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="Search">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="0.70196078429999997" green="0.30196078430000001" blue="0.10980392160000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="searchButton:" destination="fjd-hp-ci6" eventType="touchUpInside" id="56A-iG-lNJ"/>
@@ -81,6 +85,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <outlet property="delegate" destination="fjd-hp-ci6" id="kJZ-7Z-3Oj"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <animations/>
@@ -102,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k25-FZ-NFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1671" y="405"/>
+            <point key="canvasLocation" x="1707" y="405"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jwO-tX-w6Y">
@@ -121,7 +128,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9n-G1-Npe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="385" y="400"/>
+            <point key="canvasLocation" x="336" y="405"/>
         </scene>
     </scenes>
 </document>
