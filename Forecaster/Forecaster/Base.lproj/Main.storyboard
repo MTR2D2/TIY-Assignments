@@ -32,6 +32,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="FHQ-bY-FEI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6ev-3l-Fhy"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="W9b-SR-Jfp">
                             <color key="tintColor" red="0.80867387820512815" green="0.26322203635730324" blue="0.1339778357204183" alpha="0.78925107758620694" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -118,9 +119,24 @@
                     <view key="view" contentMode="scaleToFill" id="nOQ-pV-SXT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
+                                <rect key="frame" x="447" y="130" width="79" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ddi-uH-w7J" firstAttribute="top" secondItem="w28-zv-VeI" secondAttribute="bottom" constant="449" id="YZ9-LC-jBM"/>
+                            <constraint firstAttribute="trailing" secondItem="w28-zv-VeI" secondAttribute="trailing" constant="74" id="lUt-44-b1x"/>
+                            <constraint firstItem="w28-zv-VeI" firstAttribute="top" secondItem="v3l-Ge-VIk" secondAttribute="bottom" constant="66" id="wib-2I-N4T"/>
+                        </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqz-fu-q4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
