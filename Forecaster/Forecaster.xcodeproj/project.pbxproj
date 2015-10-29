@@ -13,6 +13,7 @@
 		4C01FD671BE27A2F000BE416 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C01FD651BE27A2F000BE416 /* LaunchScreen.storyboard */; };
 		4C01FD6F1BE27C36000BE416 /* SunRise.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C01FD6E1BE27C36000BE416 /* SunRise.jpg */; settings = {ASSET_TAGS = (); }; };
 		4C01FD711BE27E89000BE416 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01FD701BE27E89000BE416 /* MainTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		4C01FD741BE29EE9000BE416 /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C01FD731BE29EE9000BE416 /* ShowDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4C01FD681BE27A2F000BE416 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C01FD6E1BE27C36000BE416 /* SunRise.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SunRise.jpg; sourceTree = "<group>"; };
 		4C01FD701BE27E89000BE416 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		4C01FD731BE29EE9000BE416 /* ShowDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +60,22 @@
 			children = (
 				4C01FD5C1BE27A2F000BE416 /* AppDelegate.swift */,
 				4C01FD701BE27E89000BE416 /* MainTableViewController.swift */,
+				4C01FD731BE29EE9000BE416 /* ShowDetailViewController.swift */,
 				4C01FD601BE27A2F000BE416 /* Main.storyboard */,
+				4C01FD721BE27FA1000BE416 /* Extras */,
+			);
+			path = Forecaster;
+			sourceTree = "<group>";
+		};
+		4C01FD721BE27FA1000BE416 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
 				4C01FD631BE27A2F000BE416 /* Assets.xcassets */,
 				4C01FD651BE27A2F000BE416 /* LaunchScreen.storyboard */,
 				4C01FD681BE27A2F000BE416 /* Info.plist */,
 				4C01FD6E1BE27C36000BE416 /* SunRise.jpg */,
 			);
-			path = Forecaster;
+			name = Extras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C01FD741BE29EE9000BE416 /* ShowDetailViewController.swift in Sources */,
 				4C01FD711BE27E89000BE416 /* MainTableViewController.swift in Sources */,
 				4C01FD5D1BE27A2F000BE416 /* AppDelegate.swift in Sources */,
 			);
