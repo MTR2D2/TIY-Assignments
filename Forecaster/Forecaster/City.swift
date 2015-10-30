@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+struct City
+{
+    let title: String
+    
+    init(name: String)
+    {
+        self.title = name
+    }
+    
+
+}

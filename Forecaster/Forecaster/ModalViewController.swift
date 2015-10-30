@@ -8,8 +8,10 @@
 
 import UIKit
 
-class ModalViewController: UIViewController
+class ModalViewController: UIViewController //UITextFieldDelegate
 {
+    
+    @IBOutlet weak var zipcodeTextField: UITextField!
     
     var delegate: ModalViewControllerProtocol?
         
@@ -25,6 +27,13 @@ class ModalViewController: UIViewController
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+//    func textFieldShouldReturn(textField: UITextField) -> Bool
+//    {
+//        
+//        return true
+//    }
+
 
     /*
     // MARK: - Navigation
@@ -42,5 +51,14 @@ class ModalViewController: UIViewController
     @IBAction func cancelButtonPressed(sender: UIBarButtonItem)
     {
         delegate?.cancelButtonPressed(sender)
+    }
+    
+    @IBAction func searchButtonPressed(sender: UIBarButtonItem)
+    {
+        if zipcodeTextField.text != ""
+        {
+            delegate?.zipcodeWasEntered(zipcodeTextField.text!)
+
+        }
     }
 }

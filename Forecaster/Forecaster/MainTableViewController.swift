@@ -11,6 +11,7 @@ import UIKit
 protocol ModalViewControllerProtocol
 {
     func cancelButtonPressed(sender: UIBarButtonItem)
+    func zipcodeWasEntered(zipcode: String)
 }
 
 class MainTableViewController: UITableViewController, ModalViewControllerProtocol
@@ -111,5 +112,10 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
     func cancelButtonPressed(sender: UIBarButtonItem)
     {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func zipcodeWasEntered(zipcode: String)
+    {
+        print(zipcode)
     }
 }
