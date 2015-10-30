@@ -17,6 +17,7 @@
 		4C0B51E61BE2ABF1001DA20E /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B51E51BE2ABF1001DA20E /* City.swift */; settings = {ASSET_TAGS = (); }; };
 		4C0B51E81BE2AC10001DA20E /* WeatherConditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B51E71BE2AC10001DA20E /* WeatherConditions.swift */; settings = {ASSET_TAGS = (); }; };
 		4C0B51EA1BE2AC36001DA20E /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B51E91BE2AC36001DA20E /* APIController.swift */; settings = {ASSET_TAGS = (); }; };
+		4C3AD82B1BE3CB02005C6927 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD82A1BE3CB02005C6927 /* ModalViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		4C0B51E51BE2ABF1001DA20E /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		4C0B51E71BE2AC10001DA20E /* WeatherConditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherConditions.swift; sourceTree = "<group>"; };
 		4C0B51E91BE2AC36001DA20E /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		4C3AD82A1BE3CB02005C6927 /* ModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				4C01FD5C1BE27A2F000BE416 /* AppDelegate.swift */,
 				4C01FD701BE27E89000BE416 /* MainTableViewController.swift */,
+				4C3AD82A1BE3CB02005C6927 /* ModalViewController.swift */,
 				4C01FD731BE29EE9000BE416 /* ShowDetailViewController.swift */,
 				4C0B51E51BE2ABF1001DA20E /* City.swift */,
 				4C0B51E71BE2AC10001DA20E /* WeatherConditions.swift */,
@@ -164,6 +167,7 @@
 				4C0B51E61BE2ABF1001DA20E /* City.swift in Sources */,
 				4C0B51E81BE2AC10001DA20E /* WeatherConditions.swift in Sources */,
 				4C01FD5D1BE27A2F000BE416 /* AppDelegate.swift in Sources */,
+				4C3AD82B1BE3CB02005C6927 /* ModalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

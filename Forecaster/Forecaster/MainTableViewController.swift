@@ -8,9 +8,13 @@
 
 import UIKit
 
-class MainTableViewController: UITableViewController
+protocol ModalViewControllerProtocol
 {
+    func cancelButtonPressed(sender: UIBarButtonItem)
+}
 
+class MainTableViewController: UITableViewController, ModalViewControllerProtocol
+{
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -89,14 +93,23 @@ class MainTableViewController: UITableViewController
     }
     */
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ModalViewControllerSegue"
+        {
+            let destVC = segue.destinationViewController as! UINavigationController
+            let modal = destVC.viewControllers[0] as! ModalViewController
+            modal.delegate = self //connects
+        }
+        
     }
-    */
 
+    // MARK: - ModalViewController Protocol
+    
+    func cancelButtonPressed(sender: UIBarButtonItem)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }

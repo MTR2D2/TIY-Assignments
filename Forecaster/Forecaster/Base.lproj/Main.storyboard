@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Modal View Controller-->
         <scene sceneID="mqb-uK-eG1">
             <objects>
-                <viewController id="Yyf-2t-Oeb" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController id="Yyf-2t-Oeb" customClass="ModalViewController" customModule="Forecaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TR6-Zq-WZM"/>
                         <viewControllerLayoutGuide type="bottom" id="g2f-ja-0uZ"/>
@@ -20,7 +20,7 @@
                                 <rect key="frame" x="243" y="285" width="114" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <animations/>
@@ -32,7 +32,11 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="FHQ-bY-FEI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6ev-3l-Fhy"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="6ev-3l-Fhy">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="Yyf-2t-Oeb" id="AwH-gZ-pgG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="W9b-SR-Jfp">
                             <color key="tintColor" red="0.80867387820512815" green="0.26322203635730324" blue="0.1339778357204183" alpha="0.78925107758620694" colorSpace="calibratedRGB"/>
                         </barButtonItem>
@@ -99,7 +103,7 @@
                     <navigationItem key="navigationItem" id="RWr-ie-c6i">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kqw-R4-NDi">
                             <connections>
-                                <segue destination="nln-HZ-dSD" kind="presentation" identifier="SearchViewControllerSegue" id="u2E-V6-DY3"/>
+                                <segue destination="nln-HZ-dSD" kind="presentation" identifier="ModalViewControllerSegue" id="u2E-V6-DY3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
