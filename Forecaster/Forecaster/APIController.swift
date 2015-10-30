@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class APIController
+{
+    var delegate: APIControllerProtocol
+    
+    init(delegate: APIControllerProtocol)
+    {
+        self.delegate = delegate
+    }
+}

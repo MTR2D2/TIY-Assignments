@@ -12,9 +12,14 @@ protocol ModalViewControllerProtocol
 {
     func cancelButtonPressed(sender: UIBarButtonItem)
     func zipcodeWasEntered(zipcode: String)
+    func returnKeyWasPressed(zipcode: String)
+}
+protocol APIControllerProtocol
+{
+    func didReceiveAPIResults(results: NSArray)
 }
 
-class MainTableViewController: UITableViewController, ModalViewControllerProtocol
+class MainTableViewController: UITableViewController, ModalViewControllerProtocol, APIControllerProtocol
 {
     override func viewDidLoad()
     {
@@ -117,5 +122,17 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
     func zipcodeWasEntered(zipcode: String)
     {
         print(zipcode)
+    }
+    
+    func returnKeyWasPressed(zipcode: String)
+    {
+        print(zipcode)
+    }
+    
+    // MARK: - APIController Protocol
+    
+    func didReceiveAPIResults(results: NSArray)
+    {
+        print("Ok")
     }
 }

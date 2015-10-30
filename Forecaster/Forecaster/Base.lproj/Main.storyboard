@@ -21,6 +21,9 @@
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Yyf-2t-Oeb" id="cRN-D0-ljI"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <animations/>

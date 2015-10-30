@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ModalViewController: UIViewController //UITextFieldDelegate
+class ModalViewController: UIViewController, UITextFieldDelegate
 {
     
     @IBOutlet weak var zipcodeTextField: UITextField!
@@ -18,6 +18,8 @@ class ModalViewController: UIViewController //UITextFieldDelegate
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        zipcodeTextField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }
@@ -28,11 +30,16 @@ class ModalViewController: UIViewController //UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
-//    func textFieldShouldReturn(textField: UITextField) -> Bool
-//    {
-//        
-//        return true
-//    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool
+    {
+        var rc = false
+        if zipcodeTextField != ""
+        {
+            delegate?.returnKeyWasPressed(zipcodeTextField.text!)
+            rc = true
+        }
+        return rc
+    }
 
 
     /*
