@@ -14,6 +14,7 @@ class ModalViewController: UIViewController, UITextFieldDelegate
     @IBOutlet weak var zipcodeTextField: UITextField!
     
     var delegate: ModalViewControllerProtocol?
+    
         
     override func viewDidLoad()
     {
@@ -65,6 +66,7 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         if zipcodeTextField.text != ""
         {
             delegate?.zipcodeWasEntered(zipcodeTextField.text!)
+            self.dismissViewControllerAnimated(true, completion: nil)
 
         }
     }
