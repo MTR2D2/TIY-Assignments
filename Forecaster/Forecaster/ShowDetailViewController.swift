@@ -10,10 +10,11 @@ import UIKit
 
 class ShowDetailViewController: UIViewController
 {
-    var city = City?()
+    var city: City?
     var weather = WeatherConditions!()
     
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var temperatureDescriptionLabel: UILabel!
     
 
     override func viewDidLoad()
@@ -22,7 +23,11 @@ class ShowDetailViewController: UIViewController
         
 //        if city.weather != nil
 //        {
-            temperatureLabel.text = city!.weather?.temperature
+        temperatureDescriptionLabel.text = "Your Temperature in \(city!.cityName) is:"
+        temperatureLabel.text = city!.weather?.temperature
+        
+        let color = UIColor(hue: 0.8, saturation: 0.1, brightness: 0.5, alpha: 0.5)
+        navigationController?.navigationBar.barTintColor = color
 //        }
 
         // Do any additional setup after loading the view.
