@@ -124,7 +124,6 @@
                                 <connections>
                                     <outlet property="cityNameLabel" destination="MEw-vd-cIJ" id="dJL-Cc-MmV"/>
                                     <outlet property="temperatureLabel" destination="Ot2-9m-kxJ" id="FzZ-i0-TiE"/>
-                                    <segue destination="3n1-E3-Tr8" kind="showDetail" identifier="ShowDetailSegue" trigger="accessoryAction" id="N1R-7W-NBA"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -150,7 +149,7 @@
         <!--Show Detail View Controller-->
         <scene sceneID="gSt-oC-UsY">
             <objects>
-                <viewController id="3n1-E3-Tr8" customClass="ShowDetailViewController" customModule="Forecaster" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showDetailVC" id="3n1-E3-Tr8" customClass="ShowDetailViewController" customModule="Forecaster" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v3l-Ge-VIk"/>
                         <viewControllerLayoutGuide type="bottom" id="Ddi-uH-w7J"/>
@@ -159,10 +158,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
-                                <rect key="frame" x="447" y="130" width="79" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
+                                <rect key="frame" x="409" y="130" width="117" height="70"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="46"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -170,12 +169,15 @@
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.77577634080000002" blue="0.37365237649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Ddi-uH-w7J" firstAttribute="top" secondItem="w28-zv-VeI" secondAttribute="bottom" constant="449" id="YZ9-LC-jBM"/>
+                            <constraint firstItem="Ddi-uH-w7J" firstAttribute="top" secondItem="w28-zv-VeI" secondAttribute="bottom" constant="400" id="YZ9-LC-jBM"/>
                             <constraint firstAttribute="trailing" secondItem="w28-zv-VeI" secondAttribute="trailing" constant="74" id="lUt-44-b1x"/>
                             <constraint firstItem="w28-zv-VeI" firstAttribute="top" secondItem="v3l-Ge-VIk" secondAttribute="bottom" constant="66" id="wib-2I-N4T"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="w28-zv-VeI" id="Fxs-F2-fwq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gqz-fu-q4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

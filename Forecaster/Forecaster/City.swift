@@ -8,28 +8,28 @@
 
 import Foundation
 
-struct City
+class City
 {
     let cityName: String
     let latitude: String
     let longitude: String
     
-//    var weather: weather?
+    var weather: WeatherConditions?
     
-    init(cityName: String, latitude: String, longitude: String /*weather: weather?*/)
+    init(cityName: String, latitude: String, longitude: String, weather: WeatherConditions?)
     {
         self.cityName = cityName
         self.latitude = latitude
         self.longitude = longitude
         
-//        if weather != nil
-//        {
-//            self.weather = weather!
-//        }
-//        else
-//        {
-//            self.weather = nil
-//        }
+        if weather != nil
+        {
+            self.weather = weather!
+        }
+        else
+        {
+            self.weather = nil
+        }
     }
     
     static func locationWithJSON(results: NSArray) -> City
@@ -68,7 +68,7 @@ struct City
             }
             
         }
-        city = City(cityName: cityName, latitude: latStr, longitude: lngStr)
+        city = City(cityName: cityName, latitude: latStr, longitude: lngStr, weather: nil)
         return city
     }
 

@@ -17,12 +17,13 @@ protocol ModalViewControllerProtocol
 protocol APIControllerProtocol
 {
     func didReceiveAPIResults(results: NSArray)
+    func didReceiveAPIWeatherResults(results: NSDictionary, city: City)
 }
 
 class MainTableViewController: UITableViewController, ModalViewControllerProtocol, APIControllerProtocol
 {
     var api: APIController!
-    var cities = Array<City>()
+    var cities = [City]()
     
     override func viewDidLoad()
     {
@@ -31,7 +32,7 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
 //        tableView.registerClass(UITableView.self, forCellReuseIdentifier: "MainViewCell")
         
         api = APIController(delegate: self)
-//        api.searchMapsFor("32601")
+        api.searchMapsFor("32801")
         title = "Sunrise"
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
 
@@ -71,11 +72,27 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         let city = cities[indexPath.row]
         
         cell.cityNameLabel?.text = city.cityName
-        cell.temperatureLabel?.text = city.latitude
+        
+        if city.weather != nil
+        {
+            cell.temperatureLabel?.text = String(city.weather!.temperature)
+        }
+        
+        print(city.weather?.temperature)
+        
 
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let showDetailVC = storyboard?.instantiateViewControllerWithIdentifier("showDetailVC") as! ShowDetailViewController
+        showDetailVC.city = cities[indexPath.row]
+        navigationController?.pushViewController(showDetailVC, animated: true)
+        
+        // better way to transistion view controllers without delegates.
     }
 
     
@@ -117,13 +134,35 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
             let city = City.locationWithJSON(results)
             self.cities.append(city)
             self.tableView.reloadData()
-            // cannot update UI in any thread but the main thread
-            // multi-threading is the computer doing something in the background
+            
+        
+            let api = APIController(delegate: self)
+            api.searchWeatherFor(city)
+            
+        })
+    }
+    
+    func didReceiveAPIWeatherResults(results: NSDictionary, city: City)
+    {
+        dispatch_async(dispatch_get_main_queue(), {
+            let weather = WeatherConditions.weatherWithJSON(results)
+            
+            for x in self.cities
+            {
+                if x.cityName == city.cityName
+                {
+                    x.weather = weather
+                }
+            }
+            
+            self.tableView.reloadData()
+            
             
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             // turn the indicator toggle back off
         })
     }
+
     
     /*
     // Override to support conditional editing of the table view.
