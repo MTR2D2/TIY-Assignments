@@ -34,15 +34,17 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         api = APIController(delegate: self)
         api.searchMapsFor("32801")
         title = "Sunrise"
+        navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Futura-Medium", size: 17)!]
         
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
         let navigationBarColor = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 1.0)
-        let backgroundColor = UIColor(hue: 0.66, saturation: 0.5, brightness: 1.0, alpha: 1.0)
         
         navigationController?.navigationBar.barTintColor = navigationBarColor
-        tableView.backgroundColor = backgroundColor
+        tableView.backgroundColor = navigationBarColor
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
 
 
@@ -83,8 +85,10 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         
         if city.weather != nil
         {
-            cell.temperatureLabel?.text = String(city.weather!.temperature)
+            cell.temperatureLabel?.text = "\(city.weather!.temperature)℉"
         }
+        
+//        + ℉
         
         // Configure the cell...
 
@@ -105,8 +109,45 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
     {
         if editingStyle == UITableViewCellEditingStyle.Delete {
             cities.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)}
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)}
     }
+    
+    // Override to support conditional editing of the table view.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool
+    {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    /*
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    if editingStyle == .Delete {
+    // Delete the row from the data source
+    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    } else if editingStyle == .Insert {
+    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+    }
+    */
+    
+    
+    // Override to support rearranging the table view.
+    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+    {
+    
+    }
+
+    
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    // Return false if you do not want the item to be re-orderable.
+    return true
+    }
+    */
+ 
+    
     
 //    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
 //    {
@@ -189,39 +230,4 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         })
     }
 
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the specified item to be editable.
-    return true
-    }
-    */
-    
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    if editingStyle == .Delete {
-    // Delete the row from the data source
-    tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    } else if editingStyle == .Insert {
-    // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }
-    }
-    */
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-    
-    }
-    */
-    
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    // Return false if you do not want the item to be re-orderable.
-    return true
-    }
-    */
 }

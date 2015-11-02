@@ -24,8 +24,8 @@ class ShowDetailViewController: UIViewController
 //        if city.weather != nil
 //        {
         temperatureDescriptionLabel.text = "The Temperature in \(city!.cityName) is:"
-        temperatureLabel.text = city!.weather?.temperature
-        feelsLikeLabel.text = city!.weather?.feelsLike
+        temperatureLabel.text = "\(city!.weather!.temperature)℉"
+        feelsLikeLabel.text = "\(city!.weather!.feelsLike)℉"
         
         
         

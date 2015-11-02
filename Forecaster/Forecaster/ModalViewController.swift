@@ -12,6 +12,7 @@ class ModalViewController: UIViewController, UITextFieldDelegate
 {
     
     @IBOutlet weak var zipcodeTextField: UITextField!
+    @IBOutlet weak var alertLabel: UILabel!
     
     var delegate: ModalViewControllerProtocol?
     
@@ -21,6 +22,7 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         super.viewDidLoad()
         
         zipcodeTextField.becomeFirstResponder()
+        alertLabel.text = ""
 
         // Do any additional setup after loading the view.
     }
@@ -31,27 +33,40 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         // Dispose of any resources that can be recreated.
     }
     
+    func validateTextField(textField: String) -> Bool
+    {
+        let characterSet = NSCharacterSet(charactersInString: "0123456789")
+        if textField.characters.count == 5 && textField.rangeOfCharacterFromSet(characterSet)?.count == 1
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+ 
+    }
     func textFieldShouldReturn(textField: UITextField) -> Bool
     {
         var rc = false
+        
         if zipcodeTextField != ""
         {
-            delegate?.returnKeyWasPressed(zipcodeTextField.text!)
-            rc = true
+            if validateTextField(textField.text!) == true
+            {
+                alertLabel.text = ""
+                delegate?.returnKeyWasPressed(zipcodeTextField.text!)
+                rc = true
+            }
+            else
+            {
+                alertLabel.text = "Please enter valid ZipCode"
+            }
         }
         return rc
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: Action Handlers
     
@@ -71,3 +86,13 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         }
     }
 }
+
+/*
+// MARK: - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+// Get the new view controller using segue.destinationViewController.
+// Pass the selected object to the new view controller.
+}
+*/
