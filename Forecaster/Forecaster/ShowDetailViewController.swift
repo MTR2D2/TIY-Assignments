@@ -15,7 +15,7 @@ class ShowDetailViewController: UIViewController
     
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var temperatureDescriptionLabel: UILabel!
-    
+    @IBOutlet weak var feelsLikeLabel: UILabel!
 
     override func viewDidLoad()
     {
@@ -23,10 +23,13 @@ class ShowDetailViewController: UIViewController
         
 //        if city.weather != nil
 //        {
-        temperatureDescriptionLabel.text = "Your Temperature in \(city!.cityName) is:"
+        temperatureDescriptionLabel.text = "The Temperature in \(city!.cityName) is:"
         temperatureLabel.text = city!.weather?.temperature
+        feelsLikeLabel.text = city!.weather?.feelsLike
         
-        let color = UIColor(hue: 0.8, saturation: 0.1, brightness: 0.5, alpha: 0.5)
+        
+        
+        let color = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 0.0)
         navigationController?.navigationBar.barTintColor = color
 //        }
 

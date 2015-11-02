@@ -11,10 +11,12 @@ import Foundation
 struct WeatherConditions
 {
     let temperature: String
+    let feelsLike: String
     
-    init(temp: String)
+    init(temp: String, feelsLike: String)
     {
         self.temperature = temp
+        self.feelsLike = feelsLike
       
     }
     
@@ -22,16 +24,20 @@ struct WeatherConditions
     {
         var weather: WeatherConditions
         var temperature = ""
+        var feelsLike = ""
         
         if results.count > 0
         {
  //           if let currently = results["currently"] as? NSDictionary
  //           {
                 temperature = String(results["temperature"] as! Double)
+            
+                feelsLike = String(results["apparentTemperature"] as! Double)
  //           }
         }
         
-        weather = WeatherConditions(temp: temperature)
+        weather = WeatherConditions(temp: temperature, feelsLike: feelsLike)
+        
         return weather
     }
     

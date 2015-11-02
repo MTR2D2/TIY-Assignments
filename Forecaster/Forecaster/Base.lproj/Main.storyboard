@@ -66,7 +66,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" red="1" green="0.4887863248" blue="0.0" alpha="0.84264547410000001" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="center" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MainViewCell" rowHeight="200" id="yxY-kH-W9c" customClass="CityTableViewCell" customModule="Forecaster" customModuleProvider="target">
@@ -79,7 +79,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="℉" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Ot2-9m-kxJ">
                                             <rect key="frame" x="516" y="11" width="43" height="178"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="42"/>
+                                            <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="42"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="0.0" height="0.0"/>
@@ -90,7 +90,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="500" id="Cj0-FB-Pbb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Didot-Italic" family="Didot" pointSize="42"/>
+                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="default">
@@ -120,7 +120,7 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <color key="backgroundColor" red="0.80867387820000003" green="0.26322203640000003" blue="0.13397783569999999" alpha="0.78925107760000002" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.061126077600000051" colorSpace="calibratedRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="cityNameLabel" destination="MEw-vd-cIJ" id="dJL-Cc-MmV"/>
@@ -160,16 +160,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
-                                <rect key="frame" x="242" y="271" width="117" height="58"/>
+                                <rect key="frame" x="250" y="273" width="101" height="55"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="46"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC7-xE-ZeU">
-                                <rect key="frame" x="249" y="214" width="103" height="22"/>
+                                <rect key="frame" x="249" y="214" width="102" height="23"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="17"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FeelsLike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7R-PB-2te">
+                                <rect key="frame" x="216" y="453" width="168" height="55"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYx-C0-vNO">
+                                <rect key="frame" x="261" y="394" width="79" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -178,13 +193,18 @@
                         <color key="backgroundColor" red="1" green="0.77577634080000002" blue="0.37365237649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VC7-xE-ZeU" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="0wA-eq-8YE"/>
+                            <constraint firstItem="B7R-PB-2te" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="4Ho-Xb-Djb"/>
                             <constraint firstItem="w28-zv-VeI" firstAttribute="centerY" secondItem="nOQ-pV-SXT" secondAttribute="centerY" id="A8B-A1-U2v"/>
                             <constraint firstItem="VC7-xE-ZeU" firstAttribute="centerY" secondItem="nOQ-pV-SXT" secondAttribute="centerY" multiplier="0.75" id="TTR-15-728"/>
+                            <constraint firstItem="B7R-PB-2te" firstAttribute="centerY" secondItem="nOQ-pV-SXT" secondAttribute="centerY" multiplier="1.6" id="YuB-Sz-IY4"/>
                             <constraint firstItem="w28-zv-VeI" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="k6s-39-QzJ"/>
+                            <constraint firstItem="HYx-C0-vNO" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="mmQ-dF-ryS"/>
+                            <constraint firstItem="HYx-C0-vNO" firstAttribute="centerY" secondItem="nOQ-pV-SXT" secondAttribute="centerY" multiplier="1.35" id="yvf-9M-WeV"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="feelsLikeLabel" destination="B7R-PB-2te" id="VPj-DT-Xq7"/>
                         <outlet property="temperatureDescriptionLabel" destination="VC7-xE-ZeU" id="F2b-gt-PER"/>
                         <outlet property="temperatureLabel" destination="w28-zv-VeI" id="Fxs-F2-fwq"/>
                     </connections>
@@ -232,4 +252,5 @@
             <point key="canvasLocation" x="204" y="1545"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -34,7 +34,15 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         api = APIController(delegate: self)
         api.searchMapsFor("32801")
         title = "Sunrise"
+        
+        
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        
+        let navigationBarColor = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 1.0)
+        let backgroundColor = UIColor(hue: 0.66, saturation: 0.5, brightness: 1.0, alpha: 1.0)
+        
+        navigationController?.navigationBar.barTintColor = navigationBarColor
+        tableView.backgroundColor = backgroundColor
 
 
 
@@ -78,9 +86,6 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
             cell.temperatureLabel?.text = String(city.weather!.temperature)
         }
         
-        print(city.weather?.temperature)
-        
-
         // Configure the cell...
 
         return cell
@@ -102,6 +107,20 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
             cities.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)}
     }
+    
+//    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+//    {
+//        let label : UILabel = UILabel()
+//        if(section == 0)
+//        {
+//            label.text = "Item1"
+//        } else if (section == 1)
+//        {
+//            label.textColor = UIColor.orangeColor()
+//            label.text = "Item2"
+//        }
+//        return label
+//    }
     
     // MARK: - Navigation
 
