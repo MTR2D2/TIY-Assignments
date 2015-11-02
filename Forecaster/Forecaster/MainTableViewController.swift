@@ -93,8 +93,15 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         navigationController?.pushViewController(showDetailVC, animated: true)
         
         // better way to transistion view controllers without delegates.
+        // "showDetailVC" is the storyboard ID of the ShowDetailViewController 
     }
 
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
+    {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            cities.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)}
+    }
     
     // MARK: - Navigation
 
