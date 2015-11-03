@@ -16,12 +16,14 @@ protocol ModalViewControllerProtocol
     func cancelButtonPressed(sender: UIBarButtonItem)
     func zipcodeWasEntered(zipcode: String)
     func returnKeyWasPressed(zipcode: String)
+    func cityWasFound(aCity: City)
 }
 protocol APIControllerProtocol
 {
     func didReceiveAPIResults(results: NSArray)
     func didReceiveAPIWeatherResults(results: NSDictionary, city: City)
 }
+
 
 class MainTableViewController: UITableViewController, ModalViewControllerProtocol, APIControllerProtocol
 {
@@ -229,6 +231,21 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
             // turn the indicator toggle back off
         })
     }
+    
+    // MARK: - ZipCodeViewController delegate
+    
+    func cityWasFound(aCity: City)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+//        if cities == nil
+//        {
+//            cities = [City]()
+//        }
+        cities.append(aCity)
+        tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: cities.count - 1, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    
     
     // MARK: - Misc.
     

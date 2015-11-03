@@ -110,6 +110,7 @@ class ModalViewController: UIViewController, UITextFieldDelegate, CLLocationMana
         })
     }
 
+    
 
 
     // MARK: Action Handlers
@@ -129,9 +130,16 @@ class ModalViewController: UIViewController, UITextFieldDelegate, CLLocationMana
     {
         if zipcodeTextField.text != ""
         {
-            delegate?.zipcodeWasEntered(zipcodeTextField.text!)
-            self.dismissViewControllerAnimated(true, completion: nil)
-
+            if validateTextField(zipcodeTextField.text!) == true
+            {
+                print(zipcodeTextField.text)
+                delegate?.zipcodeWasEntered(zipcodeTextField.text!)
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
+        else
+            {
+                print("error")
+            }
         }
     }
     
