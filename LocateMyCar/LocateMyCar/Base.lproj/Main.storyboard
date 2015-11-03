@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jxG-4Q-Y6i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X0p-Cc-Hu6">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -25,10 +25,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="oPv-vP-ugE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Edb-fB-A20"/>
-                            <constraint firstItem="oPv-vP-ugE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GY1-3M-mCm"/>
-                            <constraint firstAttribute="trailing" secondItem="oPv-vP-ugE" secondAttribute="trailing" id="IF4-9j-g3s"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oPv-vP-ugE" secondAttribute="bottom" id="ych-Pe-Ihi"/>
+                            <constraint firstAttribute="trailing" secondItem="oPv-vP-ugE" secondAttribute="trailing" id="S13-gv-f3k"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="oPv-vP-ugE" secondAttribute="bottom" id="k1j-Um-maT"/>
+                            <constraint firstItem="oPv-vP-ugE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="p1p-Kc-pFP"/>
+                            <constraint firstItem="oPv-vP-ugE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yPH-Lc-XVu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cy3-AY-yPl">
@@ -38,31 +38,39 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <animations/>
                             <state key="normal" title="Pin My Current Location"/>
+                            <connections>
+                                <action selector="useLocationTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xsf-xy-bjq"/>
+                            </connections>
                         </button>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="qco-bu-k1C" id="OJe-22-yR5"/>
+                        <outlet property="mapView" destination="oPv-vP-ugE" id="ODf-l3-Ihx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="389"/>
+            <point key="canvasLocation" x="1929" y="389"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="05X-Tk-VCb">
+        <scene sceneID="FTe-Lv-f2p">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jxG-4Q-Y6i" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X0p-Cc-Hu6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ciW-xV-0cW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WMj-Qt-XGS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9mC-DA-y7A"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="zPD-oz-thV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="INf-OC-sgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3P-h2-L1K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="281" y="1049"/>
+            <point key="canvasLocation" x="1117" y="389"/>
         </scene>
     </scenes>
 </document>
