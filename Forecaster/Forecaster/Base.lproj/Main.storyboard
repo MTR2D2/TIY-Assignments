@@ -172,6 +172,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
+                                <rect key="frame" x="250" y="137" width="101" height="55"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VC7-xE-ZeU">
                                 <rect key="frame" x="249" y="89" width="102" height="23"/>
                                 <animations/>
@@ -181,42 +188,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FeelsLike" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7R-PB-2te">
-                                <rect key="frame" x="216" y="290" width="168" height="55"/>
+                                <rect key="frame" x="216" y="440" width="168" height="55"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels Like:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYx-C0-vNO">
-                                <rect key="frame" x="261" y="242" width="79" height="23"/>
+                                <rect key="frame" x="261" y="392" width="79" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w28-zv-VeI">
-                                <rect key="frame" x="250" y="137" width="101" height="55"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rain" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-tE-elC">
+                                <rect key="frame" x="268" y="271" width="64" height="58"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="42"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="1" green="0.77577634080000002" blue="0.37365237649999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="VC7-xE-ZeU" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="2PE-wa-ZiS"/>
+                            <constraint firstItem="pfM-tE-elC" firstAttribute="centerY" secondItem="nOQ-pV-SXT" secondAttribute="centerY" id="3Cg-eK-lLi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HYx-C0-vNO" secondAttribute="trailing" constant="240" id="474-ae-9qq"/>
                             <constraint firstItem="B7R-PB-2te" firstAttribute="leading" secondItem="nOQ-pV-SXT" secondAttribute="leadingMargin" constant="196" id="4su-eZ-V6a"/>
                             <constraint firstItem="VC7-xE-ZeU" firstAttribute="leading" secondItem="nOQ-pV-SXT" secondAttribute="leadingMargin" constant="229" id="645-p7-6v5"/>
                             <constraint firstItem="HYx-C0-vNO" firstAttribute="leading" secondItem="nOQ-pV-SXT" secondAttribute="leadingMargin" constant="241" id="6QX-7B-Dfs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w28-zv-VeI" secondAttribute="trailing" constant="229" id="9cf-23-YW3"/>
                             <constraint firstItem="w28-zv-VeI" firstAttribute="top" secondItem="VC7-xE-ZeU" secondAttribute="bottom" constant="25" id="BTZ-JD-Bnq"/>
-                            <constraint firstItem="HYx-C0-vNO" firstAttribute="top" secondItem="w28-zv-VeI" secondAttribute="bottom" constant="50" id="Rc7-aI-YOc"/>
+                            <constraint firstItem="HYx-C0-vNO" firstAttribute="top" secondItem="w28-zv-VeI" secondAttribute="bottom" constant="200" id="Rc7-aI-YOc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VC7-xE-ZeU" secondAttribute="trailing" constant="229" id="YZw-tb-L65"/>
                             <constraint firstItem="w28-zv-VeI" firstAttribute="leading" secondItem="nOQ-pV-SXT" secondAttribute="leadingMargin" constant="230" id="Z55-7o-cvs"/>
                             <constraint firstItem="VC7-xE-ZeU" firstAttribute="top" secondItem="v3l-Ge-VIk" secondAttribute="bottom" constant="25" id="a23-pv-Ylv"/>
                             <constraint firstItem="B7R-PB-2te" firstAttribute="top" secondItem="HYx-C0-vNO" secondAttribute="bottom" constant="25" id="aJf-Mw-6fw"/>
+                            <constraint firstItem="pfM-tE-elC" firstAttribute="centerX" secondItem="nOQ-pV-SXT" secondAttribute="centerX" id="aNN-SL-c4c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="B7R-PB-2te" secondAttribute="trailing" constant="196" id="hgO-ux-ww6"/>
                             <constraint firstItem="B7R-PB-2te" firstAttribute="centerX" secondItem="HYx-C0-vNO" secondAttribute="centerX" id="i5p-ir-eUr"/>
                             <constraint firstItem="HYx-C0-vNO" firstAttribute="centerX" secondItem="w28-zv-VeI" secondAttribute="centerX" id="rJv-Ra-T7q"/>
@@ -238,6 +244,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="feelsLikeLabel" destination="B7R-PB-2te" id="VPj-DT-Xq7"/>
+                        <outlet property="imageView" destination="pfM-tE-elC" id="uyi-DM-ihV"/>
                         <outlet property="temperatureDescriptionLabel" destination="VC7-xE-ZeU" id="F2b-gt-PER"/>
                         <outlet property="temperatureLabel" destination="w28-zv-VeI" id="Fxs-F2-fwq"/>
                     </connections>
@@ -285,5 +292,8 @@
             <point key="canvasLocation" x="204" y="1545"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rain" width="64" height="58"/>
+    </resources>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

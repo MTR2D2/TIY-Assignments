@@ -12,11 +12,13 @@ struct WeatherConditions
 {
     let temperature: String
     let feelsLike: String
+    let icon: String
     
-    init(temp: String, feelsLike: String)
+    init(temp: String, feelsLike: String, icon: String)
     {
         self.temperature = temp
         self.feelsLike = feelsLike
+        self.icon = icon
       
     }
     
@@ -25,6 +27,7 @@ struct WeatherConditions
         var weather: WeatherConditions
         var temperature = ""
         var feelsLike = ""
+        var icon = ""
         
         if results.count > 0
         {
@@ -33,10 +36,11 @@ struct WeatherConditions
                 temperature = String(results["temperature"] as! Double)
             
                 feelsLike = String(results["apparentTemperature"] as! Double)
- //           }
+                icon = results["icon"] as! String
+//            }
         }
         
-        weather = WeatherConditions(temp: temperature, feelsLike: feelsLike)
+        weather = WeatherConditions(temp: temperature, feelsLike: feelsLike, icon: icon)
         
         return weather
     }
