@@ -39,7 +39,7 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        let navigationBarColor = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 1.0)
+        let navigationBarColor = UIColor(hue: 0.166, saturation: 1.0, brightness: 1.0, alpha: 1.0)
         
         navigationController?.navigationBar.barTintColor = navigationBarColor
         tableView.backgroundColor = navigationBarColor
