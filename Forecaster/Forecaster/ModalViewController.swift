@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ModalViewController: UIViewController, UITextFieldDelegate
+class ModalViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate
 {
     
     @IBOutlet weak var zipcodeTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
+    
+    let locationManager = CLLocationManager()
+    let geocoder = CLGeocoder()
     
     var delegate: ModalViewControllerProtocol?
     
@@ -23,6 +27,8 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         
         zipcodeTextField.becomeFirstResponder()
         alertLabel.text = ""
+//        configureLocationManager()
+//        currentLocationButton.enabled = false
 
         // Do any additional setup after loading the view.
     }
@@ -65,6 +71,44 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         }
         return rc
     }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus)
+    {
+        if status == CLAuthorizationStatus.AuthorizedWhenInUse
+        {
+//            currentLocationButton.enabled = true
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
+    {
+        print(error.localizedDescription)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    
+    {
+        let location = locations.last
+        geocoder.reverseGeocodeLocation(location!, completionHandler: {(placemark: [CLPlacemark]?, error: NSError?) -> Void in
+            
+            if error != nil
+            {
+                print(error?.localizedDescription)
+            }
+            else
+            {
+                self.locationManager.stopUpdatingLocation()
+                let cityName = placemark?[0].locality
+                let zipCode = placemark?[0].postalCode
+                self.zipcodeTextField.text = zipCode!
+                let lat = location?.coordinate.latitude
+                let lng = location?.coordinate.longitude
+                let aCity = City(cityName: cityName!, zip: zipCode!, latitude: String(lat!), longitude: String(lng!), weather: nil)
+                self.delegate?.cityWasFound(aCity)
+            }
+    
+        })
+    }
 
 
 
@@ -76,6 +120,11 @@ class ModalViewController: UIViewController, UITextFieldDelegate
         delegate?.cancelButtonPressed(sender)
     }
     
+//    @IBAction func useLocationTapped(sender: UIButton)
+//    {
+//        locationManager.startUpdatingLocation()
+//    }
+    
     @IBAction func searchButtonPressed(sender: UIBarButtonItem)
     {
         if zipcodeTextField.text != ""
@@ -83,6 +132,25 @@ class ModalViewController: UIViewController, UITextFieldDelegate
             delegate?.zipcodeWasEntered(zipcodeTextField.text!)
             self.dismissViewControllerAnimated(true, completion: nil)
 
+        }
+    }
+    
+    // MARK: - CLLocation related methods
+    
+    func configureLocationManager()
+    {
+        if CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Denied && CLLocationManager.authorizationStatus() != CLAuthorizationStatus.Restricted
+        {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.NotDetermined
+            {
+                locationManager.requestWhenInUseAuthorization()
+            }
+            else
+            {
+//                currentLocationButton.enabled = true
+            }
         }
     }
 }

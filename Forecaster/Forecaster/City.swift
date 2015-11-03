@@ -8,17 +8,25 @@
 
 import Foundation
 
+//NSCoding Constants
+let kNameKey = "name"
+let kZipCodeKey = "zipCode"
+let kLatitudeKey = "latitude"
+let kLongitudeKey = "longitude"
+
 class City
 {
     let cityName: String
+    let zipCode: String
     let latitude: String
     let longitude: String
     
     var weather: WeatherConditions?
     
-    init(cityName: String, latitude: String, longitude: String, weather: WeatherConditions?)
+    init(cityName: String, zip: String, latitude: String, longitude: String, weather: WeatherConditions?)
     {
         self.cityName = cityName
+        self.zipCode = zip
         self.latitude = latitude
         self.longitude = longitude
         
@@ -68,8 +76,28 @@ class City
             }
             
         }
-        city = City(cityName: cityName, latitude: latStr, longitude: lngStr, weather: nil)
+        city = City(cityName: cityName, zip: "", latitude: latStr, longitude: lngStr, weather: nil)
         return city
+    }
+    
+    // MARK: - NSCoding
+    
+    required convenience init?(coder aDecoder: NSCoder)
+    {
+        guard let name = aDecoder.decodeObjectForKey(kNameKey) as? String,
+        let zipCode = aDecoder.decodeObjectForKey(kZipCodeKey) as? String,
+        let lat = aDecoder.decodeObjectForKey(kLatitudeKey) as? String,
+        let lng = aDecoder.decodeObjectForKey(kLongitudeKey) as? String
+            else { return nil}
+        self.init(cityName: name, zip: zipCode, latitude: lat , longitude: lng, weather: nil)
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder)
+    {
+        aCoder.encodeObject(self.cityName, forKey: kNameKey)
+        aCoder.encodeObject(self.zipCode, forKey: kZipCodeKey)
+        aCoder.encodeObject(self.latitude, forKey: kLatitudeKey)
+        aCoder.encodeObject(self.longitude, forKey: kLongitudeKey)
     }
 
 }

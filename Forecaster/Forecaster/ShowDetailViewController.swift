@@ -27,7 +27,7 @@ class ShowDetailViewController: UIViewController
         temperatureDescriptionLabel.text = "The Temperature in \(city!.cityName) is:"
         temperatureLabel.text = "\(city!.weather!.temperature)℉"
         feelsLikeLabel.text = "\(city!.weather!.feelsLike)℉"
-        imageView.image = UIImage(named: "clear-day.png")
+        imageView.image = UIImage(named: "\(city!.weather!.icon)")
 
         let color = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 0.0)
         navigationController?.navigationBar.barTintColor = color

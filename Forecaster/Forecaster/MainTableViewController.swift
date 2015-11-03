@@ -8,6 +8,9 @@
 
 import UIKit
 
+//NSCoding Constants
+let kCitiesKey = "cities"
+
 protocol ModalViewControllerProtocol
 {
     func cancelButtonPressed(sender: UIBarButtonItem)
@@ -39,10 +42,9 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        let navigationBarColor = UIColor(hue: 0.166, saturation: 1.0, brightness: 1.0, alpha: 1.0)
-        
-        navigationController?.navigationBar.barTintColor = navigationBarColor
-        tableView.backgroundColor = navigationBarColor
+        let color = UIColor(hue: 0.166, saturation: 0.5, brightness: 1.0, alpha: 0.0)
+        navigationController?.navigationBar.barTintColor = color
+//        tableView.backgroundColor = navigationBarColor
         
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
@@ -87,8 +89,6 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
         {
             cell.temperatureLabel?.text = "\(city.weather!.temperature)℉"
         }
-        
-//        + ℉
         
         // Configure the cell...
 
@@ -228,6 +228,28 @@ class MainTableViewController: UITableViewController, ModalViewControllerProtoco
             UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             // turn the indicator toggle back off
         })
+    }
+    
+    // MARK: - Misc.
+    
+    func loadCityData()
+    {
+        if let data = NSUserDefaults.standardUserDefaults().objectForKey(kCitiesKey) as? NSData
+        {
+            if let savedCities = NSKeyedUnarchiver.unarchiveObjectWithData(data) as? [City]
+            {
+                cities = savedCities
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    
+    
+    func saveCityData()
+    {
+        let cityData = NSKeyedArchiver.archivedDataWithRootObject(cities)
+        NSUserDefaults.standardUserDefaults().setObject(cityData, forKey: kCitiesKey)
     }
 
 }
