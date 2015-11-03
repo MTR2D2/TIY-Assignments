@@ -10,6 +10,9 @@ import UIKit
 import MapKit
 import CoreLocation
 
+// NSCoding Constants
+let kLocationsKey = "locations"
+
 class ViewController: UIViewController, CLLocationManagerDelegate
 {
     @IBOutlet weak var currentLocationButton: UIButton!
@@ -17,12 +20,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate
     
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
+    
+    var locations: [Location]?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         configureLocationManager()
         currentLocationButton.enabled = false
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         
 //        geocoder.geocodeAddressString("Lakeland, FL", completionHandler: {(placemarks: [CLPlacemark]?, error: NSError?) -> Void in
 //            if let placemark = placemarks?[0]
@@ -56,6 +63,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             else
             {
                 currentLocationButton.enabled = true
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+
             }
         }
     }
@@ -65,6 +74,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate
         if status == CLAuthorizationStatus.AuthorizedWhenInUse
         {
             currentLocationButton.enabled = true
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+
         }
     }
     
@@ -85,12 +96,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate
             else
             {
                 self.locationManager.stopUpdatingLocation()
+                let name = placemark?[0].locality
+                let lat = location?.coordinate.latitude
+                let lng = location?.coordinate.longitude
+                let aPin = Location(name: name!, lat: lat!, lng: lng!)
+                self.locationWasPinned(aPin)
                 
-                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+
             }
         })
     }
+    
+    func locationWasPinned(aPin: Location)
+    {
+        if locations == nil
+        {
+            locations = [Location]()
+        }
+        else
+        {
+            locations?.append(aPin)
+            
+            let annotation = MKPointAnnotation()
+            annotation.coordinate.latitude = aPin.latitude
+            annotation.coordinate.longitude = aPin.longitude
+            annotation.title = aPin.name
+            
+            mapView.showAnnotations([annotation], animated: true)
+        }
+    }
 
+    func updateMapLocation()
+    {
+//        switch
+//        {
+//            if case
+//        }
+    }
     
     // MARK: - Action Handlers
     
