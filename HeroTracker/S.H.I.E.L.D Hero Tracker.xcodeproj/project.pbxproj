@@ -48,6 +48,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C09BB1B1BEAE0AD00F16B38 /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				4CF61B601BCC3497002EF03D /* Assets.xcassets */,
+				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,
+				4CF61B651BCC3497002EF03D /* Info.plist */,
+				4CF61B711BCC3840002EF03D /* heroes.json */,
+				4CF61B751BCD1E2A002EF03D /* Iron-Man.png */,
+			);
+			name = Extras;
+			sourceTree = "<group>";
+		};
 		4CF61B4D1BCC3497002EF03D = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +86,7 @@
 				4CF61B6D1BCC358C002EF03D /* HeroTableViewController.swift */,
 				4CE8477F1BCEE45D00BDF588 /* HeroDetailViewController.swift */,
 				4CF61B5D1BCC3497002EF03D /* Main.storyboard */,
-				4CF61B601BCC3497002EF03D /* Assets.xcassets */,
-				4CF61B621BCC3497002EF03D /* LaunchScreen.storyboard */,
-				4CF61B651BCC3497002EF03D /* Info.plist */,
-				4CF61B711BCC3840002EF03D /* heroes.json */,
-				4CF61B751BCD1E2A002EF03D /* Iron-Man.png */,
+				4C09BB1B1BEAE0AD00F16B38 /* Extras */,
 			);
 			path = "S.H.I.E.L.D Hero Tracker";
 			sourceTree = "<group>";
