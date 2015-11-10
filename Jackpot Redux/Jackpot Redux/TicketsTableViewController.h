@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TicketsTableViewController.h
 //  Jackpot Redux
 //
 //  Created by Michael Reynolds on 11/10/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface TicketsTableViewController : UITableViewController
 
 @end
-
