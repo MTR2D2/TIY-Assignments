@@ -53,9 +53,15 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TicketCell" forIndexPath:indexPath];
     
+
+    
     Ticket *aTicket = tickets[indexPath.row];
-    NSString *ticketString = [NSString stringWithFormat: @"%@", aTicket.numbers];
+//    NSString *ticketString = [NSString stringWithFormat: @"%@", aTicket.numbers];
+    NSString *ticketString = [self formatTicket:aTicket.numbers];
+    
     cell.textLabel.text = ticketString;
+    
+//    cell.textLabel.text = ticketString;
     
     return cell;
 }
@@ -109,6 +115,18 @@
     Ticket *aTicket = [Ticket makeTicket];
     [tickets addObject:aTicket];
     [self.tableView reloadData];
+}
+
+- (NSString *)formatTicket:(NSArray *)numbers
+{
+    NSString *ticketStr;
+    ticketStr = [[NSString alloc] init];
+    for(id number in numbers)
+    {
+        NSString *numberAsStr = [NSString stringWithFormat: @"%@ ", number];
+        ticketStr = [ticketStr stringByAppendingString:numberAsStr];
+    }
+    return ticketStr;
 }
 
 #pragma mark - Action Handlers
