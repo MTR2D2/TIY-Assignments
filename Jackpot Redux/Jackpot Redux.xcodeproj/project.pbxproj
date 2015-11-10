@@ -14,6 +14,7 @@
 		4C45D6A61BF266E3001BDA49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C45D6A41BF266E3001BDA49 /* LaunchScreen.storyboard */; };
 		4C45D6AF1BF269FC001BDA49 /* TicketsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C45D6AE1BF269FC001BDA49 /* TicketsTableViewController.m */; };
 		4C45D6B51BF26B30001BDA49 /* Ticket.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C45D6B41BF26B30001BDA49 /* Ticket.m */; };
+		4C823F931BF284360082B2EC /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C823F921BF284360082B2EC /* PickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		4C45D6AE1BF269FC001BDA49 /* TicketsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketsTableViewController.m; sourceTree = "<group>"; };
 		4C45D6B31BF26B30001BDA49 /* Ticket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ticket.h; sourceTree = "<group>"; };
 		4C45D6B41BF26B30001BDA49 /* Ticket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ticket.m; sourceTree = "<group>"; };
+		4C823F911BF284360082B2EC /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		4C823F921BF284360082B2EC /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +66,8 @@
 			children = (
 				4C45D69A1BF266E3001BDA49 /* AppDelegate.m */,
 				4C45D6AE1BF269FC001BDA49 /* TicketsTableViewController.m */,
-				4C45D6B31BF26B30001BDA49 /* Ticket.h */,
 				4C45D6B41BF26B30001BDA49 /* Ticket.m */,
+				4C823F921BF284360082B2EC /* PickerViewController.m */,
 				4C45D69F1BF266E3001BDA49 /* Main.storyboard */,
 				63F7EF7B1BF2683200921E6B /* headers */,
 				63F7EF7A1BF2682800921E6B /* other */,
@@ -96,6 +99,8 @@
 			children = (
 				4C45D6991BF266E3001BDA49 /* AppDelegate.h */,
 				4C45D6AD1BF269FC001BDA49 /* TicketsTableViewController.h */,
+				4C45D6B31BF26B30001BDA49 /* Ticket.h */,
+				4C823F911BF284360082B2EC /* PickerViewController.h */,
 			);
 			name = headers;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			files = (
 				4C45D69B1BF266E3001BDA49 /* AppDelegate.m in Sources */,
 				4C45D6981BF266E3001BDA49 /* main.m in Sources */,
+				4C823F931BF284360082B2EC /* PickerViewController.m in Sources */,
 				4C45D6AF1BF269FC001BDA49 /* TicketsTableViewController.m in Sources */,
 				4C45D6B51BF26B30001BDA49 /* Ticket.m in Sources */,
 			);
