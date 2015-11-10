@@ -10,7 +10,7 @@
         <!--Winning Number View Controller-->
         <scene sceneID="fB5-wm-DDE">
             <objects>
-                <viewController id="JwN-Th-kwY" customClass="WinningNumberViewController" customModule="jackpot" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JwN-Th-kwY" customClass="WinningNumberViewController" customModule="Jackpot_Redux" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hTk-0c-314"/>
                         <viewControllerLayoutGuide type="bottom" id="oe8-VT-cMS"/>
@@ -66,7 +66,7 @@
         <!--Lottery Table View Controller-->
         <scene sceneID="Fdl-od-u2m">
             <objects>
-                <tableViewController id="M7h-Ml-Jhm" customClass="LotteryTableViewController" customModule="jackpot" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="M7h-Ml-Jhm" customClass="LotteryTableViewController" customModule="Jackpot_Redux" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ju-Jo-F1s">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
