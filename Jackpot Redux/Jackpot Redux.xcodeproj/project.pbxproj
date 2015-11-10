@@ -58,14 +58,11 @@
 		4C45D6951BF266E3001BDA49 /* Jackpot Redux */ = {
 			isa = PBXGroup;
 			children = (
-				4C45D6991BF266E3001BDA49 /* AppDelegate.h */,
 				4C45D69A1BF266E3001BDA49 /* AppDelegate.m */,
-				4C45D69C1BF266E3001BDA49 /* ViewController.h */,
 				4C45D69D1BF266E3001BDA49 /* ViewController.m */,
 				4C45D69F1BF266E3001BDA49 /* Main.storyboard */,
-				4C45D6A21BF266E3001BDA49 /* Assets.xcassets */,
-				4C45D6A41BF266E3001BDA49 /* LaunchScreen.storyboard */,
-				4C45D6A71BF266E3001BDA49 /* Info.plist */,
+				63F7EF7B1BF2683200921E6B /* headers */,
+				63F7EF7A1BF2682800921E6B /* other */,
 				4C45D6961BF266E3001BDA49 /* Supporting Files */,
 			);
 			path = "Jackpot Redux";
@@ -77,6 +74,25 @@
 				4C45D6971BF266E3001BDA49 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		63F7EF7A1BF2682800921E6B /* other */ = {
+			isa = PBXGroup;
+			children = (
+				4C45D6A21BF266E3001BDA49 /* Assets.xcassets */,
+				4C45D6A41BF266E3001BDA49 /* LaunchScreen.storyboard */,
+				4C45D6A71BF266E3001BDA49 /* Info.plist */,
+			);
+			name = other;
+			sourceTree = "<group>";
+		};
+		63F7EF7B1BF2683200921E6B /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				4C45D6991BF266E3001BDA49 /* AppDelegate.h */,
+				4C45D69C1BF266E3001BDA49 /* ViewController.h */,
+			);
+			name = headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +317,7 @@
 				4C45D6AC1BF266E3001BDA49 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
