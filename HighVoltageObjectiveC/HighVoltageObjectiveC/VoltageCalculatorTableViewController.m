@@ -7,11 +7,20 @@
 //
 
 #import "VoltageCalculatorTableViewController.h"
+#import "ValuesTypesTableViewController.h"
+#import "ElectricityCell.h"
 
 @interface VoltageCalculatorTableViewController ()
 {
-    NSMutableArray *tabledata;
+    NSArray *allElectricityTypes;
+    NSMutableArray *shownElectricityTypes;
+    NSMutableArray *remainingElectrictyTypes;
 }
+
+@property (weak, nonatomic) IBOutlet UITextField *currentTextField;
+
+
+
 
 @end
 
@@ -23,7 +32,11 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor redColor];
+   self.title = @"High Voltage";
+    allElectricityTypes = @[@"AMPS", @"WATTS", @"VOLTS", @"OHMS"];
+    remainingElectrictyTypes = [[NSMutableArray alloc] initWithArray:allElectricityTypes];
+    shownElectricityTypes = [[NSMutableArray alloc] init];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -46,11 +59,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [tabledata count];
+    return [shownElectricityTypes count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ResistanceCell" forIndexPath:indexPath];
     
     // Configure the cell...
     
@@ -91,14 +105,36 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ValuesTypesTableViewController *valuesVC = segue.destinationViewController;
+    UIPopoverPresentationController *controller = valuesVC.popoverPresentationController;
+    controller.delegate = self;
+    valuesVC.delegate = self;
+    
+    valuesVC.valueTypes = remainingElectrictyTypes;
+    
+    
+    valuesVC.modalPresentationStyle = UIModalPresentationPopover;
+    valuesVC.preferredContentSize = CGSizeMake(400, 200);
+    
 }
-*/
+
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
+{
+    return UIModalPresentationNone;
+}
+#pragma mark - Value Type Delegate
+
+- (void)valueTypeWasChosen:(NSString *)chosenValueType;
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 @end

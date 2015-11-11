@@ -14,6 +14,8 @@
 		4C823FE11BF3BC6E0082B2EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C823FDF1BF3BC6E0082B2EC /* LaunchScreen.storyboard */; };
 		4C823FEA1BF3BE550082B2EC /* VoltageCalculatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C823FE91BF3BE550082B2EC /* VoltageCalculatorTableViewController.m */; };
 		4C823FED1BF3BE700082B2EC /* ValuesTypesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C823FEC1BF3BE700082B2EC /* ValuesTypesTableViewController.m */; };
+		5DCDEE301BF3EAB2002C7EA1 /* ElectricityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCDEE2F1BF3EAB2002C7EA1 /* ElectricityCell.m */; };
+		5DCDEE331BF3EB03002C7EA1 /* Brain.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCDEE321BF3EB03002C7EA1 /* Brain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,10 @@
 		4C823FE91BF3BE550082B2EC /* VoltageCalculatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoltageCalculatorTableViewController.m; sourceTree = "<group>"; };
 		4C823FEB1BF3BE700082B2EC /* ValuesTypesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValuesTypesTableViewController.h; sourceTree = "<group>"; };
 		4C823FEC1BF3BE700082B2EC /* ValuesTypesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValuesTypesTableViewController.m; sourceTree = "<group>"; };
+		5DCDEE2E1BF3EAB2002C7EA1 /* ElectricityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricityCell.h; sourceTree = "<group>"; };
+		5DCDEE2F1BF3EAB2002C7EA1 /* ElectricityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricityCell.m; sourceTree = "<group>"; };
+		5DCDEE311BF3EB03002C7EA1 /* Brain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brain.h; sourceTree = "<group>"; };
+		5DCDEE321BF3EB03002C7EA1 /* Brain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 				4C823FE91BF3BE550082B2EC /* VoltageCalculatorTableViewController.m */,
 				4C823FEB1BF3BE700082B2EC /* ValuesTypesTableViewController.h */,
 				4C823FEC1BF3BE700082B2EC /* ValuesTypesTableViewController.m */,
+				5DCDEE351BF3EF6F002C7EA1 /* VoltageCalculatorCell */,
+				5DCDEE341BF3EF4D002C7EA1 /* Brain */,
 			);
 			path = HighVoltageObjectiveC;
 			sourceTree = "<group>";
@@ -82,6 +90,24 @@
 				4C823FD21BF3BC6E0082B2EC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5DCDEE341BF3EF4D002C7EA1 /* Brain */ = {
+			isa = PBXGroup;
+			children = (
+				5DCDEE311BF3EB03002C7EA1 /* Brain.h */,
+				5DCDEE321BF3EB03002C7EA1 /* Brain.m */,
+			);
+			name = Brain;
+			sourceTree = "<group>";
+		};
+		5DCDEE351BF3EF6F002C7EA1 /* VoltageCalculatorCell */ = {
+			isa = PBXGroup;
+			children = (
+				5DCDEE2E1BF3EAB2002C7EA1 /* ElectricityCell.h */,
+				5DCDEE2F1BF3EAB2002C7EA1 /* ElectricityCell.m */,
+			);
+			name = VoltageCalculatorCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCDEE331BF3EB03002C7EA1 /* Brain.m in Sources */,
+				5DCDEE301BF3EAB2002C7EA1 /* ElectricityCell.m in Sources */,
 				4C823FEA1BF3BE550082B2EC /* VoltageCalculatorTableViewController.m in Sources */,
 				4C823FD61BF3BC6E0082B2EC /* AppDelegate.m in Sources */,
 				4C823FED1BF3BE700082B2EC /* ValuesTypesTableViewController.m in Sources */,
@@ -307,6 +335,7 @@
 				4C823FE71BF3BC6E0082B2EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

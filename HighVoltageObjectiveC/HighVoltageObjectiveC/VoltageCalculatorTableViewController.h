@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VoltageCalculatorTableViewController : UITableViewController
+@protocol ValueProtocol
+
+- (void)valueTypeWasChosen:(NSString *)chosenValueType;
+
+@end
+@interface VoltageCalculatorTableViewController : UITableViewController <ValueProtocol, UIPopoverPresentationControllerDelegate>
+
+
 
 @end

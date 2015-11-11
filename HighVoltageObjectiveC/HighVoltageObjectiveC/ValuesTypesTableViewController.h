@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VoltageCalculatorTableViewController.h"
 
 @interface ValuesTypesTableViewController : UITableViewController
 
+@property (nonatomic) id<ValueProtocol> delegate;
+@property (nonatomic) NSMutableArray *valueTypes;
 @end
