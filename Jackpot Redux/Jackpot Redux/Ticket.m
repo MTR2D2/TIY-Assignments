@@ -91,7 +91,7 @@
         self.isWinner = YES;        
     }
     
-    NSLog(@"tick prz amt %d", matchingNumbers);
+//    NSLog(@"tick prz amt %d", matchingNumbers);
     return prize;
 }
 

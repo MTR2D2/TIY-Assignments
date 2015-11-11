@@ -55,7 +55,7 @@
     [super viewWillDisappear:animated];
     winningNumbers = [self getWinningNumbers];
     
-    NSLog(@"%@", winningNumbers);
+//    NSLog(@"%@", winningNumbers);
     
     [self.delegate winningNumbersWereChosen: winningNumbers];
 }
@@ -135,8 +135,6 @@
 {
     self.errorLabel.text = @"";
     
-    NSInteger allNumbers = 0;
-    
     NSArray *numStrArr = @[
                            self.com0.text,
                            self.com1.text,
@@ -148,6 +146,8 @@
     
     NSOrderedSet *numStrSet = [NSOrderedSet orderedSetWithArray:numStrArr];
     
+    NSInteger allNumbers = 0;
+
     for(NSString *str in numStrArr)
     {
         if([str integerValue] > 0)
@@ -174,7 +174,7 @@
     }
     else
     {
-        self.errorLabel.text = @"Enter valid ticket";
+        self.errorLabel.text = @"Enter valid winning ticket";
     }
 }
 
