@@ -14,7 +14,7 @@
 {
     Ticket *aTicket = [[Ticket alloc] init];
     NSMutableArray *numbers = [[NSMutableArray alloc] init];
-    BOOL willLoop = true;
+    BOOL willLoop = YES;
     while(willLoop)
     {
         [numbers removeAllObjects];
@@ -28,7 +28,7 @@
         NSSet *setFromArray = [NSSet setWithArray:numbers];
         if(setFromArray.count == numbers.count)
         {
-            willLoop = false;
+            willLoop = NO;
         }
     }
     aTicket.numbers = numbers;
@@ -37,15 +37,13 @@
 
 - (BOOL)noDuplicates:(NSMutableArray *)arrayToTest
 {
+    BOOL rc = NO;
     NSSet *setFromArray = [NSSet setWithArray:arrayToTest];
     if(setFromArray.count == arrayToTest.count)
     {
-        return true;
+        rc = YES;
     }
-    else
-    {
-        return false;
-    }
+    return rc;
 }
 
 - (NSString *)checkWinningTicket:(NSMutableArray *)winningTicketNumbers
