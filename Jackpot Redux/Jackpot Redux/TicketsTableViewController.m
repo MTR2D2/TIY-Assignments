@@ -79,17 +79,17 @@
     pickerVC.preferredContentSize = CGSizeMake(400, 200);
 }
 
--(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
 {
     return UIModalPresentationNone;
 }
 
--(void)viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [self.tableView reloadData];
 }
 
--(void)newTicket
+- (void)newTicket
 {
     Ticket *aTicket = [Ticket newTicket];
     [tickets addObject:aTicket];
