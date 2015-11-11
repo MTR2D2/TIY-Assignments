@@ -8,10 +8,12 @@
 
 #import "TicketsTableViewController.h"
 #import "Ticket.h"
+#import "PickerViewController.h"
 
 @interface TicketsTableViewController ()
 {
     NSMutableArray *tickets;
+    NSMutableArray *winningTicket;
 }
 
 @end
@@ -23,12 +25,6 @@
     [super viewDidLoad];
     
     tickets = [[NSMutableArray alloc] init];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -53,66 +49,49 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TicketCell" forIndexPath:indexPath];
     
-
-    
     Ticket *aTicket = tickets[indexPath.row];
-//    NSString *ticketString = [NSString stringWithFormat: @"%@", aTicket.numbers];
     NSString *ticketString = [self formatTicket:aTicket.numbers];
     
     cell.textLabel.text = ticketString;
-    
-//    cell.textLabel.text = ticketString;
-    
+    cell.detailTextLabel.text = [aTicket checkWinningTicket:winningTicket];
+    if(aTicket.isWinner)
+    {
+        cell.backgroundColor = [UIColor greenColor];
+    }
+    else
+    {
+        cell.backgroundColor = [UIColor whiteColor];
+    }
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
--(void)makeTicket
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    Ticket *aTicket = [Ticket makeTicket];
+    PickerViewController *pickerVC = segue.destinationViewController;
+    UIPopoverPresentationController *controller = pickerVC.popoverPresentationController;
+    controller.delegate = self;
+    pickerVC.delegate = self;
+    
+    pickerVC.modalPresentationStyle = UIModalPresentationPopover;
+    pickerVC.preferredContentSize = CGSizeMake(400, 200);
+}
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller
+{
+    return UIModalPresentationNone;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.tableView reloadData];
+}
+
+-(void)newTicket
+{
+    Ticket *aTicket = [Ticket newTicket];
     [tickets addObject:aTicket];
     [self.tableView reloadData];
 }
@@ -129,11 +108,22 @@
     return ticketStr;
 }
 
+- (void)winningNumbersWereChosen:(NSMutableArray *)winningNumbers;
+{
+    winningTicket = winningNumbers;
+    
+    [self.tableView reloadData];
+}
+
 #pragma mark - Action Handlers
 
 - (IBAction)addButtonTapped:(UIBarButtonItem *)sender
 {
-    [self makeTicket];
+    [self newTicket];
+}
+- (IBAction)refreshButtonTapped:(UIBarButtonItem *)sender
+{
+    [self.tableView reloadData];
 }
 
 

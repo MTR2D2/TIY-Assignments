@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TicketsTableViewController : UITableViewController
+@protocol PickerProtocol
+
+- (void)winningNumbersWereChosen:(NSMutableArray *)winningNumbers;
+
+@end
+
+@interface TicketsTableViewController : UITableViewController <PickerProtocol, UIPopoverPresentationControllerDelegate>
 
 @end

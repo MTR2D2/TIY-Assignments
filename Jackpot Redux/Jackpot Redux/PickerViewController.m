@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UIPickerView *picker;
 
-
 @end
 
 @implementation PickerViewController
@@ -24,6 +23,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    for(int x = 5; x >= 0; x--)
+    {
+        int randomRow = arc4random() % 52;
+        [self.picker selectRow:randomRow inComponent:x animated:YES];
+    }
     
     winningNumbers = [[NSMutableArray alloc] init];
 }
@@ -34,32 +39,43 @@
     // Dispose of any resources that can be recreated.
 }
 
--(int)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    winningNumbers = [self getWinningNumbers];
+//    NSLog(winningNumbers);
+    [self.delegate winningNumbersWereChosen: winningNumbers];
+}
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 6;
 }
 
--(int)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return 53;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    NSString *rowAsStr = [NSString stringWithFormat:@"%d", row];
+    NSString *rowAsStr = [NSString stringWithFormat:@"%ld", (long)row];
     return rowAsStr;
 }
 
--(NSArray *)getWinningNumbers
+-(NSMutableArray *)getWinningNumbers
 {
-    NSInteger x = 6;
-    while (x > 0)
+    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+    NSInteger x = 5;
+    while (x >= 0)
     {
         NSInteger selectedNumber = [self.picker selectedRowInComponent:x];
         NSNumber *selectedNSNumber = [NSNumber numberWithInteger:selectedNumber];
-        [winningNumbers addObject:selectedNSNumber];
+        [tempArray addObject:selectedNSNumber];
+        
+        x -= 1;
     }
-    return winningNumbers;
+    return tempArray;
 }
 /*
 #pragma mark - Navigation

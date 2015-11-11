@@ -12,7 +12,10 @@
 
 @property (nonatomic) NSArray *numbers;
 @property (nonatomic) NSArray *winningNumbers;
+@property (nonatomic) NSString *prizeAmount;
+@property (nonatomic) BOOL isWinner;
 
-+ (Ticket *)makeTicket;
++ (Ticket *)newTicket;
+- (NSString *)checkWinningTicket:(NSMutableArray *)winningTicketNumbers;
 
 @end
