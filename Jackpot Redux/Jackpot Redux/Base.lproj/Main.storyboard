@@ -132,7 +132,11 @@
                                     <action selector="addButtonTapped:" destination="M7h-Ml-Jhm" id="7LT-lo-mPY"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="stop" id="nPf-un-3yp"/>
+                            <barButtonItem systemItem="stop" id="nPf-un-3yp">
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="M7h-Ml-Jhm" id="uzQ-8b-vRY"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
