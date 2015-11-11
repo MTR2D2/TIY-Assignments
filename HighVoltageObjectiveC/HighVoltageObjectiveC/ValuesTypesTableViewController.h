@@ -13,4 +13,5 @@
 
 @property (nonatomic) id<ValueProtocol> delegate;
 @property (nonatomic) NSMutableArray *valueTypes;
+
 @end

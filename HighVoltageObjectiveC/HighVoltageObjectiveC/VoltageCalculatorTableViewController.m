@@ -17,11 +17,6 @@
     NSMutableArray *remainingElectrictyTypes;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *currentTextField;
-
-
-
-
 @end
 
 
@@ -111,6 +106,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+
     ValuesTypesTableViewController *valuesVC = segue.destinationViewController;
     UIPopoverPresentationController *controller = valuesVC.popoverPresentationController;
     controller.delegate = self;
@@ -118,9 +114,8 @@
     
     valuesVC.valueTypes = remainingElectrictyTypes;
     
-    
     valuesVC.modalPresentationStyle = UIModalPresentationPopover;
-    valuesVC.preferredContentSize = CGSizeMake(400, 200);
+    valuesVC.preferredContentSize = CGSizeMake(600, 400);
     
 }
 
@@ -133,6 +128,7 @@
 - (void)valueTypeWasChosen:(NSString *)chosenValueType;
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+//    shownElectricityTypes.addObject(chosenValueType)
 }
 
 

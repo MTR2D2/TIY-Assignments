@@ -10,5 +10,9 @@
 
 @interface ElectricityCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UITextField *currentTextField;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
+
 
 @end

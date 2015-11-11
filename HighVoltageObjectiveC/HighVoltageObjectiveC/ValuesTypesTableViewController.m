@@ -20,7 +20,6 @@
     [super viewDidLoad];
     
     
-    
     _valueTypes = [[NSMutableArray alloc]init];
     
     
@@ -35,8 +34,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 #pragma mark - Table view data source
 

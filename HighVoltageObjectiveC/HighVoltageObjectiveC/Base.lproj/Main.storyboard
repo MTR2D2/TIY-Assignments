@@ -15,7 +15,7 @@
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResistanceCell" id="Rs0-L7-CzY" customClass="ResistanceCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResistanceCell" id="Rs0-L7-CzY" customClass="ElectricityCell">
                                 <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rs0-L7-CzY" id="c7g-vk-jXc">
@@ -47,6 +47,10 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="currentTextField" destination="W3K-GM-ys9" id="Uug-FN-y4L"/>
+                                    <outlet property="valueLabel" destination="Xu1-F5-NlJ" id="t1R-Xw-y2r"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
