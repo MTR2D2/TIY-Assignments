@@ -19,10 +19,6 @@
 {
     [super viewDidLoad];
     
-    
-    _valueTypes = [[NSMutableArray alloc]init];
-    
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -30,7 +26,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -39,13 +36,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_valueTypes count];
+    return [self.valueTypes count];
 }
 
 
@@ -53,14 +49,14 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TypeCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    NSString *aValue = _valueTypes[indexPath.row];
+    NSString *aValue = self.valueTypes[indexPath.row];
     cell.textLabel.text = [aValue description];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *valueType = _valueTypes[indexPath.row];
+    NSString *valueType = self.valueTypes[indexPath.row];
     [self.delegate valueTypeWasChosen: valueType];
 }
 

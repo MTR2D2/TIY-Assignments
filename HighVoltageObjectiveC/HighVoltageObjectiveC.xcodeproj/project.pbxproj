@@ -67,12 +67,12 @@
 		4C823FD01BF3BC6E0082B2EC /* HighVoltageObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				4C823FDA1BF3BC6E0082B2EC /* Main.storyboard */,
-				4C823FD11BF3BC6E0082B2EC /* Supporting Files */,
 				4C823FE81BF3BE550082B2EC /* VoltageCalculatorTableViewController.h */,
 				4C823FE91BF3BE550082B2EC /* VoltageCalculatorTableViewController.m */,
 				4C823FEB1BF3BE700082B2EC /* ValuesTypesTableViewController.h */,
 				4C823FEC1BF3BE700082B2EC /* ValuesTypesTableViewController.m */,
+				4C823FDA1BF3BC6E0082B2EC /* Main.storyboard */,
+				4C823FD11BF3BC6E0082B2EC /* Supporting Files */,
 				5DCDEE351BF3EF6F002C7EA1 /* VoltageCalculatorCell */,
 				5DCDEE341BF3EF4D002C7EA1 /* Brain */,
 			);

@@ -13,6 +13,7 @@
 - (void)valueTypeWasChosen:(NSString *)chosenValueType;
 
 @end
+
 @interface VoltageCalculatorTableViewController : UITableViewController <ValueProtocol, UIPopoverPresentationControllerDelegate>
 
 

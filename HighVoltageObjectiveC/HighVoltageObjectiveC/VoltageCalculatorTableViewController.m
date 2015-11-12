@@ -20,7 +20,6 @@
 @end
 
 
-
 @implementation VoltageCalculatorTableViewController
 
 - (void)viewDidLoad
@@ -123,6 +122,7 @@
 {
     return UIModalPresentationNone;
 }
+
 #pragma mark - Value Type Delegate
 
 - (void)valueTypeWasChosen:(NSString *)chosenValueType;
