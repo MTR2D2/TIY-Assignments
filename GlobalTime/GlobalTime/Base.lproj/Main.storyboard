@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-5n-UQ8">
-                                            <rect key="frame" x="261" y="64" width="78" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-5n-UQ8">
+                                            <rect key="frame" x="116" y="64" width="368" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -47,6 +47,7 @@
                                         <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="IFz-eh-bdK"/>
                                         <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" id="K8u-bm-EzY"/>
                                         <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" constant="24" id="SlV-4G-sTb"/>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="leading" secondItem="ZbG-7U-qQN" secondAttribute="trailing" constant="8" id="d5X-hO-cV1"/>
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="leading" secondItem="ObX-e2-rFe" secondAttribute="leading" constant="8" id="flv-MC-EPy"/>
                                         <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" constant="53" id="gZN-ii-LN7"/>
                                     </constraints>
@@ -74,7 +75,7 @@
                     <navigationItem key="navigationItem" id="jYw-RU-pZm">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IK2-oh-Keu">
                             <connections>
-                                <segue destination="f6d-J0-yf1" kind="presentation" id="W0B-hQ-kbd"/>
+                                <segue destination="f6d-J0-yf1" kind="presentation" identifier="ModalSegue" id="W0B-hQ-kbd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

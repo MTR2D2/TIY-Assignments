@@ -18,6 +18,9 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
 {
     var visibleCards = [String]()
     
+    var allTimeZones = NSTimeZone.knownTimeZoneNames()
+
+    
     @IBOutlet weak var addButton: UIBarButtonItem!
     
 
@@ -25,8 +28,6 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     {
         super.viewDidLoad()
         
-        visibleCards.append("Example Timezone")
-
          self.clearsSelectionOnViewWillAppear = false
          self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
@@ -54,9 +55,12 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TimeZoneCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("TimeZoneCell", forIndexPath: indexPath) as! TimeZoneCell
 
         // Configure the cell...
+        let zoneName = visibleCards[indexPath.row]
+        cell.zoneLabel.text = zoneName
+        cell.clock.timezone = NSTimeZone(name: zoneName)
 
         return cell
     }
@@ -108,17 +112,22 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     func zoneWasChosen(chosenZone: String)
     {
         visibleCards.append(chosenZone)
+        tableView!.reloadData()
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "ModalSegue"
+        {
+            let nav = segue.destinationViewController as! UINavigationController
+            let destVC = nav.topViewController as! NewTimeZoneTableViewController
+            destVC.visibleTimeZones = allTimeZones
+            destVC.delegate = self
+        }
+
     }
-    */
 
 }

@@ -12,15 +12,13 @@ class NewTimeZoneTableViewController: UITableViewController
 {
     var delegate: TimeZoneTableViewControllerDelegate?
 
-    var visibleTimeZones = [String]()
-
+    var visibleTimeZones: [String]?
+    
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        visibleTimeZones = NSTimeZone.knownTimeZoneNames()
-
     }
 
     override func didReceiveMemoryWarning()
@@ -37,14 +35,14 @@ class NewTimeZoneTableViewController: UITableViewController
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return visibleTimeZones.count
+        return visibleTimeZones!.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCellWithIdentifier("NewTimeZoneCell", forIndexPath: indexPath) as! NewTimeZoneCell
 
-        let timeZoneName = visibleTimeZones[indexPath.row]
+        let timeZoneName = visibleTimeZones![indexPath.row]
         cell.timeZoneLabel.text = timeZoneName
         
         return cell
@@ -55,7 +53,7 @@ class NewTimeZoneTableViewController: UITableViewController
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        delegate?.zoneWasChosen((visibleTimeZones[indexPath.row]))
+        delegate?.zoneWasChosen((visibleTimeZones![indexPath.row]))
         dismissViewControllerAnimated(true, completion: nil)
     }
 

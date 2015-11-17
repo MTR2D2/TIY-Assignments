@@ -10,7 +10,7 @@ import UIKit
 
 class TimeZoneCell: UITableViewCell
 {
-    @IBOutlet weak var clock: UIView!
+    @IBOutlet weak var clock: ClockView!
     @IBOutlet weak var zoneLabel: UILabel!
 
     override func awakeFromNib()
