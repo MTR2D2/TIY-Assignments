@@ -13,11 +13,13 @@ protocol TimeZoneTableViewControllerDelegate
     func zoneWasChosen(chosenZone: String)
 }
 
+
 class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewControllerDelegate
 {
     var visibleCards = [String]()
     
     @IBOutlet weak var addButton: UIBarButtonItem!
+    
 
     override func viewDidLoad()
     {
@@ -28,11 +30,13 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
          self.clearsSelectionOnViewWillAppear = false
          self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
+    
 
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
+    
 
     // MARK: - Table view data source
 
@@ -40,6 +44,7 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     {
         return 1
     }
+    
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
@@ -72,7 +77,7 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     {
         if editingStyle == .Delete
         {
-            // Delete the row from the data source
+            visibleCards.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         }
         else if editingStyle == .Insert
@@ -102,7 +107,7 @@ class TimeZoneTableViewController: UITableViewController, TimeZoneTableViewContr
     
     func zoneWasChosen(chosenZone: String)
     {
-        
+        visibleCards.append(chosenZone)
     }
     
 

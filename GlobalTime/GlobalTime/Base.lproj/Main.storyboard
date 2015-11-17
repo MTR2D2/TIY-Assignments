@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Time Zone Table View Controller-->
@@ -24,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-5n-UQ8">
-                                            <rect key="frame" x="411" y="64" width="78" height="21"/>
+                                            <rect key="frame" x="261" y="64" width="78" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -46,7 +45,7 @@
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="top" secondItem="ObX-e2-rFe" secondAttribute="top" constant="25" id="Aq2-Zr-ZtO"/>
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="GQm-DQ-eKN"/>
                                         <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="IFz-eh-bdK"/>
-                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" multiplier="1.5" id="K8u-bm-EzY"/>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" id="K8u-bm-EzY"/>
                                         <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" constant="24" id="SlV-4G-sTb"/>
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="leading" secondItem="ObX-e2-rFe" secondAttribute="leading" constant="8" id="flv-MC-EPy"/>
                                         <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" constant="53" id="gZN-ii-LN7"/>
@@ -61,6 +60,10 @@
                                     </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="clock" destination="ZbG-7U-qQN" id="zfU-i7-g96"/>
+                                    <outlet property="zoneLabel" destination="V5t-5n-UQ8" id="TwX-Sr-TZT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
