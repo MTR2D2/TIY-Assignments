@@ -31,9 +31,18 @@
                                                 <constraint firstAttribute="height" constant="43" id="kj6-Vs-Gqe"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-5n-UQ8">
+                                            <rect key="frame" x="261" y="11" width="78" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" id="9bY-1I-neR"/>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="B84-w5-ZVT"/>
                                         <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" id="Hm1-Wa-RES"/>
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="top" secondItem="ObX-e2-rFe" secondAttribute="top" id="RAM-HF-hWd"/>
                                         <constraint firstItem="ZbG-7U-qQN" firstAttribute="leading" secondItem="ObX-e2-rFe" secondAttribute="leading" constant="8" id="XJ4-um-OAk"/>
