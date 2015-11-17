@@ -9,30 +9,26 @@
         <scene sceneID="5Ko-sh-IIG">
             <objects>
                 <tableViewController id="60B-Xk-cFN" customClass="TimeZoneTableViewController" customModule="GlobalTime" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUd-Wf-slC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="OUd-Wf-slC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeZoneCell" id="Tp3-S1-dGi" customClass="TimeZoneCell" customModule="GlobalTime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tp3-S1-dGi" id="ObX-e2-rFe">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="149"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-7U-qQN" customClass="ClockView" customModule="GlobalTime" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbG-7U-qQN" customClass="ClockView" customModule="GlobalTime" customModuleProvider="target">
                                             <rect key="frame" x="8" y="0.0" width="53" height="43"/>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="53" id="9Ln-cy-8G5"/>
-                                                <constraint firstAttribute="height" constant="43" id="kj6-Vs-Gqe"/>
-                                            </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeZone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5t-5n-UQ8">
-                                            <rect key="frame" x="261" y="11" width="78" height="21"/>
+                                            <rect key="frame" x="261" y="64" width="78" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -41,11 +37,8 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" id="9bY-1I-neR"/>
-                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="B84-w5-ZVT"/>
-                                        <constraint firstAttribute="bottom" secondItem="ZbG-7U-qQN" secondAttribute="bottom" id="Hm1-Wa-RES"/>
-                                        <constraint firstItem="ZbG-7U-qQN" firstAttribute="top" secondItem="ObX-e2-rFe" secondAttribute="top" id="RAM-HF-hWd"/>
-                                        <constraint firstItem="ZbG-7U-qQN" firstAttribute="leading" secondItem="ObX-e2-rFe" secondAttribute="leading" constant="8" id="XJ4-um-OAk"/>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerY" secondItem="ObX-e2-rFe" secondAttribute="centerY" id="R3b-2D-UNs"/>
+                                        <constraint firstItem="V5t-5n-UQ8" firstAttribute="centerX" secondItem="ObX-e2-rFe" secondAttribute="centerX" id="VAI-kM-kLZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
@@ -56,7 +49,9 @@
                             <outlet property="delegate" destination="60B-Xk-cFN" id="7v4-uj-jRR"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jYw-RU-pZm"/>
+                    <navigationItem key="navigationItem" id="jYw-RU-pZm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="IK2-oh-Keu"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fhf-bX-iuC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
