@@ -111,4 +111,15 @@ class FriendsListViewController: UIViewController, UITableViewDataSource, UITabl
         personDetailVC.person = people[indexPath.row]
         navigationController?.pushViewController(personDetailVC, animated: true)
     }
+    
+//    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+//            if editingStyle == .Delete
+//            {
+//                let aPerson = people[indexPath.row]
+//                people.delete(aPerson)
+//                
+//                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+//            }
+//        }
+
 }
