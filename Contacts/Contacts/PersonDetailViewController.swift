@@ -1,35 +1,43 @@
 //
-//  DetailViewController.swift
-//  Contacts
+//  PersonDetailViewController.swift
+//  Friends
 //
-//  Created by Michael Reynolds on 11/20/15.
+//  Created by Michael Reynolds on 11/19/15.
 //  Copyright © 2015 The Iron Yard. All rights reserved.
 //
 
 import UIKit
 import RealmSwift
 
-class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class PersonDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
     let realm = try! Realm()
+    // this creates a handle to talk to the Realm database
     
     var person: Person?
     var allPeople: Results<Person>!
-
+    
+    @IBOutlet weak var friendCountLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         allPeople = realm.objects(Person).filter("name != %@", person!.name).sorted("name")
         updateFriendCountLabel()
-
     }
-
+    
+    func updateFriendCountLabel()
+    {
+        friendCountLabel.text = "\(person!.name) has \(person!.friendCount) friend\(person!.friendCount == 1 ? "" : "s")"
+        // this is a turnary operator
+    }
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     // MARk: - UITableView Data Source
@@ -93,6 +101,4 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             updateFriendCountLabel()
         }
     }
-
-
 }

@@ -1,6 +1,6 @@
 //
-//  ViewController.swift
-//  Contacts
+//  FriendsListViewController.swift
+//  Friends
 //
 //  Created by Michael Reynolds on 11/19/15.
 //  Copyright © 2015 The Iron Yard. All rights reserved.
@@ -9,20 +9,22 @@
 import UIKit
 import RealmSwift
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+class FriendsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
+    @IBOutlet weak var tableSortSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
     let realm = try! Realm()
     var people: Results<Person>!
     var currentCreateAction: UIAlertAction!
-
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         people = realm.objects(Person).sorted("name")
-
+        
+        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool)
@@ -30,13 +32,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewWillAppear(true)
         tableView.reloadData()
     }
-
-
+    
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return 1
@@ -105,10 +107,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let personDetailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailViewController") as! DetailViewController
+        let personDetailVC = storyboard?.instantiateViewControllerWithIdentifier("DetailView") as! PersonDetailViewController
         personDetailVC.person = people[indexPath.row]
         navigationController?.pushViewController(personDetailVC, animated: true)
     }
-
 }
-
