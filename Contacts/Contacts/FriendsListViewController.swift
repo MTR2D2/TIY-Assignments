@@ -68,6 +68,7 @@ class FriendsListViewController: UIViewController, UITableViewDataSource, UITabl
                 let newPerson = Person()
                 newPerson.name = personName!
                 
+                
                 try! self.realm.write({ () -> Void in
                     self.realm.add(newPerson)
                     self.tableView.reloadData()
