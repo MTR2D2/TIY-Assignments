@@ -71,6 +71,7 @@ aVariableWithIntegerValueOf0
 */
 
 // Every instance of a type has an implicit property called self, which is exactly equivalent to the instance itself.
+/*
 class SelfExample
 {
     var instanceVariable: Double = 0
@@ -80,6 +81,7 @@ class SelfExample
         self.instanceVariable++
     }
 }
+*/
 
 // Note, cannot do this with struct
 /*
@@ -97,7 +99,7 @@ struct SelfExample
 // You must use the self property to distinguish between the parameter name and the property name when they are the same.
 
 // Here, self disambiguates between a method parameter called x and an instance property that is also called x:
-
+/*
 struct Point
 {
     var x = 0.0
@@ -114,6 +116,7 @@ if somePoint.isToTheRightOfX(1.0)
 {
     print("This point is to the right of the line where x == 1.0")
 }
+*/
 
 // Without the self prefix, Swift would assume that both uses of x referred to the method parameter called x.
 
