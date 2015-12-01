@@ -1,12 +1,14 @@
-//: Playground - noun: a place where people can play
+/*:
+# Methods and Self
+*/
 
 import UIKit
 
 // These are properties that can be used throughout the entire playground
 var str = "Hello, playground"
-//var aVariableWithIntegerValueOf0: Int = 0
+var aVariableWithIntegerValueOf0: Int = 0
 
-/*
+
 class ThisIsAMethod
 // “Methods are functions that are associated with a particular type”
 {
@@ -26,13 +28,15 @@ class ThisIsAMethod
         }
     }
 }
+
+
+/*:
+You call the method as follows:
 */
+let x = ThisIsAMethod()
+x.anInstanceMethodOfTheClassMethod()
 
-// You call the method as follows:
-//let x = ThisIsAMethod()
-//x.anInstanceMethodOfTheClassMethod()
 
-/*
 struct CounterExample
 {
     func increment()
@@ -52,26 +56,33 @@ struct CounterExample
     }
 }
 
-// Calling the method again reveals 3 instance methods:
+/*: 
+Calling the method again reveals 3 instance methods:
+*/
 let y = CounterExample()
 y.increment()
 
 aVariableWithIntegerValueOf0
 
 y.incrementBy(6, numberOfTimes: 10)
-// In the instance method incrementBy, the first parameter is local by default because it can be inferred by the name of the method; therefore, the name of the parameter should not be included when called. 
-// The second parameter is both local and external so it should be written out in order to show others know what the code is doing.
-// This allows for the code to be easily read.
-
-aVariableWithIntegerValueOf0
-
-y.reset()
-
-aVariableWithIntegerValueOf0
+/*: 
+## In the instance method incrementBy, the first parameter is local by default because it can be inferred by the name of the method; therefore, the name of the parameter should not be included when called.
+### The second parameter is both local and external so it should be written out in order to show others what the code is doing.
+#### This allows for the code to be easily read.
 */
 
-// Every instance of a type has an implicit property called self, which is exactly equivalent to the instance itself.
-/*
+aVariableWithIntegerValueOf0
+//
+y.reset()
+//
+aVariableWithIntegerValueOf0
+
+
+/*:
+Every instance of a type has an implicit property called self, which is exactly equivalent to the instance itself.
+*/
+
+
 class SelfExample
 {
     var instanceVariable: Double = 0
@@ -81,25 +92,30 @@ class SelfExample
         self.instanceVariable++
     }
 }
+
+
+// Note, cannot use self with a struct
+//
+//struct SelfExample
+//{
+//    var instanceVariable: Double = 0
+//    
+//    func increment()
+//    {
+//        self.instanceVariable++
+//    }
+//}
+
+
+/*:
+### You must use the self property to distinguish between the parameter name and the property name when they are the same.
 */
 
-// Note, cannot do this with struct
-/*
-struct SelfExample
-{
-    var instanceVariable: Double = 0
-    
-    func increment()
-    {
-        self.instanceVariable++
-    }
-}
+/*:
+Here, self disambiguates between a method parameter called x and an instance property that is also called x:
 */
 
-// You must use the self property to distinguish between the parameter name and the property name when they are the same.
 
-// Here, self disambiguates between a method parameter called x and an instance property that is also called x:
-/*
 struct Point
 {
     var x = 0.0
@@ -116,9 +132,11 @@ if somePoint.isToTheRightOfX(1.0)
 {
     print("This point is to the right of the line where x == 1.0")
 }
-*/
 
-// Without the self prefix, Swift would assume that both uses of x referred to the method parameter called x.
+
+/*:
+Without the self prefix, Swift would assume that both uses of x referred to the method parameter called x.
+*/
 
 
 
