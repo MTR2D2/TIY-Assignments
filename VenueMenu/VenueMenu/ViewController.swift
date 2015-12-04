@@ -7,19 +7,67 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
+var userLocation: Location?
 
-    override func viewDidLoad() {
+protocol LocationManagerProtocol
+{
+    func didReceiveLocation(location: Location?)
+}
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, LocationManagerProtocol
+{
+    @IBOutlet weak var tableView: UITableView!
+    
+    var favorites = [Entity]()
+    var locationManager: LocationManager!
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        locationManager = LocationManager(delegate: self)
+        locationManager.configureLocationManager()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return favorites.count
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
+        let cell = tableView.dequeueReusableCellWithIdentifier("FavoriteCell", forIndexPath: indexPath)
+        
+        
+        return cell
+    }
+    
+    func didReceiveLocation(location: Location?)
+    {
+        if location != nil
+        {
+            userLocation = location
+        }
+        else
+        {
+            //disable search button
+        }
     }
 
+    
 
 }
 
