@@ -10,6 +10,7 @@ import UIKit
 
 class NextVC: UIViewController
 {
+    
 
     override func viewDidLoad()
     {

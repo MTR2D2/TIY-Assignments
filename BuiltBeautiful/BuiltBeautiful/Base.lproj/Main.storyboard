@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rOS-O5-9ia">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--NextVC-->
@@ -29,7 +30,7 @@
                                 <rect key="frame" x="65" y="276" width="471" height="48"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
-                                <color key="textColor" red="0.24175134742584908" green="0.69202250544703703" blue="0.1380044556670986" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.32321935892105103" green="0.7608342170715332" blue="0.20437973737716675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="3" height="0.0"/>
                             </label>
@@ -122,6 +123,24 @@
             <point key="canvasLocation" x="520.5" y="324"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="3ej-TY-AK0">
+            <objects>
+                <viewController id="ESo-oG-sk4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bgg-09-j25"/>
+                        <viewControllerLayoutGuide type="bottom" id="bmK-pA-eGM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rXQ-ov-Oc6">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kca-BC-BT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.5" y="1719.75"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="4t4-eC-SI7">
             <objects>
                 <viewController id="6Ld-gP-LA4" sceneMemberID="viewController">
@@ -131,8 +150,66 @@
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9TW-zk-HnX">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-bA-Dg8">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
+                                <state key="normal" title="Income &gt;">
+                                    <color key="titleColor" red="0.32321935892105103" green="0.7608342170715332" blue="0.20437973737716675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="UVy-83-zlm" kind="popoverPresentation" identifier="IncomeSegue" popoverAnchorView="MZv-bA-Dg8" id="6ry-8r-Y4Q">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lI2-wg-Ehf">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
+                                <state key="normal" title="Expense &gt;">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ESo-oG-sk4" kind="popoverPresentation" identifier="ExpenseSegue" popoverAnchorView="lI2-wg-Ehf" id="xfC-wa-iRB">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MZv-bA-Dg8" firstAttribute="centerX" secondItem="9TW-zk-HnX" secondAttribute="centerX" id="4sP-wC-Npc"/>
+                            <constraint firstItem="lI2-wg-Ehf" firstAttribute="centerX" secondItem="9TW-zk-HnX" secondAttribute="centerX" id="TxL-gH-yvC"/>
+                            <constraint firstItem="MZv-bA-Dg8" firstAttribute="centerY" secondItem="9TW-zk-HnX" secondAttribute="centerY" multiplier="0.75" id="foN-fQ-CNy"/>
+                            <constraint firstItem="lI2-wg-Ehf" firstAttribute="centerY" secondItem="9TW-zk-HnX" secondAttribute="centerY" multiplier="1.25" id="jC1-v1-a6a"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MZv-bA-Dg8"/>
+                                <exclude reference="lI2-wg-Ehf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="TxL-gH-yvC"/>
+                                <exclude reference="jC1-v1-a6a"/>
+                                <exclude reference="4sP-wC-Npc"/>
+                                <exclude reference="foN-fQ-CNy"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MZv-bA-Dg8"/>
+                                <include reference="lI2-wg-Ehf"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="TxL-gH-yvC"/>
+                                <include reference="jC1-v1-a6a"/>
+                                <include reference="4sP-wC-Npc"/>
+                                <include reference="foN-fQ-CNy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="800"/>
@@ -141,26 +218,23 @@
             </objects>
             <point key="canvasLocation" x="520.5" y="1015.5"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UuC-Th-3tw">
+        <!--View Controller-->
+        <scene sceneID="mg5-fY-9qs">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOS-O5-9ia" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="100"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hif-yp-Hb3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                <viewController id="UVy-83-zlm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R3k-mx-39D"/>
+                        <viewControllerLayoutGuide type="bottom" id="OmZ-tZ-PKl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jtv-gh-WTc">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U6I-Xe-DkB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YCT-7l-MYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXg-6R-U0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="520.5" y="-96.75"/>
+            <point key="canvasLocation" x="1246.5" y="1015.5"/>
         </scene>
     </scenes>
     <resources>
