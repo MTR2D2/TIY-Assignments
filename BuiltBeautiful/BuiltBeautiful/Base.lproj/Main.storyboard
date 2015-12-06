@@ -133,7 +133,7 @@
                     <view key="view" contentMode="scaleToFill" id="rXQ-ov-Oc6">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kca-BC-BT9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -154,9 +154,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZv-bA-Dg8">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
+                                <size key="titleShadowOffset" width="10" height="0.0"/>
                                 <state key="normal" title="Income &gt;">
                                     <color key="titleColor" red="0.32321935892105103" green="0.7608342170715332" blue="0.20437973737716675" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="UVy-83-zlm" kind="popoverPresentation" identifier="IncomeSegue" popoverAnchorView="MZv-bA-Dg8" id="6ry-8r-Y4Q">
@@ -167,9 +170,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lI2-wg-Ehf">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
+                                <size key="titleShadowOffset" width="10" height="0.0"/>
                                 <state key="normal" title="Expense &gt;">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.20784313725490197" green="0.20784313725490197" blue="0.20784313725490197" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="ESo-oG-sk4" kind="popoverPresentation" identifier="ExpenseSegue" popoverAnchorView="lI2-wg-Ehf" id="xfC-wa-iRB">
@@ -177,37 +183,52 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello, User." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6A-HV-trz">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" red="0.81960784310000001" green="0.82352941180000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MZv-bA-Dg8" firstAttribute="centerX" secondItem="9TW-zk-HnX" secondAttribute="centerX" id="4sP-wC-Npc"/>
+                            <constraint firstItem="F6A-HV-trz" firstAttribute="centerX" secondItem="9TW-zk-HnX" secondAttribute="centerX" id="9mr-y5-Zpo"/>
                             <constraint firstItem="lI2-wg-Ehf" firstAttribute="centerX" secondItem="9TW-zk-HnX" secondAttribute="centerX" id="TxL-gH-yvC"/>
                             <constraint firstItem="MZv-bA-Dg8" firstAttribute="centerY" secondItem="9TW-zk-HnX" secondAttribute="centerY" multiplier="0.75" id="foN-fQ-CNy"/>
+                            <constraint firstItem="F6A-HV-trz" firstAttribute="top" secondItem="RgS-RV-mbe" secondAttribute="bottom" constant="63" id="j14-Ba-yB5"/>
                             <constraint firstItem="lI2-wg-Ehf" firstAttribute="centerY" secondItem="9TW-zk-HnX" secondAttribute="centerY" multiplier="1.25" id="jC1-v1-a6a"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="MZv-bA-Dg8"/>
                                 <exclude reference="lI2-wg-Ehf"/>
+                                <exclude reference="F6A-HV-trz"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="TxL-gH-yvC"/>
-                                <exclude reference="jC1-v1-a6a"/>
+                                <exclude reference="9mr-y5-Zpo"/>
+                                <exclude reference="j14-Ba-yB5"/>
                                 <exclude reference="4sP-wC-Npc"/>
                                 <exclude reference="foN-fQ-CNy"/>
+                                <exclude reference="TxL-gH-yvC"/>
+                                <exclude reference="jC1-v1-a6a"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="MZv-bA-Dg8"/>
                                 <include reference="lI2-wg-Ehf"/>
+                                <include reference="F6A-HV-trz"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="TxL-gH-yvC"/>
-                                <include reference="jC1-v1-a6a"/>
+                                <include reference="9mr-y5-Zpo"/>
+                                <include reference="j14-Ba-yB5"/>
                                 <include reference="4sP-wC-Npc"/>
                                 <include reference="foN-fQ-CNy"/>
+                                <include reference="TxL-gH-yvC"/>
+                                <include reference="jC1-v1-a6a"/>
                             </mask>
                         </variation>
                     </view>
