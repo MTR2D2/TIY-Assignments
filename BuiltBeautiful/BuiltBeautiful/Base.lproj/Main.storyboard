@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rOS-O5-9ia">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--NextVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BuiltBeautiful" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="NextVC" customModule="BuiltBeautiful" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,13 +17,153 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(Please hit the arrow to continue)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uk2-ZZ-Wbw">
+                                <rect key="frame" x="191" y="340" width="219" height="20"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.81960784313725488" green="0.82352941176470584" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michael's Money" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhF-0W-IAy">
+                                <rect key="frame" x="65" y="276" width="471" height="48"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="44"/>
+                                <color key="textColor" red="0.24175134742584908" green="0.69202250544703703" blue="0.1380044556670986" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="3" height="0.0"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NO5-B6-P7x">
+                                <rect key="frame" x="65" y="276" width="471" height="48"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="35"/>
+                                <color key="textColor" red="0.81960784310000001" green="0.82352941180000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="3" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hY8-yS-5y5">
+                                <rect key="frame" x="238" y="388" width="125" height="60"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="Mbq-o0-a8e"/>
+                                    <constraint firstAttribute="width" secondItem="hY8-yS-5y5" secondAttribute="height" multiplier="48:53" id="tDh-fM-kXp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-CondensedBold" family="Helvetica Neue" pointSize="40"/>
+                                <size key="titleShadowOffset" width="1" height="0.0"/>
+                                <state key="normal" image="success-next-button.png">
+                                    <color key="titleColor" red="0.95992204092271605" green="0.96391541268262038" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mbq-o0-a8e"/>
+                                        <exclude reference="tDh-fM-kXp"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Mbq-o0-a8e"/>
+                                        <include reference="tDh-fM-kXp"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="6Ld-gP-LA4" kind="showDetail" identifier="NextSegue" id="MfW-Iq-MMX"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bhF-0W-IAy" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QYh-cI-xzq"/>
+                            <constraint firstItem="bhF-0W-IAy" firstAttribute="top" secondItem="NO5-B6-P7x" secondAttribute="bottom" constant="28" id="WEn-Sa-Jw8"/>
+                            <constraint firstItem="Uk2-ZZ-Wbw" firstAttribute="top" secondItem="bhF-0W-IAy" secondAttribute="bottom" constant="28" id="jfr-vl-BeX"/>
+                            <constraint firstItem="hY8-yS-5y5" firstAttribute="centerX" secondItem="Uk2-ZZ-Wbw" secondAttribute="centerX" id="m7d-Dr-wS9"/>
+                            <constraint firstItem="Uk2-ZZ-Wbw" firstAttribute="centerX" secondItem="bhF-0W-IAy" secondAttribute="centerX" id="pg3-ik-mCw"/>
+                            <constraint firstItem="hY8-yS-5y5" firstAttribute="top" secondItem="Uk2-ZZ-Wbw" secondAttribute="bottom" constant="73" id="sy7-oU-5XX"/>
+                            <constraint firstItem="NO5-B6-P7x" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uU4-n1-0bW"/>
+                            <constraint firstItem="bhF-0W-IAy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zY8-VZ-mxF"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NO5-B6-P7x"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="uU4-n1-0bW"/>
+                                <exclude reference="QYh-cI-xzq"/>
+                                <exclude reference="WEn-Sa-Jw8"/>
+                                <exclude reference="zY8-VZ-mxF"/>
+                                <exclude reference="jfr-vl-BeX"/>
+                                <exclude reference="pg3-ik-mCw"/>
+                                <exclude reference="m7d-Dr-wS9"/>
+                                <exclude reference="sy7-oU-5XX"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NO5-B6-P7x"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="uU4-n1-0bW"/>
+                                <include reference="QYh-cI-xzq"/>
+                                <include reference="WEn-Sa-Jw8"/>
+                                <include reference="zY8-VZ-mxF"/>
+                                <include reference="jfr-vl-BeX"/>
+                                <include reference="pg3-ik-mCw"/>
+                                <include reference="m7d-Dr-wS9"/>
+                                <include reference="sy7-oU-5XX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="F9n-gh-MlC"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="800"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="371"/>
+            <point key="canvasLocation" x="520.5" y="324"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4t4-eC-SI7">
+            <objects>
+                <viewController id="6Ld-gP-LA4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RgS-RV-mbe"/>
+                        <viewControllerLayoutGuide type="bottom" id="RbC-oD-dGp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9TW-zk-HnX">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="800"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1B-rz-t3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.5" y="1015.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UuC-Th-3tw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rOS-O5-9ia" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="100"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hif-yp-Hb3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U6I-Xe-DkB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YCT-7l-MYN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520.5" y="-96.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="success-next-button.png" width="300" height="300"/>
+    </resources>
 </document>
