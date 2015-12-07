@@ -9,12 +9,13 @@
 import UIKit
 import QuartzCore
 
-protocol EnterNameVCProtocol
-{
-    func nextKeyWasPressed(nameText: String)
-}
+//protocol EnterNameVCProtocol
+//{
+//    func nextKeyWasPressed(nameText: String)
+//    func nextTapped(sender: UIButton)
+//}
 
-class ChooseVC: UIViewController, UIPopoverPresentationControllerDelegate, EnterNameVCProtocol
+class ChooseVC: UIViewController//, UIPopoverPresentationControllerDelegate, EnterNameVCProtocol
 {
     
     @IBOutlet weak var userLabel: UILabel!
@@ -30,6 +31,11 @@ class ChooseVC: UIViewController, UIPopoverPresentationControllerDelegate, Enter
         self.expenseButton.layer.cornerRadius = 8
         self.myBudgetsButton.layer.cornerRadius = 8
 
+//        if name != nil
+//        {
+//            userLabel.text = "Hello, \(name) )"
+//        }
+
     }
 
     override func didReceiveMemoryWarning()
@@ -39,11 +45,20 @@ class ChooseVC: UIViewController, UIPopoverPresentationControllerDelegate, Enter
     
     // MARK: - UIPopoverPresentationController Delegate
     
-    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
-    {
-        return UIModalPresentationStyle.None
-        //can also just type: return .None
-    }
+//    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle
+//    {
+//        return UIModalPresentationStyle.None
+//        //can also just type: return .None
+//    }
+    
+//       func enterNameSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+//        {
+//            if segue.identifier == "EnterNameSegue"
+//            {
+//                let destVC = segue.destinationViewController as! EnterNameVC
+//                destVC.delegate = self //connects
+//            }
+//        }
     
 //    override func prepareForIncomeSegue(segue: UIStoryboardSegue, sender: AnyObject?)
 //    {
@@ -71,12 +86,19 @@ class ChooseVC: UIViewController, UIPopoverPresentationControllerDelegate, Enter
 //        }
 //    }
     
-    func nextKeyWasPressed(nameText: String)
-    {
-        userLabel.text = "Hello, \(nameText) )"
-        self.dismissViewControllerAnimated(true, completion: nil)
-        print(nameText)
-    }
+//    // MARK: - Enter Name Protocol
+//    
+//    func nextKeyWasPressed(nameText: String)
+//    {
+//        userLabel.text = "Hello, \(nameText) )"
+//
+//        print(nameText)
+//    }
+//    
+//    func nextTapped(sender: UIButton)
+//    {
+//        userLabel.text = "Hello, \(sender) )"
+//    }
     
     
 

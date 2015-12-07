@@ -11,11 +11,19 @@ import UIKit
 class IncomeVC: UIViewController, UITextFieldDelegate
 {
     
+    @IBOutlet weak var incomeTextField: UITextField!
+    @IBOutlet weak var myBudgetButton: UIButton!
+    
 //    var delegate: IncomeViewControllerDelegate?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.myBudgetButton.layer.cornerRadius = 8
+
+        
+        incomeTextField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }

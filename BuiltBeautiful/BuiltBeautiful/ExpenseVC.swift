@@ -11,11 +11,19 @@ import UIKit
 class ExpenseVC: UIViewController, UITextFieldDelegate
 {
     
+    @IBOutlet weak var expenseTextField: UITextField!
+    @IBOutlet weak var myBudgetButton: UIButton!
+
+    
 //    var delegate: ExpenseViewControllerDelegate?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.myBudgetButton.layer.cornerRadius = 8
+        
+        expenseTextField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
     }

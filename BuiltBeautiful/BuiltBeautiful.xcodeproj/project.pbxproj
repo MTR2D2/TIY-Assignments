@@ -68,7 +68,6 @@
 		4CB95F821C128065005E2903 /* BuiltBeautiful */ = {
 			isa = PBXGroup;
 			children = (
-				4C6C31A41C15131600C4DA4C /* NewFile.swift */,
 				4CB95F851C128065005E2903 /* NextVC.swift */,
 				4C6C31A61C15135100C4DA4C /* EnterNameVC.swift */,
 				4C6C319C1C14F8B700C4DA4C /* ChooseVC.swift */,
@@ -84,6 +83,7 @@
 		4CEE72231C14E3DD00B9724B /* Extra */ = {
 			isa = PBXGroup;
 			children = (
+				4C6C31A41C15131600C4DA4C /* NewFile.swift */,
 				4CB95F831C128065005E2903 /* AppDelegate.swift */,
 				4CB95F8A1C128065005E2903 /* Assets.xcassets */,
 				4CB95F8C1C128065005E2903 /* LaunchScreen.storyboard */,

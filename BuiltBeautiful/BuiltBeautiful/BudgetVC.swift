@@ -21,10 +21,15 @@ import UIKit
 
 class BudgetVC: UIViewController//, IncomeViewControllerDelegate, ExpenseViewControllerDelegate
 {
+    
+    @IBOutlet weak var newTransactionButton: UIButton!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        self.newTransactionButton.layer.cornerRadius = 8
+
 
         // Do any additional setup after loading the view.
     }
