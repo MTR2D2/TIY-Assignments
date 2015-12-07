@@ -16,9 +16,22 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="Tlf-XU-nw5">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                <animations/>
+                            </activityIndicatorView>
+                        </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tlf-XU-nw5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="RWW-7v-Kyt"/>
+                            <constraint firstItem="Tlf-XU-nw5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hKu-qp-j0V"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activityViewIndicator" destination="Tlf-XU-nw5" id="SJy-w7-wyc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

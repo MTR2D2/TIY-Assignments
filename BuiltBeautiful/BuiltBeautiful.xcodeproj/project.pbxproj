@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6C319D1C14F8B700C4DA4C /* ChooseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C319C1C14F8B700C4DA4C /* ChooseVC.swift */; };
+		4C6C319F1C14F96900C4DA4C /* IncomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C319E1C14F96900C4DA4C /* IncomeVC.swift */; };
+		4C6C31A11C14F97400C4DA4C /* ExpenseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C31A01C14F97300C4DA4C /* ExpenseVC.swift */; };
+		4C6C31A31C150F8800C4DA4C /* BudgetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C31A21C150F8800C4DA4C /* BudgetVC.swift */; };
+		4C6C31A51C15131600C4DA4C /* NewFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C31A41C15131600C4DA4C /* NewFile.swift */; };
+		4C6C31A71C15135100C4DA4C /* EnterNameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6C31A61C15135100C4DA4C /* EnterNameVC.swift */; };
 		4CB95F841C128065005E2903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB95F831C128065005E2903 /* AppDelegate.swift */; };
 		4CB95F861C128065005E2903 /* NextVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB95F851C128065005E2903 /* NextVC.swift */; };
 		4CB95F891C128065005E2903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB95F871C128065005E2903 /* Main.storyboard */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C6C319C1C14F8B700C4DA4C /* ChooseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseVC.swift; sourceTree = "<group>"; };
+		4C6C319E1C14F96900C4DA4C /* IncomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncomeVC.swift; sourceTree = "<group>"; };
+		4C6C31A01C14F97300C4DA4C /* ExpenseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpenseVC.swift; sourceTree = "<group>"; };
+		4C6C31A21C150F8800C4DA4C /* BudgetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgetVC.swift; sourceTree = "<group>"; };
+		4C6C31A41C15131600C4DA4C /* NewFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFile.swift; sourceTree = "<group>"; };
+		4C6C31A61C15135100C4DA4C /* EnterNameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnterNameVC.swift; sourceTree = "<group>"; };
 		4CB95F801C128065005E2903 /* BuiltBeautiful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuiltBeautiful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB95F831C128065005E2903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB95F851C128065005E2903 /* NextVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextVC.swift; sourceTree = "<group>"; };
@@ -56,7 +68,13 @@
 		4CB95F821C128065005E2903 /* BuiltBeautiful */ = {
 			isa = PBXGroup;
 			children = (
+				4C6C31A41C15131600C4DA4C /* NewFile.swift */,
 				4CB95F851C128065005E2903 /* NextVC.swift */,
+				4C6C31A61C15135100C4DA4C /* EnterNameVC.swift */,
+				4C6C319C1C14F8B700C4DA4C /* ChooseVC.swift */,
+				4C6C319E1C14F96900C4DA4C /* IncomeVC.swift */,
+				4C6C31A01C14F97300C4DA4C /* ExpenseVC.swift */,
+				4C6C31A21C150F8800C4DA4C /* BudgetVC.swift */,
 				4CB95F871C128065005E2903 /* Main.storyboard */,
 				4CEE72231C14E3DD00B9724B /* Extra */,
 			);
@@ -150,6 +168,12 @@
 			files = (
 				4CB95F861C128065005E2903 /* NextVC.swift in Sources */,
 				4CB95F841C128065005E2903 /* AppDelegate.swift in Sources */,
+				4C6C31A31C150F8800C4DA4C /* BudgetVC.swift in Sources */,
+				4C6C31A11C14F97400C4DA4C /* ExpenseVC.swift in Sources */,
+				4C6C319D1C14F8B700C4DA4C /* ChooseVC.swift in Sources */,
+				4C6C31A51C15131600C4DA4C /* NewFile.swift in Sources */,
+				4C6C31A71C15135100C4DA4C /* EnterNameVC.swift in Sources */,
+				4C6C319F1C14F96900C4DA4C /* IncomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
