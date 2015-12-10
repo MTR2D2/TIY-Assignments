@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C7F3DA01C16143B00B46542 /* MMVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F3D9F1C16143B00B46542 /* MMVC.swift */; };
+		4C7F3DA01C16143B00B46542 /* MM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7F3D9F1C16143B00B46542 /* MM.swift */; };
 		4CB95F841C128065005E2903 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB95F831C128065005E2903 /* AppDelegate.swift */; };
 		4CB95F891C128065005E2903 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CB95F871C128065005E2903 /* Main.storyboard */; };
 		4CB95F8B1C128065005E2903 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB95F8A1C128065005E2903 /* Assets.xcassets */; };
@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C7F3D9F1C16143B00B46542 /* MMVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMVC.swift; sourceTree = "<group>"; };
+		4C7F3D9F1C16143B00B46542 /* MM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MM.swift; sourceTree = "<group>"; };
 		4CB95F801C128065005E2903 /* BuiltBeautiful.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BuiltBeautiful.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CB95F831C128065005E2903 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CB95F881C128065005E2903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		4CB95F821C128065005E2903 /* BuiltBeautiful */ = {
 			isa = PBXGroup;
 			children = (
-				4C7F3D9F1C16143B00B46542 /* MMVC.swift */,
+				4C7F3D9F1C16143B00B46542 /* MM.swift */,
 				4CB95F871C128065005E2903 /* Main.storyboard */,
 				4CEE72231C14E3DD00B9724B /* Extra */,
 			);
@@ -148,7 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C7F3DA01C16143B00B46542 /* MMVC.swift in Sources */,
+				4C7F3DA01C16143B00B46542 /* MM.swift in Sources */,
 				4CB95F841C128065005E2903 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
